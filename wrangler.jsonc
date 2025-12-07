@@ -1,0 +1,9 @@
+{
+  "name": "bugratiryaki",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2024-12-01",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  }
+}

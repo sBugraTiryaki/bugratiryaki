@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:worker": "opennextjs-cloudflare build",
+    "deploy": "npm run build:worker && wrangler deploy",
+    "preview": "npm run build:worker && wrangler dev"
   },
   "dependencies": {
     "lucide-react": "^0.556.0",
@@ -15,6 +18,7 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.14.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
