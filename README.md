@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bugra Tiryaki - Personal Website
+
+A minimal, clean, single-page personal portfolio website built with Next.js and TailwindCSS.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** TailwindCSS v4
+- **Icons:** Lucide React
+- **Typography:** Geist Sans & Geist Mono
+- **Form:** FormSubmit.co (no backend required)
+
+## Features
+
+- Responsive design (mobile-first)
+- Smooth scroll navigation
+- Sticky header with blur effect
+- Light theme with quiet-luxury aesthetic
+- Contact form via FormSubmit.co
+- Social links (LinkedIn, GitHub, X, Email)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17 or later
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/sBugraTiryaki/bugratiryaki.git
+
+# Navigate to the project directory
+cd bugratiryaki
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start the development server
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Create a production build
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the production server
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+bugratiryaki/
+├── app/
+│   ├── components/
+│   │   ├── Header.tsx      # Sticky navigation with social links
+│   │   ├── Hero.tsx        # Hero section with title and CTA
+│   │   ├── About.tsx       # About section with bio
+│   │   ├── Work.tsx        # Work section container
+│   │   ├── ProjectCard.tsx # Reusable project card
+│   │   ├── Skills.tsx      # Skills grid section
+│   │   ├── Contact.tsx     # Contact form
+│   │   └── Footer.tsx      # Footer with copyright
+│   ├── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout with metadata
+│   └── page.tsx            # Main page composition
+├── public/                 # Static assets
+└── package.json
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy easily on [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sBugraTiryaki/bugratiryaki)
+
+## License
+
+All rights reserved.
