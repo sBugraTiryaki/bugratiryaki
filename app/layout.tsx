@@ -13,24 +13,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bugratiryaki.com"),
   title: "Bugra Tiryaki | Software Developer & AI Builder",
   description:
-    "I build web applications, internal systems, and AI-driven tools. Focused on Laravel, Next.js, and modern development practices.",
+    "Bugra Tiryaki - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
   keywords: [
+    "Bugra Tiryaki",
+    "Buğra Tiryaki",
     "software developer",
     "web developer",
     "Laravel",
     "Next.js",
     "React",
     "AI",
-    "full-stack",
+    "full-stack developer",
+    "Turkey",
   ],
   authors: [{ name: "Bugra Tiryaki" }],
+  creator: "Bugra Tiryaki",
   openGraph: {
     title: "Bugra Tiryaki | Software Developer & AI Builder",
     description:
-      "I build web applications, internal systems, and AI-driven tools.",
+      "Software developer focused on Laravel, Next.js and AI-powered tools.",
+    url: "https://bugratiryaki.com",
+    siteName: "Bugra Tiryaki",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bugra Tiryaki | Software Developer & AI Builder",
+    description:
+      "Software developer focused on Laravel, Next.js and AI-powered tools.",
+    creator: "@sbugratiryaki",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://bugratiryaki.com",
   },
 };
 
