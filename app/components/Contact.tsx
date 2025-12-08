@@ -11,7 +11,7 @@ export default function Contact() {
             out.
           </p>
           <form
-            action="https://formsubmit.co/sbugratiryaki@gmail.com"
+            action="https://formsubmit.co/45286b86352ff99a9aca3e7594adf2fc"
             method="POST"
             className="space-y-6"
           >
