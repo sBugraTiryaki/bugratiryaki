@@ -6,7 +6,7 @@ export default function About() {
           About
         </h2>
         <p className="text-neutral-600 text-lg leading-relaxed max-w-3xl">
-          I&apos;m a software developer focused on Laravel, Next.js and
+          I&apos;m Buğra Tiryaki, a software developer focused on Laravel, Next.js and
           AI-powered tools. I work on modern web applications, internal admin
           systems, and automation workflows. I value speed, clarity, and
           practical execution over unnecessary complexity. My approach blends
