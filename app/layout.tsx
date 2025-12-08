@@ -56,6 +56,51 @@ export const metadata: Metadata = {
   },
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Bugra Tiryaki",
+  alternateName: "Buğra Tiryaki",
+  url: "https://bugratiryaki.com",
+  image: "https://bugratiryaki.com/profile.jpg",
+  jobTitle: "Software Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Self-employed",
+  },
+  sameAs: [
+    "https://x.com/sbugratiryaki",
+    "https://github.com/sBugraTiryaki",
+    "https://www.linkedin.com/in/bugratiryaki",
+  ],
+  knowsAbout: [
+    "Laravel",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "AI",
+    "Web Development",
+    "Full-Stack Development",
+  ],
+  nationality: {
+    "@type": "Country",
+    name: "Turkey",
+  },
+  description:
+    "Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Bugra Tiryaki",
+  url: "https://bugratiryaki.com",
+  author: {
+    "@type": "Person",
+    name: "Bugra Tiryaki",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +108,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
