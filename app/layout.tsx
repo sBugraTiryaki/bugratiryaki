@@ -14,13 +14,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bugratiryaki.com"),
-  title: "Bugra Tiryaki | Software Developer & AI Builder",
+  title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
   description:
-    "Bugra Tiryaki - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
+    "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
   keywords: [
-    "Bugra Tiryaki",
     "Buğra Tiryaki",
+    "Bugra Tiryaki",
+    "Buğra",
+    "Bugra",
+    "Tiryaki",
     "software developer",
+    "yazılım geliştirici",
     "web developer",
     "Laravel",
     "Next.js",
@@ -28,23 +32,25 @@ export const metadata: Metadata = {
     "AI",
     "full-stack developer",
     "Turkey",
+    "Türkiye",
   ],
-  authors: [{ name: "Bugra Tiryaki" }],
-  creator: "Bugra Tiryaki",
+  authors: [{ name: "Buğra Tiryaki", url: "https://bugratiryaki.com" }],
+  creator: "Buğra Tiryaki",
   openGraph: {
-    title: "Bugra Tiryaki | Software Developer & AI Builder",
+    title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
     description:
-      "Software developer focused on Laravel, Next.js and AI-powered tools.",
+      "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools.",
     url: "https://bugratiryaki.com",
-    siteName: "Bugra Tiryaki",
+    siteName: "Buğra Tiryaki",
     locale: "en_US",
+    alternateLocale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bugra Tiryaki | Software Developer & AI Builder",
+    title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
     description:
-      "Software developer focused on Laravel, Next.js and AI-powered tools.",
+      "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools.",
     creator: "@sbugratiryaki",
   },
   robots: {
@@ -53,14 +59,20 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://bugratiryaki.com",
+    languages: {
+      "tr-TR": "https://bugratiryaki.com",
+      "en-US": "https://bugratiryaki.com",
+    },
   },
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Bugra Tiryaki",
-  alternateName: "Buğra Tiryaki",
+  name: "Buğra Tiryaki",
+  alternateName: ["Bugra Tiryaki", "Buğra", "Bugra"],
+  givenName: "Buğra",
+  familyName: "Tiryaki",
   url: "https://bugratiryaki.com",
   image: "https://bugratiryaki.com/profile.jpg",
   jobTitle: "Software Developer",
@@ -86,18 +98,33 @@ const personSchema = {
     "@type": "Country",
     name: "Turkey",
   },
+  knowsLanguage: [
+    {
+      "@type": "Language",
+      name: "Turkish",
+      alternateName: "tr",
+    },
+    {
+      "@type": "Language",
+      name: "English",
+      alternateName: "en",
+    },
+  ],
   description:
-    "Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
+    "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Bugra Tiryaki",
+  name: "Buğra Tiryaki",
+  alternateName: "Bugra Tiryaki",
   url: "https://bugratiryaki.com",
+  inLanguage: ["tr", "en"],
   author: {
     "@type": "Person",
-    name: "Bugra Tiryaki",
+    name: "Buğra Tiryaki",
+    alternateName: "Bugra Tiryaki",
   },
 };
 

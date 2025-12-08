@@ -9,7 +9,7 @@ export default function Hero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-              Bugra Tiryaki
+              Buğra Tiryaki
             </h1>
             <p className="text-xl text-neutral-600 font-medium">
               Software Developer & AI Builder
