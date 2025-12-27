@@ -1,19 +1,57 @@
 const skillCategories = [
   {
     title: "Backend",
-    skills: ["Laravel", "PHP", "MySQL"],
+    skills: [
+      "Laravel",
+      "PHP",
+      "Node.js",
+      "PostgreSQL",
+      "MySQL",
+      "Prisma ORM",
+      "REST APIs",
+    ],
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
   },
   {
-    title: "DevOps",
-    skills: ["Docker", "OrbStack", "Hetzner basics"],
+    title: "DevOps & Tools",
+    skills: [
+      "Docker",
+      "OrbStack",
+      "Vercel",
+      "Cloudflare",
+      "Neon",
+      "Git",
+      "CI/CD",
+    ],
   },
   {
-    title: "AI",
-    skills: ["LLM prompting", "automation", "content systems"],
+    title: "Auth & Security",
+    skills: [
+      "NextAuth.js",
+      "OAuth 2.0",
+      "JWT",
+      "bcrypt",
+    ],
+  },
+  {
+    title: "AI & Automation",
+    skills: [
+      "Claude Code",
+      "Cursor",
+      "LLM prompting",
+      "MCP servers",
+      "Context7",
+      "Vibecoding",
+    ],
   },
 ];
 
@@ -24,7 +62,7 @@ export default function Skills() {
         <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-8">
           Skills
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {skillCategories.map((category) => (
             <div key={category.title}>
               <h3 className="text-sm font-semibold text-neutral-900 uppercase tracking-wide mb-4">
@@ -32,10 +70,7 @@ export default function Skills() {
               </h3>
               <ul className="space-y-2">
                 {category.skills.map((skill) => (
-                  <li
-                    key={skill}
-                    className="text-neutral-600 text-sm"
-                  >
+                  <li key={skill} className="text-neutral-600 text-sm">
                     {skill}
                   </li>
                 ))}
