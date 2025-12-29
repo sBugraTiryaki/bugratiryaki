@@ -164,6 +164,7 @@ export default function RootLayout({
             __html: JSON.stringify(websiteSchema),
           }}
         />
+        <script src="https://verify.bugratiryaki.com/b/MaA8Lo6mNRAsALvxoHsuaVIKsqBUjUFC" async />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
