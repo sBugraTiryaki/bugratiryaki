@@ -165,6 +165,63 @@ export default function RootLayout({
           }}
         />
         <script src="https://verify.bugratiryaki.com/b/uyLiCaWvsN7v6efwVlfOTSWbAnTG1f8p" async />
+        {/* Test cookies for KolayOnay cookie blocking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Simulated cookies for testing KolayOnay cookie blocking
+              (function() {
+                // Helper function to set cookie
+                function setCookie(name, value, days, category) {
+                  var expires = "";
+                  if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                  }
+                  document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+                  console.log("[KolayOnay Test] Set " + category + " cookie: " + name);
+                }
+
+                // ANALYTICS COOKIES (should be blocked if analytics consent not given)
+                // Google Analytics style cookies
+                setCookie("_ga", "GA1.1." + Math.floor(Math.random() * 1000000000) + "." + Math.floor(Date.now() / 1000), 730, "analytics");
+                setCookie("_ga_TEST123", "GS1.1." + Math.floor(Date.now() / 1000) + ".1.1." + Math.floor(Date.now() / 1000) + ".0.0.0", 730, "analytics");
+                setCookie("_gid", "GA1.1." + Math.floor(Math.random() * 1000000000), 1, "analytics");
+                setCookie("_gat_gtag_TEST", "1", 1, "analytics");
+
+                // Hotjar style cookie
+                setCookie("_hjSessionUser_123456", JSON.stringify({id: Math.random().toString(36).substr(2, 9)}), 365, "analytics");
+                setCookie("_hjSession_123456", JSON.stringify({id: Math.random().toString(36).substr(2, 9)}), 1, "analytics");
+
+                // Microsoft Clarity style cookie
+                setCookie("_clck", Math.random().toString(36).substr(2, 9), 365, "analytics");
+                setCookie("_clsk", Math.random().toString(36).substr(2, 9), 1, "analytics");
+
+                // MARKETING COOKIES (should be blocked if marketing consent not given)
+                // Facebook Pixel style cookies
+                setCookie("_fbp", "fb.1." + Date.now() + "." + Math.floor(Math.random() * 1000000000), 90, "marketing");
+                setCookie("_fbc", "fb.1." + Date.now() + ".test_click_id", 90, "marketing");
+
+                // Google Ads style cookies
+                setCookie("_gcl_au", "1.1." + Math.floor(Math.random() * 1000000000), 90, "marketing");
+                setCookie("_gcl_aw", "GCL." + Date.now() + ".test_gclid", 90, "marketing");
+
+                // LinkedIn style cookie
+                setCookie("li_sugr", Math.random().toString(36).substr(2, 9), 90, "marketing");
+                setCookie("bcookie", "v=2&" + Math.random().toString(36).substr(2, 9), 730, "marketing");
+
+                // TikTok style cookie
+                setCookie("_ttp", Math.random().toString(36).substr(2, 16), 390, "marketing");
+
+                // Twitter/X style cookie
+                setCookie("muc_ads", "v=2&" + Math.random().toString(36).substr(2, 9), 730, "marketing");
+
+                console.log("[KolayOnay Test] All test cookies have been set. Check Application > Cookies in DevTools.");
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
