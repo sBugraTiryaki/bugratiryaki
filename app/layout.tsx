@@ -152,6 +152,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* KolayOnay banner script - must be first */}
+        <script src="https://verify.bugratiryaki.com/b/gLetxQDtujP6OEHkcY8s19bdAQVYif7m" />
         {/* KolayOnay verification script */}
         <script src="https://verify.bugratiryaki.com/s/gLetxQDtujP6OEHkcY8s19bdAQVYif7m" />
         <script
