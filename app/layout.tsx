@@ -152,10 +152,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* KolayOnay banner script - must be first to enable cookie blocking */}
-        <script src="https://verify.bugratiryaki.com/b/uyLiCaWvsN7v6efwVlfOTSWbAnTG1f8p" />
-        {/* KolayOnay consent verification script */}
-        <script src="https://kolayonay.bugratiryaki.com/s/gLetxQDtujP6OEHkcY8s19bdAQVYif7m" />
+        {/* KolayOnay verification script */}
+        <script src="https://verify.bugratiryaki.com/s/gLetxQDtujP6OEHkcY8s19bdAQVYif7m" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
