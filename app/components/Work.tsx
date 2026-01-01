@@ -2,6 +2,23 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "KolayOnay",
+    description:
+      "GDPR/KVKK compliance monitoring platform with automated cookie scanning. Features a microservice architecture with a Node.js scanner using Playwright for headless browser automation. Self-hosted on Hetzner with Docker and Coolify.",
+    href: "https://kolayonay.bugratiryaki.com",
+    tags: [
+      "Laravel 12",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Microservices",
+      "Playwright",
+      "Coolify",
+      "Hetzner",
+    ],
+  },
+  {
     title: "Todo App",
     description:
       "Full stack todo application built in 1 hour as a deployment speedrun. Features Google OAuth, email/password auth, and full CRUD operations.",

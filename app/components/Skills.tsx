@@ -9,6 +9,7 @@ const skillCategories = [
       "MySQL",
       "Prisma ORM",
       "REST APIs",
+      "Microservices",
     ],
   },
   {
@@ -19,27 +20,40 @@ const skillCategories = [
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
+      "Inertia.js",
     ],
   },
   {
-    title: "DevOps & Tools",
+    title: "DevOps & Infra",
     skills: [
       "Docker",
-      "OrbStack",
+      "Coolify",
+      "Hetzner",
       "Vercel",
-      "Cloudflare",
-      "Neon",
+      "Nginx",
       "Git",
       "CI/CD",
     ],
   },
   {
+    title: "Cloudflare",
+    skills: [
+      "Workers",
+      "DNS Management",
+      "CDN & Caching",
+      "SSL/TLS",
+      "Proxy & Security",
+    ],
+  },
+  {
     title: "Auth & Security",
     skills: [
+      "Laravel Fortify",
       "NextAuth.js",
       "OAuth 2.0",
       "JWT",
       "bcrypt",
+      "2FA",
     ],
   },
   {
@@ -53,6 +67,14 @@ const skillCategories = [
       "Vibecoding",
     ],
   },
+  {
+    title: "Testing & QA",
+    skills: [
+      "Playwright",
+      "Pest PHP",
+      "PHPUnit",
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -62,7 +84,7 @@ export default function Skills() {
         <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-8">
           Skills
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {skillCategories.map((category) => (
             <div key={category.title}>
               <h3 className="text-sm font-semibold text-neutral-900 uppercase tracking-wide mb-4">

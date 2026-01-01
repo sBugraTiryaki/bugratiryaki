@@ -153,7 +153,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* KolayOnay - Cookie Consent & Verification */}
-        <script src="https://verify.bugratiryaki.com/s/kcUmAqVUMjqz5QJ9swHowaqDiDNxwKBe" />
+        {process.env.NODE_ENV === "production" && (
+          <script src="https://verify.bugratiryaki.com/s/kcUmAqVUMjqz5QJ9swHowaqDiDNxwKBe" />
+        )}
 
         {/* Google Analytics 4 - loaded after KolayOnay for Consent Mode support */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HPSZY96YC" />
