@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import ReactMarkdown from "react-markdown";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 
@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Post Content */}
             <div className="prose prose-neutral prose-lg max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-pre:bg-neutral-900">
-              <MDXRemote source={post.content} />
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </div>
 
             {/* Post Footer */}
