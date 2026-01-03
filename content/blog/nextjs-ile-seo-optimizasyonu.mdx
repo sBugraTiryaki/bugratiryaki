@@ -1,0 +1,58 @@
+---
+title: "Next.js ile SEO Optimizasyonu: Kapsamlı Rehber"
+date: "2026-01-03"
+excerpt: "Next.js projelerinde SEO performansını artırmak için kullanabileceğiniz teknikler, metadata yönetimi ve structured data implementasyonu."
+author: "Buğra Tiryaki"
+tags: ["Next.js", "SEO", "Web Development", "React"]
+---
+
+# Next.js ile SEO Optimizasyonu
+
+Modern web uygulamalarında SEO (Search Engine Optimization) artık her zamankinden daha önemli. Next.js, SEO dostu uygulamalar geliştirmek için harika araçlar sunuyor.
+
+## Neden Next.js?
+
+Next.js'in SEO açısından sunduğu avantajlar:
+
+- **Server-Side Rendering (SSR)**: Sayfalar sunucuda render edilir, bu da arama motorlarının içeriği kolayca indexlemesini sağlar.
+- **Static Site Generation (SSG)**: Statik sayfalar build zamanında oluşturulur, maksimum performans sunar.
+- **Automatic Image Optimization**: `next/image` ile görselleriniz otomatik olarak optimize edilir.
+- **Built-in Metadata API**: Metadata yönetimi için yerleşik destek.
+
+## Metadata Yönetimi
+
+Next.js 13+ ile metadata yönetimi çok kolay:
+
+```typescript
+export const metadata: Metadata = {
+  title: "Sayfa Başlığı",
+  description: "Sayfa açıklaması",
+  openGraph: {
+    title: "OG Başlık",
+    description: "OG Açıklama",
+    type: "website",
+  },
+};
+```
+
+## Structured Data
+
+Google'ın zengin sonuçlar göstermesi için JSON-LD schema ekleyin:
+
+```typescript
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Makale Başlığı",
+  author: {
+    "@type": "Person",
+    name: "Yazar Adı",
+  },
+};
+```
+
+## Sonuç
+
+Next.js, SEO optimizasyonu için mükemmel bir framework. Doğru tekniklerle kullanıldığında, arama motorlarında üst sıralara çıkmak mümkün.
+
+Sorularınız varsa benimle iletişime geçebilirsiniz!
