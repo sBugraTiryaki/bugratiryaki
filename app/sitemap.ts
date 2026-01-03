@@ -1,22 +1,20 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/blog'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+// Blog posts - update this list when adding new posts
+const blogPosts = [
+  { slug: 'full-stack-deployment-speedrun', date: '2025-12-27' },
+  { slug: 'nextjs-ile-seo-optimizasyonu', date: '2026-01-03' },
+]
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://bugratiryaki.com'
 
-  // Get all blog posts
-  let blogPosts: MetadataRoute.Sitemap = []
-  try {
-    const posts = await getAllPosts()
-    blogPosts = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.date,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // Blog posts not available yet
-  }
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
 
   return [
     {
@@ -31,6 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    ...blogPosts,
+    ...blogUrls,
   ]
 }
