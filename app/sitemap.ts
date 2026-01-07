@@ -2,8 +2,10 @@ import { MetadataRoute } from 'next'
 
 // Blog posts - update this list when adding new posts
 const blogPosts = [
-  { slug: 'full-stack-deployment-speedrun', date: '2025-12-27' },
+  { slug: 'laravel-react-modern-web-gelistirme', date: '2026-01-07' },
+  { slug: 'ai-destekli-yazilim-gelistirme-2026', date: '2026-01-06' },
   { slug: 'nextjs-ile-seo-optimizasyonu', date: '2026-01-03' },
+  { slug: 'full-stack-deployment-speedrun', date: '2025-12-27' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

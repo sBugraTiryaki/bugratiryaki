@@ -3,6 +3,16 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 
+// Hydration-safe date formatter (same output on server and client)
+function formatDate(dateString: string): string {
+  const [year, month, day] = dateString.split('-').map(Number);
+  const months = [
+    'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+  ];
+  return `${day} ${months[month - 1]} ${year}`;
+}
+
 export const metadata: Metadata = {
   title: "Blog | Buğra Tiryaki - Software Developer",
   description:
@@ -86,11 +96,7 @@ export default async function BlogPage() {
                       <div className="flex items-center gap-1.5">
                         <Calendar size={14} />
                         <time dateTime={post.date}>
-                          {new Date(post.date).toLocaleDateString("tr-TR", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
+                          {formatDate(post.date)}
                         </time>
                       </div>
                       <div className="flex items-center gap-1.5">

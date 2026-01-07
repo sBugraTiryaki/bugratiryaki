@@ -90,7 +90,7 @@ const personSchema = {
   givenName: "Buğra",
   familyName: "Tiryaki",
   url: "https://bugratiryaki.com",
-  image: "https://bugratiryaki.com/profile.jpg",
+  image: "https://bugratiryaki.com/profile-large.jpg",
   jobTitle: "Software Developer",
   worksFor: {
     "@type": "Organization",

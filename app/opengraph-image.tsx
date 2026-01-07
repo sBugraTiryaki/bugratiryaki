@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 export const alt = 'Buğra Tiryaki - Software Developer & AI Builder'
 export const size = {
@@ -8,6 +10,10 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  const profileImagePath = join(process.cwd(), 'public', 'profile-large.jpg')
+  const profileImageData = readFileSync(profileImagePath)
+  const profileImageBase64 = `data:image/jpeg;base64,${profileImageData.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -16,53 +22,76 @@ export default async function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
+          padding: '60px',
+          gap: '60px',
           fontFamily: 'system-ui, sans-serif',
         }}
       >
+        {/* Profile Photo */}
         <div
           style={{
-            width: '100px',
-            height: '100px',
+            width: '280px',
+            height: '280px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
+            overflow: 'hidden',
+            border: '4px solid rgba(255,255,255,0.1)',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '24px',
+            flexShrink: 0,
           }}
         >
-          <span
+          <img
+            src={profileImageBase64}
+            alt="Buğra Tiryaki"
             style={{
-              fontSize: '40px',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        </div>
+
+        {/* Text Content */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+          }}
+        >
+          <h1
+            style={{
+              fontSize: '64px',
               fontWeight: 'bold',
               color: 'white',
+              margin: '0 0 16px 0',
+              lineHeight: 1.1,
             }}
           >
-            BT
-          </span>
+            Buğra Tiryaki
+          </h1>
+          <p
+            style={{
+              fontSize: '28px',
+              color: '#a1a1aa',
+              margin: '0 0 24px 0',
+            }}
+          >
+            Software Developer & AI Builder
+          </p>
+          <p
+            style={{
+              fontSize: '20px',
+              color: '#71717a',
+              margin: '0',
+            }}
+          >
+            bugratiryaki.com
+          </p>
         </div>
-        <h1
-          style={{
-            fontSize: '56px',
-            fontWeight: 'bold',
-            color: 'white',
-            margin: '0 0 12px 0',
-          }}
-        >
-          Buğra Tiryaki
-        </h1>
-        <p
-          style={{
-            fontSize: '24px',
-            color: '#a1a1aa',
-            margin: '0',
-          }}
-        >
-          Software Developer & AI Builder
-        </p>
       </div>
     ),
     { ...size }

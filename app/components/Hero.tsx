@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
@@ -25,47 +27,17 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Right Visual */}
+          {/* Right Visual - Profile Photo */}
           <div className="flex justify-center md:justify-end">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-300 flex items-center justify-center">
-              <svg
-                viewBox="0 0 200 200"
-                className="w-40 h-40 md:w-48 md:h-48 text-neutral-400"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="80"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  opacity="0.5"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="60"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  opacity="0.4"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="40"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  opacity="0.3"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="20"
-                  fill="currentColor"
-                  opacity="0.2"
-                />
-              </svg>
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/profile-large.jpg"
+                alt="Buğra Tiryaki - Software Developer"
+                width={320}
+                height={320}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
