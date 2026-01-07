@@ -69,17 +69,20 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    image: "https://bugratiryaki.com/profile-large.jpg",
     author: {
       "@type": "Person",
       name: post.author,
       url: "https://bugratiryaki.com",
+      image: "https://bugratiryaki.com/profile-large.jpg",
     },
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: `${post.date}T00:00:00+03:00`,
+    dateModified: `${post.date}T00:00:00+03:00`,
     publisher: {
       "@type": "Person",
       name: "Buğra Tiryaki",
       url: "https://bugratiryaki.com",
+      image: "https://bugratiryaki.com/profile-large.jpg",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
