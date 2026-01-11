@@ -154,7 +154,7 @@ export default function RootLayout({
       <head>
         {/* KolayOnay - Cookie Consent & Verification */}
         {process.env.NODE_ENV === "production" && (
-          <script src="https://verify.kolayonay.com.tr/s/f9cQW3EjjLxnRDLWQBb7lAsgJp7m9Y5h" />
+          <script src="https://verify.kolayonay.com.tr/s/i14of3un3YOUgNkOy3zgbcPsWZ7nPRNc" />
         )}
 
         {/* Google Analytics 4 - loaded after KolayOnay for Consent Mode support */}
