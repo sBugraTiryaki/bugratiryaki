@@ -1,5 +1,6 @@
 {
   "name": "bugratiryaki",
+  "account_id": "9b66ae13b8b96e210852c7cf02177380",
   "compatibility_flags": ["nodejs_compat"],
   "compatibility_date": "2024-12-01",
   "main": ".open-next/worker.js",
