@@ -1,8 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Work from "./components/Work";
-import Skills from "./components/Skills";
+import ValueProposition from "./components/ValueProposition";
+import Portfolio from "./components/Portfolio";
+import Testimonials from "./components/Testimonials";
+import Exclusivity from "./components/Exclusivity";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -12,9 +13,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Work />
-        <Skills />
+        <ValueProposition />
+        <Portfolio />
+        <Testimonials />
+        <Exclusivity />
         <Contact />
       </main>
       <Footer />

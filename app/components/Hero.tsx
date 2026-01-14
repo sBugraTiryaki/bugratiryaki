@@ -1,46 +1,58 @@
-import Image from "next/image";
+"use client";
+
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center pt-16 bg-white"
+      className="min-h-screen flex flex-col items-center justify-center relative"
+      style={{ backgroundColor: "var(--luxury-black)" }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-20 w-full">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-              Buğra Tiryaki
-            </h1>
-            <p className="text-xl text-neutral-600 font-medium">
-              Software Developer & AI Builder
-            </p>
-            <p className="text-neutral-500 text-lg leading-relaxed">
-              I build web applications, internal systems, and AI-driven tools.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-800 transition-colors"
-            >
-              Get in Touch
-            </a>
-          </div>
+      {/* Main Content */}
+      <div className="text-center px-6 max-w-4xl">
+        <h1
+          className="font-[family-name:var(--font-cormorant)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight animate-fade-in-up"
+          style={{ color: "var(--text-primary)" }}
+        >
+          I teach ambitious people
+          <br />
+          to build businesses
+          <br />
+          <span style={{ color: "var(--accent-gold)" }}>with vibe coding</span>
+        </h1>
 
-          {/* Right Visual - Profile Photo */}
-          <div className="flex justify-center md:justify-end">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/profile-large.jpg"
-                alt="Buğra Tiryaki - Software Developer"
-                width={320}
-                height={320}
-                className="w-full h-full object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+        <p
+          className="mt-8 text-lg md:text-xl font-light tracking-wide animate-fade-in-up animation-delay-300"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          One premium mentorship at a time.
+        </p>
+
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-2 mt-8 md:mt-12 px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-medium tracking-wide animate-fade-in-up animation-delay-600"
+          style={{
+            backgroundColor: "var(--accent-gold)",
+            color: "var(--luxury-black)",
+          }}
+        >
+          Book a Call
+        </a>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in animation-delay-800">
+        <span
+          className="text-xs tracking-widest uppercase"
+          style={{ color: "var(--text-muted)" }}
+        >
+          Scroll
+        </span>
+        <ChevronDown
+          className="w-5 h-5 animate-float"
+          style={{ color: "var(--text-muted)" }}
+        />
       </div>
     </section>
   );

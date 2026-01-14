@@ -1,51 +1,48 @@
 "use client";
 
-import { useState } from "react";
-import { Linkedin, Github, Twitter, Mail, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#work", label: "Work" },
-  { href: "#skills", label: "Skills" },
-  { href: "/blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
-];
-
-const socialLinks = [
-  {
-    href: "https://www.linkedin.com/in/bugratiryaki/",
-    icon: Linkedin,
-    label: "LinkedIn",
-  },
-  {
-    href: "https://github.com/sBugraTiryaki",
-    icon: Github,
-    label: "GitHub",
-  },
-  {
-    href: "https://x.com/sbugratiryaki",
-    icon: Twitter,
-    label: "X",
-  },
-  {
-    href: "mailto:sbugratiryaki@gmail.com",
-    icon: Mail,
-    label: "Email",
-  },
+  { href: "#exclusivity", label: "About" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "backdrop-blur-md" : ""
+      }`}
+      style={{
+        backgroundColor: scrolled
+          ? "rgba(10, 10, 10, 0.8)"
+          : "transparent",
+        borderBottom: scrolled
+          ? "1px solid var(--border-subtle)"
+          : "1px solid transparent",
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
-          className="text-lg font-semibold tracking-tight text-neutral-900"
+          className="font-[family-name:var(--font-cormorant)] text-xl tracking-[0.15em] uppercase font-light"
+          style={{ color: "var(--text-primary)" }}
         >
-          BT
+          Bugra Tiryaki
         </a>
 
         {/* Desktop Navigation */}
@@ -54,75 +51,83 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              className="text-sm tracking-wide transition-colors duration-300"
+              style={{ color: "var(--text-secondary)" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--accent-gold)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--text-secondary)";
+              }}
             >
               {link.label}
             </a>
           ))}
-        </nav>
 
-        {/* Social Links */}
-        <div className="hidden md:flex items-center gap-4">
-          {socialLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target={link.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={
-                link.href.startsWith("mailto")
-                  ? undefined
-                  : "noopener noreferrer"
-              }
-              className="text-neutral-500 hover:text-neutral-900 transition-colors"
-              aria-label={link.label}
-            >
-              <link.icon size={18} strokeWidth={1.5} />
-            </a>
-          ))}
-        </div>
+          {/* CTA Button */}
+          <a
+            href="#contact"
+            className="px-5 py-2 text-sm tracking-wide border transition-all duration-300"
+            style={{
+              borderColor: "var(--accent-gold)",
+              color: "var(--accent-gold)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--accent-gold)";
+              e.currentTarget.style.color = "var(--luxury-black)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "var(--accent-gold)";
+            }}
+          >
+            Book a Call
+          </a>
+        </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-neutral-600"
+          className="md:hidden p-2 transition-colors duration-300"
+          style={{ color: "var(--text-secondary)" }}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-neutral-100">
-          <nav className="flex flex-col px-6 py-4 gap-4">
+        <div
+          className="md:hidden border-t"
+          style={{
+            backgroundColor: "var(--luxury-black)",
+            borderColor: "var(--border-subtle)",
+          }}
+        >
+          <nav className="flex flex-col px-6 py-6 gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="text-sm tracking-wide"
+                style={{ color: "var(--text-secondary)" }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <div className="flex items-center gap-4 pt-4 border-t border-neutral-100">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel={
-                    link.href.startsWith("mailto")
-                      ? undefined
-                      : "noopener noreferrer"
-                  }
-                  className="text-neutral-500 hover:text-neutral-900 transition-colors"
-                  aria-label={link.label}
-                >
-                  <link.icon size={18} strokeWidth={1.5} />
-                </a>
-              ))}
-            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center px-5 py-3 text-sm tracking-wide border transition-all duration-300"
+              style={{
+                borderColor: "var(--accent-gold)",
+                color: "var(--accent-gold)",
+              }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Book a Call
+            </a>
           </nav>
         </div>
       )}

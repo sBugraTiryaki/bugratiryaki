@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
-export const alt = 'Buğra Tiryaki - Software Developer & AI Builder'
+export const alt = 'Bugra Tiryaki - Vibe Coding Mentor'
 export const size = {
   width: 1200,
   height: 630,
@@ -18,33 +18,46 @@ export default async function Image() {
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #18181b 0%, #27272a 100%)',
+          background: '#0a0a0a',
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '60px',
-          gap: '60px',
-          fontFamily: 'system-ui, sans-serif',
+          padding: '80px',
+          position: 'relative',
         }}
       >
-        {/* Profile Photo */}
+        {/* Subtle gold accent line at top */}
         <div
           style={{
-            width: '280px',
-            height: '280px',
+            position: 'absolute',
+            top: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '120px',
+            height: '3px',
+            background: 'linear-gradient(90deg, transparent, #c9a962, transparent)',
+          }}
+        />
+
+        {/* Profile Photo with gold ring */}
+        <div
+          style={{
+            width: '180px',
+            height: '180px',
             borderRadius: '50%',
             overflow: 'hidden',
-            border: '4px solid rgba(255,255,255,0.1)',
+            border: '2px solid #c9a962',
             display: 'flex',
             flexShrink: 0,
+            marginBottom: '48px',
           }}
         >
           <img
             src={profileImageBase64}
-            alt="Buğra Tiryaki"
+            alt="Bugra Tiryaki"
             style={{
               width: '100%',
               height: '100%',
@@ -53,45 +66,47 @@ export default async function Image() {
           />
         </div>
 
-        {/* Text Content */}
-        <div
+        {/* Name - elegant serif style */}
+        <h1
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
+            fontSize: '72px',
+            fontWeight: 300,
+            color: '#ffffff',
+            margin: '0 0 16px 0',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            fontFamily: 'Georgia, serif',
           }}
         >
-          <h1
-            style={{
-              fontSize: '64px',
-              fontWeight: 'bold',
-              color: 'white',
-              margin: '0 0 16px 0',
-              lineHeight: 1.1,
-            }}
-          >
-            Buğra Tiryaki
-          </h1>
-          <p
-            style={{
-              fontSize: '28px',
-              color: '#a1a1aa',
-              margin: '0 0 24px 0',
-            }}
-          >
-            Software Developer & AI Builder
-          </p>
-          <p
-            style={{
-              fontSize: '20px',
-              color: '#71717a',
-              margin: '0',
-            }}
-          >
-            bugratiryaki.com
-          </p>
-        </div>
+          Bugra Tiryaki
+        </h1>
+
+        {/* Role - minimal */}
+        <p
+          style={{
+            fontSize: '20px',
+            fontWeight: 400,
+            color: '#c9a962',
+            margin: 0,
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Vibe Coding Mentor
+        </p>
+
+        {/* Subtle gold accent line at bottom */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '120px',
+            height: '3px',
+            background: 'linear-gradient(90deg, transparent, #c9a962, transparent)',
+          }}
+        />
       </div>
     ),
     { ...size }

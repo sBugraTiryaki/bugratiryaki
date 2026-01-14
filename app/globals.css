@@ -1,15 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark Luxury Base */
+  --luxury-black: #0a0a0a;
+  --luxury-dark: #111111;
+  --luxury-charcoal: #1a1a1a;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+
+  /* Accent - Gold/Premium */
+  --accent-gold: #c9a962;
+  --accent-gold-light: #d4bc7a;
+  --accent-gold-dark: #b8944d;
+
+  /* Subtle borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Legacy support */
+  --background: var(--luxury-black);
+  --foreground: var(--text-primary);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-luxury-black: var(--luxury-black);
+  --color-luxury-dark: var(--luxury-dark);
+  --color-luxury-charcoal: var(--luxury-charcoal);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-gold-light: var(--accent-gold-light);
+  --color-accent-gold-dark: var(--accent-gold-dark);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-hover: var(--border-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-cormorant);
 }
 
 html {
@@ -17,12 +49,198 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--luxury-black);
+  color: var(--text-primary);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 ::selection {
-  background-color: #171717;
-  color: #ffffff;
+  background-color: var(--accent-gold);
+  color: var(--luxury-black);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(201, 169, 98, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(201, 169, 98, 0.4);
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation delays */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Gold glow effect for CTA buttons */
+.gold-glow:hover {
+  animation: goldGlow 1.5s ease-in-out infinite;
+}
+
+/* CTA Button styles */
+.cta-gold-outline {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: transparent;
+}
+
+.cta-gold-outline:hover {
+  background-color: var(--accent-gold);
+  color: var(--luxury-black);
+  border-color: var(--accent-gold);
+}
+
+/* Nav link styles */
+.nav-link {
+  color: var(--text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--accent-gold);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+/* Background colors */
+.bg-luxury-black {
+  background-color: var(--luxury-black);
+}
+
+.bg-luxury-dark {
+  background-color: var(--luxury-dark);
+}
+
+.bg-luxury-charcoal {
+  background-color: var(--luxury-charcoal);
+}
+
+/* Gradient text utility */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Luxury border */
+.border-luxury {
+  border: 1px solid var(--border-subtle);
+}
+
+.border-luxury:hover {
+  border-color: var(--border-hover);
+}
+
+/* Section transitions for scroll reveal */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

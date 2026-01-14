@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,9 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://bugratiryaki.com"),
-  title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
+  title: "Bugra Tiryaki | Vibe Coding Mentor",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -26,47 +33,43 @@ export const metadata: Metadata = {
       {
         rel: "mask-icon",
         url: "/icon.svg",
-        color: "#18181B",
+        color: "#c9a962",
       },
     ],
   },
   manifest: "/site.webmanifest",
   description:
-    "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
+    "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship for ambitious builders ready to start earning.",
   keywords: [
-    "Buğra Tiryaki",
     "Bugra Tiryaki",
-    "Buğra",
-    "Bugra",
-    "Tiryaki",
-    "software developer",
-    "yazılım geliştirici",
-    "web developer",
-    "Laravel",
-    "Next.js",
-    "React",
-    "AI",
-    "full-stack developer",
-    "Turkey",
-    "Türkiye",
+    "Bugra Tiryaki",
+    "vibe coding",
+    "vibe coding mentor",
+    "AI website builder",
+    "coding mentor",
+    "premium web development",
+    "learn to code with AI",
+    "website mentorship",
+    "build websites with AI",
+    "Cursor AI",
+    "Claude AI coding",
   ],
-  authors: [{ name: "Buğra Tiryaki", url: "https://bugratiryaki.com" }],
-  creator: "Buğra Tiryaki",
+  authors: [{ name: "Bugra Tiryaki", url: "https://bugratiryaki.com" }],
+  creator: "Bugra Tiryaki",
   openGraph: {
-    title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
+    title: "Bugra Tiryaki | Vibe Coding Mentor",
     description:
-      "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools.",
+      "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship for ambitious builders.",
     url: "https://bugratiryaki.com",
-    siteName: "Buğra Tiryaki",
+    siteName: "Bugra Tiryaki",
     locale: "en_US",
-    alternateLocale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buğra Tiryaki | Bugra Tiryaki - Software Developer & AI Builder",
+    title: "Bugra Tiryaki | Vibe Coding Mentor",
     description:
-      "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools.",
+      "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship.",
     creator: "@sbugratiryaki",
   },
   robots: {
@@ -75,40 +78,34 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://bugratiryaki.com",
-    languages: {
-      "tr-TR": "https://bugratiryaki.com",
-      "en-US": "https://bugratiryaki.com",
-    },
   },
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Buğra Tiryaki",
-  alternateName: ["Bugra Tiryaki", "Buğra", "Bugra"],
-  givenName: "Buğra",
+  name: "Bugra Tiryaki",
+  alternateName: ["Bugra Tiryaki", "Bugra", "Bugra"],
+  givenName: "Bugra",
   familyName: "Tiryaki",
   url: "https://bugratiryaki.com",
   image: "https://bugratiryaki.com/profile-large.jpg",
-  jobTitle: "Software Developer",
-  worksFor: {
-    "@type": "Organization",
-    name: "Self-employed",
-  },
+  jobTitle: "Vibe Coding Mentor",
+  description:
+    "Teaching ambitious people to build premium websites using AI-powered vibe coding. Limited 1-on-1 mentorship.",
   sameAs: [
     "https://x.com/sbugratiryaki",
     "https://github.com/sBugraTiryaki",
     "https://www.linkedin.com/in/bugratiryaki",
   ],
   knowsAbout: [
-    "Laravel",
+    "Vibe Coding",
+    "AI-Powered Development",
     "Next.js",
     "React",
-    "TypeScript",
-    "AI",
-    "Web Development",
-    "Full-Stack Development",
+    "Premium Web Design",
+    "Cursor AI",
+    "Claude AI",
   ],
   nationality: {
     "@type": "Country",
@@ -126,20 +123,18 @@ const personSchema = {
       alternateName: "en",
     },
   ],
-  description:
-    "Buğra Tiryaki (Bugra Tiryaki) - Software developer focused on Laravel, Next.js and AI-powered tools. Building web applications, internal systems, and automation workflows.",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Buğra Tiryaki",
+  name: "Bugra Tiryaki - Vibe Coding Mentor",
   alternateName: "Bugra Tiryaki",
   url: "https://bugratiryaki.com",
-  inLanguage: ["tr", "en"],
+  inLanguage: "en",
   author: {
     "@type": "Person",
-    name: "Buğra Tiryaki",
+    name: "Bugra Tiryaki",
     alternateName: "Bugra Tiryaki",
   },
 };
@@ -158,7 +153,10 @@ export default function RootLayout({
         )}
 
         {/* Google Analytics 4 - loaded after KolayOnay for Consent Mode support */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HPSZY96YC" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-1HPSZY96YC"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -184,7 +182,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased`}
       >
         {children}
       </body>

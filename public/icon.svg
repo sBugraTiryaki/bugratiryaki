@@ -1,4 +1,22 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#18181B"/>
-  <text x="16" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">BT</text>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4bc7a"/>
+      <stop offset="50%" style="stop-color:#c9a962"/>
+      <stop offset="100%" style="stop-color:#b8944d"/>
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111111"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="url(#bgGradient)"/>
+
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="508" height="508" rx="62" fill="none" stroke="url(#goldGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Letter B - Elegant serif style -->
+  <path d="M168 112h120c32 0 58 8 78 24s30 38 30 66c0 22-6 40-18 54s-28 24-48 28v2c26 4 46 14 62 32s24 40 24 68c0 32-12 58-36 78s-56 30-96 30H168V112zm72 148h44c18 0 32-4 42-14s16-22 16-38c0-18-6-30-16-38s-26-12-46-12h-40v102zm0 156h52c22 0 40-6 52-18s18-28 18-48c0-22-6-38-20-50s-32-18-56-18h-46v134z" fill="url(#goldGradient)"/>
 </svg>
