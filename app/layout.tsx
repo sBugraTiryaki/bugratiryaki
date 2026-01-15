@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: "Bugra Tiryaki | Vibe Coding Mentor",
   icons: {
     icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "48x48", type: "image/png" },
       { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },

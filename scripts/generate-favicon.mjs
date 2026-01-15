@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -16,19 +16,35 @@ async function generateFavicons() {
   const sizes = [16, 32, 48, 180, 192, 512];
 
   for (const size of sizes) {
+    // PNG
     await sharp(svgBuffer)
       .resize(size, size)
       .png()
       .toFile(join(publicDir, `icon-${size}.png`));
-    console.log(`Generated icon-${size}.png`);
+
+    // WebP
+    await sharp(svgBuffer)
+      .resize(size, size)
+      .webp({ quality: 100 })
+      .toFile(join(publicDir, `icon-${size}.webp`));
+
+    console.log(`Generated icon-${size}.png and icon-${size}.webp`);
   }
 
-  // Generate apple-touch-icon
+  // Copy SVG as favicon.svg
+  writeFileSync(join(publicDir, 'favicon.svg'), svgContent);
+  console.log('Generated favicon.svg');
+
+  // Generate apple-touch-icon (PNG and WebP)
   await sharp(svgBuffer)
     .resize(180, 180)
     .png()
     .toFile(join(publicDir, 'apple-touch-icon.png'));
-  console.log('Generated apple-touch-icon.png');
+  await sharp(svgBuffer)
+    .resize(180, 180)
+    .webp({ quality: 100 })
+    .toFile(join(publicDir, 'apple-touch-icon.webp'));
+  console.log('Generated apple-touch-icon.png and apple-touch-icon.webp');
 
   // Generate favicon.ico (48x48 - Google requires minimum 48x48)
   await sharp(svgBuffer)
@@ -42,6 +58,11 @@ async function generateFavicons() {
     .toFile(join(publicDir, 'favicon.png'));
 
   await sharp(svgBuffer)
+    .resize(48, 48)
+    .webp({ quality: 100 })
+    .toFile(join(publicDir, 'favicon.webp'));
+
+  await sharp(svgBuffer)
     .resize(32, 32)
     .png()
     .toFile(join(publicDir, 'favicon-32x32.png'));
@@ -51,7 +72,7 @@ async function generateFavicons() {
     .png()
     .toFile(join(publicDir, 'favicon-16x16.png'));
 
-  console.log('Generated favicon PNGs');
+  console.log('Generated all favicon formats (PNG, WebP, SVG)');
   console.log('Done!');
 }
 
