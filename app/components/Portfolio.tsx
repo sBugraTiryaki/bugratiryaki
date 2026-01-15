@@ -9,7 +9,6 @@ const projects = [
       "Designed and deployed in a single afternoon. Dark elegance. Smooth animations. Mobile-perfect. This is the standard you'll learn to achieve.",
     url: "https://serenity.bugratiryaki.com",
     image: "/portfolio/serenity.jpg",
-    stats: "Built in 4 hours",
   },
 ];
 
@@ -71,19 +70,6 @@ export default function Portfolio() {
 
               {/* Project Info */}
               <div className="max-w-3xl">
-                <div className="flex items-center gap-4 mb-4">
-                  <div
-                    className="w-12 h-px"
-                    style={{ backgroundColor: "var(--accent-gold)" }}
-                  />
-                  <span
-                    className="text-sm tracking-wide"
-                    style={{ color: "var(--accent-gold)" }}
-                  >
-                    {project.stats}
-                  </span>
-                </div>
-
                 <h3
                   className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light mb-2"
                   style={{ color: "var(--text-primary)" }}
