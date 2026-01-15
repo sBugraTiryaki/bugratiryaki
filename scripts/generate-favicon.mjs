@@ -30,14 +30,17 @@ async function generateFavicons() {
     .toFile(join(publicDir, 'apple-touch-icon.png'));
   console.log('Generated apple-touch-icon.png');
 
-  // Generate favicon.ico (32x32)
+  // Generate favicon.ico (48x48 - Google requires minimum 48x48)
   await sharp(svgBuffer)
-    .resize(32, 32)
+    .resize(48, 48)
+    .png()
+    .toFile(join(publicDir, 'favicon.ico'));
+
+  await sharp(svgBuffer)
+    .resize(48, 48)
     .png()
     .toFile(join(publicDir, 'favicon.png'));
 
-  // For ICO, we'll use the PNG as fallback
-  // Most browsers support PNG favicons now
   await sharp(svgBuffer)
     .resize(32, 32)
     .png()
