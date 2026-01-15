@@ -1,18 +1,13 @@
 import sharp from 'sharp';
-import { writeFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(__dirname, '..', 'public');
 
-// SVG with proper text rendering
-const svgContent = `
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="96" fill="#18181B"/>
-  <text x="256" y="340" font-family="Arial, sans-serif" font-size="240" font-weight="700" fill="white" text-anchor="middle">BT</text>
-</svg>
-`;
+// Read SVG from icon.svg file
+const svgContent = readFileSync(join(publicDir, 'icon.svg'), 'utf-8');
 
 async function generateFavicons() {
   const svgBuffer = Buffer.from(svgContent);
