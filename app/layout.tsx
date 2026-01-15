@@ -98,6 +98,7 @@ const personSchema = {
     "https://www.tiktok.com/@sbugratiryaki",
     "https://www.instagram.com/sbugratiryaki",
     "https://t.me/sbugratiryaki",
+    "https://www.youtube.com/@sbugratiryaki",
   ],
   knowsAbout: [
     "Vibe Coding",

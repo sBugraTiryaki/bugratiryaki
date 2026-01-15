@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Github, Twitter, Instagram, Send } from "lucide-react";
+import { Linkedin, Github, Twitter, Instagram, Send, Youtube } from "lucide-react";
 
 // Custom TikTok icon
 const TikTok = ({ size = 20, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
@@ -29,6 +29,11 @@ const socialLinks = [
     href: "https://t.me/sbugratiryaki",
     icon: Send,
     label: "Telegram",
+  },
+  {
+    href: "https://www.youtube.com/@sbugratiryaki",
+    icon: Youtube,
+    label: "YouTube",
   },
   {
     href: "https://www.linkedin.com/in/bugratiryaki/",
