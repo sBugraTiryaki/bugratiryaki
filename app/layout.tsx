@@ -21,7 +21,10 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bugratiryaki.com"),
-  title: "Bugra Tiryaki | Vibe Coding Mentor",
+  title: {
+    default: "Bugra Tiryaki | Vibe Coding Mentor",
+    template: "%s | Bugra Tiryaki",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -42,27 +45,19 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   description:
-    "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship for ambitious builders ready to start earning.",
+    "Bugra Tiryaki - Vibe Coding Mentor. I teach ambitious people to build premium websites with AI. Book a 1-on-1 mentorship call today.",
   keywords: [
     "Bugra Tiryaki",
-    "Bugra Tiryaki",
+    "entrepreneur",
     "vibe coding",
     "vibe coding mentor",
-    "AI website builder",
-    "coding mentor",
-    "premium web development",
-    "learn to code with AI",
-    "website mentorship",
-    "build websites with AI",
-    "Cursor AI",
-    "Claude AI coding",
   ],
   authors: [{ name: "Bugra Tiryaki", url: "https://bugratiryaki.com" }],
   creator: "Bugra Tiryaki",
   openGraph: {
     title: "Bugra Tiryaki | Vibe Coding Mentor",
     description:
-      "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship for ambitious builders.",
+      "Bugra Tiryaki - Vibe Coding Mentor. I teach ambitious people to build premium websites with AI. Book a 1-on-1 mentorship call today.",
     url: "https://bugratiryaki.com",
     siteName: "Bugra Tiryaki",
     locale: "en_US",
