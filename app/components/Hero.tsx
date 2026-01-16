@@ -52,6 +52,7 @@ export default function Hero() {
         <ChevronDown
           className="w-5 h-5 animate-float"
           style={{ color: "var(--text-muted)" }}
+          aria-hidden="true"
         />
       </div>
     </section>

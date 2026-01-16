@@ -62,7 +62,7 @@ export default function Portfolio() {
                       className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded border cta-gold-outline"
                     >
                       View Live Site
-                      <ArrowUpRight className="w-4 h-4" />
+                      <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                     </span>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function Portfolio() {
                   style={{ color: "var(--accent-gold)" }}
                 >
                   View Live Site
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>

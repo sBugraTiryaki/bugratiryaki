@@ -4,7 +4,7 @@ import { Linkedin, Github, Twitter, Instagram, Send, Youtube } from "lucide-reac
 
 // Custom TikTok icon
 const TikTok = ({ size = 20, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
   </svg>
 );
@@ -87,7 +87,7 @@ export default function Footer() {
                 }}
                 aria-label={link.label}
               >
-                <link.icon size={20} strokeWidth={1.5} />
+                <link.icon size={20} strokeWidth={1.5} aria-hidden="true" />
               </a>
             ))}
           </div>

@@ -68,7 +68,7 @@ export default function Contact() {
             e.currentTarget.style.backgroundColor = "var(--accent-gold)";
           }}
         >
-          <MessageCircle className="w-5 h-5 flex-shrink-0" />
+          <MessageCircle className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
           <span>Book a Call on WhatsApp</span>
         </a>
 
@@ -102,7 +102,7 @@ export default function Contact() {
             e.currentTarget.style.color = "var(--text-muted)";
           }}
         >
-          <Mail className="w-4 h-4" />
+          <Mail className="w-4 h-4" aria-hidden="true" />
           sbugratiryaki@gmail.com
         </a>
       </div>

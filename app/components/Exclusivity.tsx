@@ -83,6 +83,7 @@ export default function Exclusivity() {
                 <Check
                   className="w-5 h-5 flex-shrink-0"
                   style={{ color: "var(--accent-gold)" }}
+                  aria-hidden="true"
                 />
                 <span style={{ color: "var(--text-secondary)" }}>
                   {benefit}

@@ -70,6 +70,7 @@ export default function ValueProposition() {
               <feature.icon
                 className="w-6 h-6 md:w-8 md:h-8 mb-3 md:mb-4 transition-colors duration-300"
                 style={{ color: "var(--accent-gold)" }}
+                aria-hidden="true"
               />
               <h3
                 className="text-lg md:text-xl font-medium mb-2 md:mb-3"

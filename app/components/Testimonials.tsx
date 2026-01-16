@@ -69,6 +69,7 @@ export default function Testimonials() {
           <Quote
             className="absolute -top-4 left-0 md:-left-4 w-12 h-12 md:w-16 md:h-16 opacity-10"
             style={{ color: "var(--accent-gold)" }}
+            aria-hidden="true"
           />
 
           <div className="text-center py-8 md:py-12 px-2 md:px-0">
@@ -100,7 +101,7 @@ export default function Testimonials() {
               style={{ color: "var(--text-secondary)" }}
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
             </button>
 
             {/* Dots */}
@@ -129,7 +130,7 @@ export default function Testimonials() {
               style={{ color: "var(--text-secondary)" }}
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
         </div>
