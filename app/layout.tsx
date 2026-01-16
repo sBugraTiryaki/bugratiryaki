@@ -20,6 +20,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
   preload: true,
   adjustFontFallback: true,
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = {
@@ -168,12 +169,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased`}
       >
         {children}
-        {/* Google Analytics 4 - deferred for performance */}
+        {/* Google Analytics 4 - lazy loaded for maximum performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1HPSZY96YC"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
