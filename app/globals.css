@@ -6,10 +6,10 @@
   --luxury-dark: #111111;
   --luxury-charcoal: #1a1a1a;
 
-  /* Text Colors */
+  /* Text Colors - WCAG AA compliant contrast ratios */
   --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --text-muted: #8a8a8a;
+  --text-secondary: #b8b8b8;
+  --text-muted: #999999;
 
   /* Accent - Gold/Premium */
   --accent-gold: #c9a962;
