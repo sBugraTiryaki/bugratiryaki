@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     template: "%s | Bugra Tiryaki",
   },
   icons: {
+    // Google prefers PNG format, 48x48 minimum - list PNG first for priority
     icon: [
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
       { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/favicon.ico",
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     other: [
       {
