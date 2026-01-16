@@ -60,9 +60,10 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6">
           {/* Logo */}
           <a
-            href="#"
-            className="font-[family-name:var(--font-cormorant)] text-lg tracking-[0.15em] uppercase font-light"
+            href="#hero"
+            className="font-serif text-lg tracking-[0.15em] uppercase font-light"
             style={{ color: "var(--text-primary)" }}
+            aria-label="Bugra Tiryaki - Go to top"
           >
             Bugra Tiryaki
           </a>

@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Main Content */}
       <div className="text-center px-6 max-w-4xl">
         <h1
-          className="font-[family-name:var(--font-cormorant)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight animate-fade-in-up"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight animate-fade-in-up"
           style={{ color: "var(--text-primary)" }}
         >
           I teach ambitious people

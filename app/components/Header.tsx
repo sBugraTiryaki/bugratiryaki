@@ -38,9 +38,10 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a
-          href="#"
-          className="font-[family-name:var(--font-cormorant)] text-xl tracking-[0.15em] uppercase font-light"
+          href="#hero"
+          className="font-serif text-xl tracking-[0.15em] uppercase font-light"
           style={{ color: "var(--text-primary)" }}
+          aria-label="Bugra Tiryaki - Go to top"
         >
           Bugra Tiryaki
         </a>
