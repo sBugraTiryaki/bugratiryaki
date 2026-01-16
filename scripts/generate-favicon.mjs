@@ -12,8 +12,8 @@ const svgContent = readFileSync(join(publicDir, 'icon.svg'), 'utf-8');
 async function generateFavicons() {
   const svgBuffer = Buffer.from(svgContent);
 
-  // Generate PNG sizes
-  const sizes = [16, 32, 48, 180, 192, 512];
+  // Generate PNG sizes (Google prefers multiples of 48: 48, 96, 144, 192)
+  const sizes = [16, 32, 48, 96, 144, 180, 192, 512];
 
   for (const size of sizes) {
     // PNG
