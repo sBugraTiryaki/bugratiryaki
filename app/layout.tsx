@@ -172,6 +172,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           data-version="062024"
           strategy="afterInteractive"
         />
+        {/* KolayOnay - KVKK Cookie Consent */}
+        <Script
+          id="kolayonay-consent"
+          src="https://verify.kolayonay.com.tr/s/mLvuGa6BV884mroV9uLxBUGg2ybSA9a6"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
