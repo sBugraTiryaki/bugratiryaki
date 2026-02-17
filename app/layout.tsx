@@ -175,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* KolayOnay - KVKK Cookie Consent */}
         <Script
           id="kolayonay-consent"
-          src="https://verify.kolayonay.com.tr/s/mLvuGa6BV884mroV9uLxBUGg2ybSA9a6"
+          src="https://verify.kolayonay.com.tr/s/DLdqhFDEDuJhIR0zRukbThIZnV8AZCVU"
           strategy="afterInteractive"
         />
         <script
