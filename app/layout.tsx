@@ -152,6 +152,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* KolayOnay - KVKK Cookie Consent (must load before all tracking scripts) */}
+        <Script
+          id="kolayonay-consent"
+          src="https://verify.kolayonay.com.tr/s/DLdqhFDEDuJhIR0zRukbThIZnV8AZCVU"
+          strategy="beforeInteractive"
+        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
@@ -170,12 +176,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://r2.leadsy.ai/tag.js"
           data-pid="Md4foOpKHKWjShpm"
           data-version="062024"
-          strategy="afterInteractive"
-        />
-        {/* KolayOnay - KVKK Cookie Consent */}
-        <Script
-          id="kolayonay-consent"
-          src="https://verify.kolayonay.com.tr/s/DLdqhFDEDuJhIR0zRukbThIZnV8AZCVU"
           strategy="afterInteractive"
         />
         <script
