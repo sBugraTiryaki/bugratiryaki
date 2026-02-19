@@ -152,12 +152,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* KolayOnay - KVKK Cookie Consent (must load before all tracking scripts) */}
-        <Script
-          id="kolayonay-consent"
-          src="https://verify.kolayonay.com.tr/s/DLdqhFDEDuJhIR0zRukbThIZnV8AZCVU"
-          strategy="beforeInteractive"
-        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
