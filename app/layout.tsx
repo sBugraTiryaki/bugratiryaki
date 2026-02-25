@@ -152,6 +152,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* KolayOnay Verification */}
+        <Script
+          id="kolayonay-verify"
+          src="https://verify.kolayonay.com.tr/s/qcSqqS5V6TpZLcqtdPVOtR7qMz4chkgO"
+          strategy="afterInteractive"
+        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
