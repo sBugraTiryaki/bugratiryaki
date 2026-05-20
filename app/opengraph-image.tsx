@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
-export const alt = 'Bugra Tiryaki - Vibe Coding Mentor'
+export const alt = 'Buğra Tiryaki — Yazılım Geliştirici & Kurucu Ortak'
 export const size = {
   width: 1200,
   height: 630,
@@ -57,7 +57,7 @@ export default async function Image() {
         >
           <img
             src={profileImageBase64}
-            alt="Bugra Tiryaki"
+            alt="Buğra Tiryaki"
             style={{
               width: '100%',
               height: '100%',
@@ -78,7 +78,7 @@ export default async function Image() {
             fontFamily: 'Georgia, serif',
           }}
         >
-          Bugra Tiryaki
+          Buğra Tiryaki
         </h1>
 
         {/* Role - minimal */}
@@ -92,7 +92,7 @@ export default async function Image() {
             textTransform: 'uppercase',
           }}
         >
-          Vibe Coding Mentor
+          Yazılım Geliştirici · Kurucu Ortak
         </p>
 
         {/* Subtle gold accent line at bottom */}

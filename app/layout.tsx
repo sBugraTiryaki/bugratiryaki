@@ -2,20 +2,28 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { siteConfig } from "@/lib/site";
+import {
+  personSchema,
+  websiteSchema,
+  professionalServiceSchema,
+} from "@/lib/schema";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300"],
   display: "swap",
   preload: true,
@@ -24,13 +32,30 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bugratiryaki.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Bugra Tiryaki | Vibe Coding Mentor",
-    template: "%s | Bugra Tiryaki",
+    default: siteConfig.title,
+    template: "%s | Buğra Tiryaki",
   },
+  description: siteConfig.description,
+  keywords: [
+    "Buğra Tiryaki",
+    "Buğra Tiryaki kimdir",
+    "Bugra Tiryaki",
+    "Yazılım Geliştirici",
+    "Laravel Geliştirici",
+    "Next.js Geliştirici",
+    "SaaS Geliştirme",
+    "MVP Geliştirme",
+    "Web Uygulaması Geliştirme",
+    "Mobil Uygulama Geliştirme",
+    "KolayOnay",
+    "AgencyLambda",
+    "Bağımsız Yazılım Geliştirici",
+  ],
+  authors: [{ name: "Buğra Tiryaki", url: siteConfig.url }],
+  creator: "Buğra Tiryaki",
   icons: {
-    // Google prefers PNG format, 48x48 minimum - list PNG first for priority
     icon: [
       { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
@@ -47,100 +72,28 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-  description:
-    "Bugra Tiryaki - Vibe Coding Mentor. I teach ambitious people to build premium websites with AI. Book a 1-on-1 mentorship call today.",
-  keywords: [
-    "Bugra Tiryaki",
-    "entrepreneur",
-    "vibe coding",
-    "vibe coding mentor",
-  ],
-  authors: [{ name: "Bugra Tiryaki", url: "https://bugratiryaki.com" }],
-  creator: "Bugra Tiryaki",
   openGraph: {
-    title: "Bugra Tiryaki | Vibe Coding Mentor",
-    description:
-      "Bugra Tiryaki - Vibe Coding Mentor. I teach ambitious people to build premium websites with AI. Book a 1-on-1 mentorship call today.",
-    url: "https://bugratiryaki.com",
-    siteName: "Bugra Tiryaki",
-    locale: "en_US",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: "Buğra Tiryaki",
+    locale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bugra Tiryaki | Vibe Coding Mentor",
-    description:
-      "Learn to build premium websites with AI-powered vibe coding. Limited 1-on-1 mentorship.",
-    creator: "@sbugratiryaki",
+    title: siteConfig.title,
+    description: siteConfig.description,
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://bugratiryaki.com",
-  },
-};
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Bugra Tiryaki",
-  alternateName: ["Bugra Tiryaki", "Bugra", "Bugra"],
-  givenName: "Bugra",
-  familyName: "Tiryaki",
-  url: "https://bugratiryaki.com",
-  image: "https://bugratiryaki.com/profile-large.jpg",
-  jobTitle: "Vibe Coding Mentor",
-  description:
-    "Teaching ambitious people to build premium websites using AI-powered vibe coding. Limited 1-on-1 mentorship.",
-  sameAs: [
-    "https://x.com/sbugratiryaki",
-    "https://github.com/sBugraTiryaki",
-    "https://www.linkedin.com/in/bugratiryaki",
-    "https://www.tiktok.com/@sbugratiryaki",
-    "https://www.instagram.com/sbugratiryaki",
-    "https://t.me/sbugratiryaki",
-    "https://www.youtube.com/@sbugratiryaki",
-  ],
-  knowsAbout: [
-    "Vibe Coding",
-    "AI-Powered Development",
-    "Next.js",
-    "React",
-    "Premium Web Design",
-    "Cursor AI",
-    "Claude AI",
-  ],
-  nationality: {
-    "@type": "Country",
-    name: "Turkey",
-  },
-  knowsLanguage: [
-    {
-      "@type": "Language",
-      name: "Turkish",
-      alternateName: "tr",
+    canonical: siteConfig.url,
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
     },
-    {
-      "@type": "Language",
-      name: "English",
-      alternateName: "en",
-    },
-  ],
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Bugra Tiryaki - Vibe Coding Mentor",
-  alternateName: "Bugra Tiryaki",
-  url: "https://bugratiryaki.com",
-  inLanguage: "en",
-  author: {
-    "@type": "Person",
-    name: "Bugra Tiryaki",
-    alternateName: "Bugra Tiryaki",
   },
 };
 
@@ -150,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         {/* KolayOnay Verification */}
         <Script
@@ -181,13 +134,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personSchema),
+            __html: JSON.stringify(personSchema()),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: JSON.stringify(websiteSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(professionalServiceSchema()),
           }}
         />
       </head>
@@ -200,11 +159,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             src="https://www.googletagmanager.com/ns.html?id=GTM-PF6734H9"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {children}
+        <Header />
+        <main className="pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
 }
+

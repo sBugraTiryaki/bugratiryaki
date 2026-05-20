@@ -1,0 +1,93 @@
+---
+title: "MVP geliştirme nedir, nasıl başlanır?"
+description: "MVP, ürünü küçültmek değil varsayımı netleştirmektir. Bir MVP nasıl planlanır, nasıl bitirilir, sonrasında ne olur?"
+date: "2026-04-26"
+tags: ["MVP", "Ürün", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+MVP kavramı son yıllarda hem en çok kullanılan, hem de en yanlış anlaşılan terimlerden biri oldu. "MVP yapacağız" dendiğinde çoğu zaman "ürünün küçük versiyonunu yapacağız" anlaşılıyor. Oysa MVP, ürünü küçültmek değil; **varsayımı netleştirmek**.
+
+Bu yazıda MVP'yi nasıl tanımladığımı, hangi adımlarla geliştirdiğimi ve sonrasında neler yaşandığını anlatıyorum.
+
+## MVP nedir, ne değildir?
+
+MVP — *Minimum Viable Product* — bir varsayımı en az çabayla test eden ürün versiyonu. "En az çaba" kısmı önemli: bir özelliği yarım yapmak değil; doğru özelliği eksiksiz yapmak demek.
+
+Şu da değil:
+
+- Ürünün ilk sürümü
+- Bütçe yetmediği için kesilen özellik listesi
+- "Hızlı yayına çıkalım, sonra düzeltiriz" yaklaşımı
+
+Tek cümleyle: MVP, **"bu çözüm bu sorunu bu kişi için yeterince çözüyor mu?"** sorusunu yanıtlayan en küçük üründür.
+
+## Varsayımı yazmadan başlamak
+
+MVP'ye girişen çoğu kurucu, varsayımını yazıya dökmeden geliştirmeye başlıyor. Bir hafta sonra ekip içinde "biz neden bunu yaptık?" sorusu cevapsız kalıyor.
+
+İyi bir varsayım şöyle olur:
+
+> "Bağımsız çalışan terapistler, danışan randevularını ve seans notlarını tek bir yerden yöneten bir araca aylık 500–1.500 TL arası öder."
+
+Bu cümle dört şey söylüyor:
+1. **Kim:** bağımsız çalışan terapistler
+2. **Sorun:** randevu ve not yönetimi
+3. **Çözüm:** tek bir yerden yönetim
+4. **Ödeme isteği:** aylık 500–1.500 TL
+
+MVP geliştirme süreci, bu cümlenin doğru olup olmadığını bulmak için var.
+
+## Özellik listesini daraltmak
+
+Varsayımınız netleştiğinde "ama şunu da yapsak iyi olur" dürtüsü geliyor. Daha güzel bir login akışı, bildirim sistemi, daha temiz bir admin paneli...
+
+Bir kural koyuyorum: **varsayımı test etmek için olmazsa olmaz mı?** Cevap "olmasa da olur" ise, sonraya bırakıyoruz. Sonradan eklenebilecek her şey, ilk yayın tarihinizi geciktirmek için bir bahane.
+
+KolayOnay'da bile bunu yaşadık. 6 aylık geliştirme sürecinde "ileride şart olur" diye düşündüğümüz birçok özelliği sonraya bıraktık. İlk yayına aldığımız sürüm bugün baktığımızda çok sade görünüyor. Ama o sade sürüm sayesinde gerçek müşterilerle konuşmaya başladık. Sonradan eklediğimiz özellikler de tahminlerimizden çok farklı çıktı.
+
+## Süre: 4–12 hafta
+
+Tek bir MVP süresi yok ama benim çalıştığım proje aralığı çoğunlukla **4–12 hafta** arası. Süre şuna göre değişiyor:
+
+- **4–6 hafta:** Tek bir kullanım senaryosu, basit veri modeli, az bağlantı. Örnek: form alıp e-postaya gönderen ve panelde gösteren bir araç.
+- **6–9 hafta:** Birden fazla kullanıcı tipi, ödeme entegrasyonu, temel raporlama.
+- **9–12 hafta:** Multi-tenant SaaS yapısı, dış sistem bağlantıları, karmaşık iş akışları.
+
+Bu aralıklar dışına çıkan projelerde, neye MVP dediğimizi yeniden gözden geçirmek gerek. 6 aylık bir MVP çoğunlukla MVP değildir.
+
+## Geliştirme süreci nasıl ilerliyor?
+
+İşleyen düzen şu:
+
+1. **Hafta 0: Keşif.** Varsayım ve özellik listesini birlikte netleştiriyoruz, kapsam dokümanı hazırlıyoruz.
+2. **Hafta 1: Mimari.** Veri modeli, ana akışlar, teknoloji kararları. Sonradan değiştirmenin pahalı olacağı kararlar.
+3. **Hafta 2 ve sonrası: Sprint döngüleri.** Her hafta sonu size çalışan bir sürüm gösteriyorum.
+4. **Son hafta: Yayın.** Sunucu, alan adı, varsa ödeme altyapısı. Genelde Cloudflare üzerinde edge deployment yapıyorum.
+
+Bunun dışında bir kural daha var: **kapsam genişlemez**. Yeni fikirler çıktıkça not alıyoruz, sonraya bırakıyoruz. Bu disiplin olmadan 6 hafta kolayca 6 aya dönüyor.
+
+## Yayın sonrası
+
+MVP yayına alındığı an proje bitmiyor; tam tersi, önemli kısım başlıyor. Varsayımınızı doğrulamak için ne ölçeceğinizi önceden belirlemek gerekiyor:
+
+- Ürünü kaç kişi denedi?
+- Kaç kişi ücretsiz denemeden ücretli aboneliğe geçti?
+- Ücretli olanlar ürünü ne kadar sık kullanıyor?
+
+Bu sayılar varsayımınızın doğrulanıp doğrulanmadığını söylüyor. Çoğu sayı zayıfsa, ürünü değil varsayımı gözden geçirmek gerek.
+
+## Sonra ne olur?
+
+Üç senaryo var:
+
+1. **Varsayım doğrulandı.** Sonraki sürüm için yol haritası çıkıyor, MVP'den ölçeklenebilir bir ürüne geçiş başlıyor.
+2. **Varsayım yanlış çıktı.** Üzücü ama değerli. Birkaç ay erkenden öğrendiğiniz için yıllarınızı kurtardınız. Yön değiştirmek için iyi bir an.
+3. **Karışık sonuçlar.** En sık karşılaşılan durum. Bazı şeyler doğrulandı, bazıları yanlış çıktı. Varsayımı yeniden yazıp daraltılmış bir sürümle test etmeye devam ediyoruz.
+
+## Birlikte çalışmak
+
+[MVP geliştirme](/hizmetler/mvp-gelistirme) hizmetimde tam olarak bu süreci yürütüyorum. Sıfırdan başlayıp 4–12 hafta içinde yayına alınmış bir ürüne ulaşıyoruz. Yatırımcı gözüyle baktığım fikirlere odaklanıyorum — yani fikrin marjinal olması değil, arkasında gerçek bir pazar olması önemli.
+
+Konuşmak istediğiniz bir fikir varsa, [iletişim sayfasından](/iletisim) ulaşın.

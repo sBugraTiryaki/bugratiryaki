@@ -1,0 +1,116 @@
+---
+title: "SaaS geliştirirken dikkat edilmesi gerekenler"
+description: "Kendi SaaS ürününüzü kurarken erkenden alınması gereken kararlar var. KolayOnay'da öğrendiklerimizden damıtılmış pratik notlar."
+date: "2026-05-19"
+tags: ["SaaS", "Ürün", "Mimari"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+[KolayOnay'ı](/projeler/kolayonay) üç ortak olarak sıfırdan kurarken aldığımız bazı kararları sonradan değiştirmek imkânsızdı; bazılarını ise erkenden yeniden yazmak zorunda kaldık. Bu yazı, bir SaaS ürünü kurarken erkenden alınması gereken mimari ve ürün kararları üzerine.
+
+Yazıdaki tavsiyeler her ölçek için aynı işlemez. Bir kısmı sadece bir avuç müşteriniz varken anlamlı; bir kısmı 50+ müşteriye ulaştığınızda kritik. Her bölümde hangi aşama için olduğunu belirtiyorum.
+
+## 1. Multi-tenancy modelini gün 0'da seçin
+
+**Aşama: tasarım**
+
+Üç ana model var:
+
+1. **Tek veritabanı, tek şema, kiracı kolonu.** En basit, en ölçeklenebilir, en az izolasyon.
+2. **Tek veritabanı, kiracı başına şema.** Orta düzey izolasyon, yönetimi biraz daha karmaşık.
+3. **Kiracı başına veritabanı.** En güçlü izolasyon, en pahalı yönetim.
+
+İlk müşterinizden önce hangi modeli seçeceğinize karar verin. 50 müşteriye ulaştıktan sonra modeli değiştirmek mümkün ama acı verici.
+
+KolayOnay'da seçimimiz kiracı kolonlu tek veritabanı oldu. Türkiye'de kullanılan SaaS ürünlerinin çoğu için bu yeterli. Daha katı izolasyon yalnızca regülasyon gerektirdiğinde anlamlı.
+
+## 2. Veri modelini "müşteri" değil "hesap" üzerine kurun
+
+**Aşama: tasarım**
+
+İlk müşterinizi düşününce model basit görünür: bir kullanıcı, bir e-posta, bir abonelik. Ama gerçek dünyada şöyle şeyler oluyor:
+
+- Bir şirketin üç çalışanı aynı abonelikte oturum açmak istiyor.
+- Bir kullanıcı, iki ayrı şirketin yönetiminde aynı anda olabiliyor.
+- Sahiplik değişiyor, abonelik kalıyor.
+
+Bu senaryoları sonradan eklemeye çalışmak zorlu bir yeniden yazma oluyor. İlk günden **kullanıcı** ve **hesap** kavramlarını ayrı modelleyin. Aralarına bir **üyelik** ilişkisi koyun. Her veri hesaba bağlansın, kullanıcıya değil.
+
+## 3. Ödeme entegrasyonunu erkenden ekleyin
+
+**Aşama: ilk müşteri**
+
+İlk müşterinizi ücretsiz aldığınız için ödeme entegrasyonunu sonraya bırakmak cazip geliyor. Ama:
+
+- Ödeme akışı ürünün en kırılgan parçalarından biri. Trafik artmadan test etmek istersiniz.
+- Müşteriyi "ücretliye geçirme" anı, ürünün gerçek değerinin sınandığı andır. Bu anı ilerleyen aylara bırakmayın.
+
+Stripe veya iyzico ile temel abonelik akışını ilk lansman sürümüne dahil edin. Türkiye'de B2B SaaS satıyorsanız iyzico daha pratik; uluslararası satışta Stripe.
+
+## 4. Faturalandırma ile kullanım ölçümünü ayırın
+
+**Aşama: orta ölçek**
+
+Erken müşteriler "Pro paket"in sınırlarını test etmiyor. Ama 30. müşterinizden sonra biri ayda 100.000 kayıt oluştururken bir başkası 500 oluşturuyor. Faturalandırma modeli buna hazır olmalı.
+
+Bu, ödeme sisteminde yapılan bir işlem değil; ürünün **kullanım kaydı tutması** ile ilgili. Her kritik aksiyonu (API çağrısı, kullanıcı ekleme, depolanan veri miktarı) saymaya başlayın — kullanım bazlı plan eklemeniz gerektiğinde altyapı hazır olur.
+
+## 5. Kullanıcı yönetimini sosyal girişle başlatmayın
+
+**Aşama: tasarım**
+
+"Google ile giriş" ilk gün çok cazip görünüyor ama:
+
+- Birden fazla giriş yöntemi ekleyince hesapları birbirine bağlamak zorlaşıyor.
+- Kurumsal müşteriler sonradan SSO istiyor. Bunu sosyal girişin üzerine eklemek zor oluyor.
+
+Önce klasik e-posta + parola ile başlayıp, sonradan ihtiyaç çıktığında diğer yöntemleri eklemek genelde daha temiz oluyor.
+
+## 6. Gözlemlenebilirlik "sonradan" yapılacak iş değil
+
+**Aşama: ilk müşteri**
+
+İlk müşterinizden gelen "bu işlem niye başarısız oldu?" sorusuna cevap vermek için tek tek loglara bakmak istemezsiniz. Daha en başında üç şey eklenmeli:
+
+- **Hata izleme:** Sentry veya benzeri. Ücretsiz paketler erken aşamada yeterli.
+- **Yapılandırılmış loglar:** JSON formatında, kullanıcı ve hesap kimliği etiketli.
+- **Temel metrikler:** Kaç istek geldi, hangileri başarısız oldu, ortalama yanıt süresi.
+
+Bu üç şey olmadan 10 müşteriden sonra sorunları çözmek çok yavaşlıyor.
+
+## 7. Admin paneli ürünün kendisi kadar kritik
+
+**Aşama: ilk müşteri**
+
+Müşteriler arttıkça siz ya da ekibiniz her gün admin panelinde geziyor olacak. Müşteri ekleme, fatura yansıtma, hata kayıtlarını görme, deneme süresi uzatma gibi işlemler için zayıf bir araç kullanırsanız, dakikalar günlere dönüşüyor.
+
+Admin paneline "ürünün kendisi" gibi yaklaşın. Tasarımını ve kullanılabilirliğini aynı titizlikte düşünün.
+
+## 8. İlk müşterinizden önce dokümantasyon yazın
+
+**Aşama: ilk müşteri**
+
+İlk müşterinize "bunu nasıl kuracağım?" sorusunu sormadan önce, kurulum belgelerini kendiniz okuyabilecek hale getirin. Bu, müşteri desteğinize ciddi zaman kazandırır.
+
+Kurulum, faturalandırma, paket geçişleri, hesap silme — hepsi için kısa rehberler hazırlayın. Her yeni özellik eklendiğinde dokümantasyonu güncelleyin. Yoksa bir yıl sonra dokümantasyon ürünle eşleşmiyor olur.
+
+## 9. Müşteri konuşmalarını sistematik hale getirin
+
+**Aşama: orta ölçek**
+
+İlk 10 müşterinizle düzenli görüşme yapmak ürünün doğru yöne gitmesini sağlıyor. Bu samimi bir muhabbet değil; her görüşmeyi yazıya dökün, ortak temaları çıkarın. Hangi özellik talebi birden fazla müşteriden geliyor, hangisi sadece bir kişinin kendine özgü ihtiyacı — fark görünür hale geliyor.
+
+Bu disiplin olmadan yol haritası "en gürültücü müşterinin" istediği gibi şekilleniyor.
+
+## 10. Pazar ve ideal müşteri tanımları yazılı olsun
+
+**Aşama: tasarım**
+
+SaaS ürünü kurarken bir noktada herkes aynı hatayı yapıyor: "kimin için" olduğunu netleştirmeden geliştirmeye devam ediyor. Bu, herkese hitap eden ama hiç kimseye yetmeyen bir araca dönüştürüyor.
+
+Erken aşamada **ideal müşteri profili** (ICP) ve **toplam erişilebilir pazar** (TAM) tanımlarını yazıya dökün. Sadece pazarlama için değil; ürün kararlarında da "bu özellik ICP'mizin işine yarar mı?" diye sorabilmek için.
+
+## Birlikte çalışmak
+
+Kendi SaaS ürününüzü kurmak istiyorsanız [SaaS geliştirme](/hizmetler/saas-gelistirme) hizmetimde tam olarak bu süreci yürütüyorum — KolayOnay'da üç ortak olarak yaptıklarımızın hepsini sizin projenize de uygulayabilirim. Konuşmak isterseniz [iletişim sayfasından](/iletisim) ulaşın.
