@@ -7,13 +7,17 @@ export function personSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteConfig.url}/#person`,
     name: "Buğra Tiryaki",
     givenName: "Buğra",
     familyName: "Tiryaki",
     url: siteConfig.url,
-    image: `${siteConfig.url}/profile-large.jpg`,
+    mainEntityOfPage: `${siteConfig.url}/hakkimda`,
+    image: `${siteConfig.url}/hakkimda-portrait.png`,
     jobTitle: "Yazılım Geliştirici, Kurucu Ortak",
     description: siteConfig.description,
+    disambiguatingDescription:
+      "KolayOnay ve AgencyLambda kurucu ortağı, bağımsız yazılım geliştirici. KTU'da görevli akademisyen Dr. Öğr. Üyesi Buğra Kaan Tiryaki ile karıştırılmamalıdır.",
     email: `mailto:${siteConfig.email}`,
     sameAs: [siteConfig.social.linkedin, siteConfig.social.github],
     knowsAbout: [

@@ -95,6 +95,11 @@ export const metadata: Metadata = {
       "application/rss+xml": `${siteConfig.url}/feed.xml`,
     },
   },
+  verification: {
+    other: {
+      "msvalidate.01": "B9C5E61C5B7DA88EFC3B7D35BE93C20A",
+    },
+  },
 };
 
 export default function RootLayout({

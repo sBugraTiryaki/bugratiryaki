@@ -8,14 +8,14 @@ import CTASection from "../components/cta/CTASection";
 import JsonLd from "../components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Hakkımda",
+  title: "Buğra Tiryaki Kimdir?",
   description:
-    "Buğra Tiryaki kimdir? Yazılım yolculuğum, KolayOnay ve AgencyLambda kurucu ortaklığım, çalıştığım teknolojiler ve yaklaşımım.",
+    "Buğra Tiryaki kimdir? Yazılım geliştirici, KolayOnay ve AgencyLambda kurucu ortağı. Yazılım yolculuğu, çalıştığı teknolojiler ve devam eden projeler.",
   alternates: { canonical: `${siteConfig.url}/hakkimda` },
   openGraph: {
-    title: "Hakkımda | Buğra Tiryaki",
+    title: "Buğra Tiryaki Kimdir? | Hakkımda",
     description:
-      "Yazılıma 12 yaşında başladım. Bugün KolayOnay ve AgencyLambda kurucu ortağıyım.",
+      "Yazılım geliştirici, KolayOnay ve AgencyLambda kurucu ortağı. Yazılıma 12 yaşında başladım.",
     url: `${siteConfig.url}/hakkimda`,
     type: "profile",
   },
@@ -62,14 +62,15 @@ export default function HakkimdaPage() {
                 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl lg:text-6xl font-light mt-6 mb-8 leading-tight"
                 style={{ color: "var(--text-primary)" }}
               >
-                Hakkımda
+                Buğra Tiryaki Kimdir?
               </h1>
               <p
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "var(--text-secondary)" }}
               >
-                KolayOnay ve AgencyLambda&apos;nın kurucu ortağıyım. Aynı zamanda
-                işletmeler ve girişimciler için bağımsız yazılım geliştiriyorum.
+                Buğra Tiryaki, KolayOnay ve AgencyLambda&apos;nın kurucu
+                ortağıyım. Aynı zamanda işletmeler ve girişimciler için bağımsız
+                yazılım geliştiriyorum.
               </p>
             </div>
             <div
