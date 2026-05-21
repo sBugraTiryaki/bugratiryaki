@@ -42,13 +42,13 @@ export default function Home() {
             className="text-[11px] sm:text-xs tracking-[0.25em] uppercase animate-fade-in"
             style={{ color: "var(--accent-gold)" }}
           >
-            Yazılım Geliştirici · İstanbul
+            Girişimci · Yazılım Geliştirici
           </span>
           <h1
             className="font-[family-name:var(--font-cormorant)] text-[2.25rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-light mt-6 animate-fade-in-up"
             style={{ color: "var(--text-primary)" }}
           >
-            Yazılım fikriniz var mı?
+            Yazılım fikriniz mi var?
             <br />
             <span style={{ color: "var(--accent-gold)" }}>
               Birlikte yapalım.
