@@ -152,34 +152,35 @@ export default function ProjectPageTemplate({ project }: Props) {
         </div>
       </section>
 
-      {/* Teknolojiler */}
-      <section
-        className="py-16"
-        style={{ backgroundColor: "var(--luxury-black)" }}
-      >
-        <div className="max-w-4xl mx-auto px-6">
-          <h2
-            className="text-xs tracking-[0.2em] uppercase mb-6"
-            style={{ color: "var(--accent-gold)" }}
-          >
-            Teknolojiler
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="text-sm px-4 py-2 border rounded-full"
-                style={{
-                  borderColor: "var(--border-subtle)",
-                  color: "var(--text-secondary)",
-                }}
-              >
-                {tech}
-              </span>
-            ))}
+      {project.technologies && project.technologies.length > 0 && (
+        <section
+          className="py-16"
+          style={{ backgroundColor: "var(--luxury-black)" }}
+        >
+          <div className="max-w-4xl mx-auto px-6">
+            <h2
+              className="text-xs tracking-[0.2em] uppercase mb-6"
+              style={{ color: "var(--accent-gold)" }}
+            >
+              Teknolojiler
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="text-sm px-4 py-2 border rounded-full"
+                  style={{
+                    borderColor: "var(--border-subtle)",
+                    color: "var(--text-secondary)",
+                  }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CTASection
         title="Benzer bir ürün kurmak ister misiniz?"

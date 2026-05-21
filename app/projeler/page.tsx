@@ -67,7 +67,7 @@ export default function ProjelerPage() {
                 name={project.name}
                 role={project.role}
                 tagline={project.tagline}
-                tags={project.technologies.slice(0, 4)}
+                tags={project.technologies?.slice(0, 4) ?? []}
               />
             ))}
           </div>
