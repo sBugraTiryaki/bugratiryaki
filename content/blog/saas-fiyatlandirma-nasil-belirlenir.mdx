@@ -1,0 +1,130 @@
+---
+title: "SaaS fiyatlandırma nasıl belirlenir?"
+description: "Paketler kaç tane olmalı, fiyat nereden başlamalı, ücretsiz deneme mi freemium mu? SaaS fiyatlandırmasına dair pratik bir rehber."
+date: "2026-05-22"
+tags: ["SaaS", "Fiyatlandırma", "Ürün", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+SaaS ürünü kuran herkesin bir noktada takıldığı soru şu: "Bunun fiyatı ne olmalı?" Ürünü aylarca geliştiriyorsunuz, sıra fiyatlandırma sayfasını yazmaya gelince elinizdeki tek şey bir Excel ve birkaç rakibin pricing sayfası oluyor.
+
+Fiyatlandırma, ürün kararlarının en sık ertelenenlerinden biri. Oysa fiyatlandırma sadece "ne kadar para isteyeceğiz" sorusu değil; ürünün **kime, hangi vaatle, hangi sıklıkla satıldığını** belirleyen bir mimari karar. [KolayOnay'da](/projeler/kolayonay) üç ortak olarak bu konuda epey kafa yorduk, birkaç kez de değiştirdik. Bu yazıda öğrendiklerimizi topluyorum.
+
+## Önce fiyatlandırma modelini seçin, sonra rakamı
+
+Fiyatlandırma sayfasını açıp önce 99 TL mi 299 TL mi diye düşünmek hatalı bir başlangıç. Asıl soru şu: **müşteri ne ölçtüğünüz için ödüyor?** Yani fiyatlandırmanızın birimi ne?
+
+Yaygın olan birkaç model var:
+
+- **Sabit fiyat (flat).** Tek bir paket, tek bir fiyat. En basit, en anlaşılır. Niş ürünlerde iyi çalışıyor.
+- **Kullanıcı başına (per-seat).** Şirketten kaç kişi giriş yapıyorsa o kadar ödüyor. Slack, Notion gibi ekip araçlarında klasik.
+- **Kullanım bazlı (usage-based).** API çağrısı, GB depolama, gönderilen e-posta sayısı gibi gerçek kullanım üzerinden ücret. AWS, Twilio bu modelde.
+- **Kademeli paketler (tiered).** "Basic, Pro, Business" gibi paketler — her birinde farklı limitler ve özellikler. En çok kullanılan model.
+- **Hibrit.** Sabit bir aylık ücrete bazı kullanım limitleri ekleyip, üstüne kullanım faturalandırması bindirmek. Çoğu olgun SaaS bu noktaya geliyor.
+
+KolayOnay'da seçimimiz **kademeli paket + kullanım limiti** hibridi oldu. Her paket belirli bir "aylık ziyaretçi" limitiyle geliyor; limiti aşan bir üst pakete geçiyor. Bu, hem fiyatlandırma sayfasında anlaşılır kalıyor hem büyük müşterinin daha fazla ödemesini doğal hale getiriyor.
+
+Yanlış model seçtiğinizde sonradan değiştirmek mümkün ama can yakıcı. Bir B2B SaaS'ı per-seat satıp 100. müşteriden sonra "aslında bunun bedeli kullanıma göre belirlenmeli" demek, mevcut müşterilerle yeniden müzakere demek.
+
+## Değer birimini bulun
+
+İyi bir fiyatlandırma modelinin altında "değer birimi" (value metric) yatar. Bu, müşterinin sizden aldığı değerin **arttıkça artması beklenen** birim.
+
+Birkaç örnek:
+
+- Mailchimp için değer birimi: aboneye gönderilen e-posta sayısı.
+- Shopify için: işlenen sipariş cirosu.
+- KolayOnay için: bannerın gösterildiği aylık ziyaretçi sayısı.
+
+Değer birimi iyi seçilince hem müşteri "bana yarayan şey büyüyor, ödediğim de büyüyor" diye düşünüyor; hem siz büyüyen müşteriden büyüyen gelir alıyorsunuz. Buna **net revenue retention** denir ve sağlıklı bir SaaS metriklerinin en önemlilerindendir.
+
+Değer birimi yanlış seçilince ne oluyor? Per-seat satan bir ürünü düşünün: müşteri içeride sadece 2 kişiyle kullanıp şirketinin geri kalanını ürüne bağlamıyor. Sizin için yeni kullanıcı eklemek bedava; müşteriye değer birimini doğru sunmamışsınız.
+
+## Kaç paket olmalı?
+
+İlk içgüdü "müşteriye seçenek sunalım" diye 5-6 paket koymak oluyor. Pratikte tam tersi işliyor: paket sayısı arttıkça karar verme hızı düşüyor ve dönüşüm oranı kötüleşiyor.
+
+Pratik bir kural:
+
+- **3 paket** en iyi denge. Klasik "Basic / Pro / Business" formülü tesadüf değil.
+- **2 paket** çok niş ürünlerde iyi çalışıyor.
+- **4+ paket** ancak çok farklı segmentlere satıyorsanız mantıklı.
+
+Üç paket varsa **ortadakini öne çıkarın.** "Most popular" rozeti, daha koyu çerçeve, varsayılan seçim — kullanıcının çoğu zaten ortayı seçer; siz de o yönde nudge edin. Bu, fiyat psikolojisinde "anchoring" denilen şeyin gündelik tezahürü.
+
+## Fiyat rakamını nasıl belirleyeceksiniz?
+
+Rakama gelirken dört yaklaşım var:
+
+1. **Maliyet odaklı.** "Bu müşteriye servis vermem ayda 50 TL'ye mal oluyor, üstüne marj koyup 200 TL satayım." En kolay, ama yanlış.
+2. **Rakip odaklı.** Aynı işi yapan rakipler ne alıyor, ona göre konumlanıyorsunuz. Hızlı bir referans noktası ama tek başına yetersiz.
+3. **Müşteri değeri odaklı (value-based).** Müşteriniz bu ürün sayesinde ayda kaç para kazanıyor ya da tasarruf ediyor? Onun küçük bir yüzdesi.
+4. **Sezgi.** Birkaç müşteriyle konuşup "şu fiyatta alır mıydın?" sorusunun cevabına göre belirlemek.
+
+Doğru yöntem: **value-based başlangıç, sezgiyle test, rakiple kalibre.** Maliyet rakamınızı asla iletişimde kullanmayın — müşteri sizin maliyetinizle ilgilenmiyor, kendine sağladığınız değerle ilgileniyor.
+
+KolayOnay'da çıkış fiyatımızı belirlerken üç şeye baktık: müşterinin KVKK uyumsuzluğu nedeniyle alabileceği ceza miktarı (değer), Türkiye'deki birkaç rakip çözümün fiyatı (rakip), ve birebir konuştuğumuz potansiyel müşterilerin "bu işi yapmak için ayda en fazla X TL veririm" cevapları (sezgi).
+
+## Ücretsiz deneme mi, freemium mi?
+
+İki yaklaşım sıklıkla birbirine karıştırılıyor:
+
+- **Ücretsiz deneme (free trial):** Belli süre boyunca tüm ürüne ya da bir paketin tamamına ücretsiz erişim. Süre bitince ya öder ya çıkar.
+- **Freemium:** Sınırlı bir ücretsiz paket sonsuza dek var. Daha fazlasını isteyen ücretliye geçer.
+
+Hangisini seçmeli? Sorunun cevabı ürünün **değerinin ne zaman göründüğüne** bağlı:
+
+- Değer hemen görünüyorsa (kullanıcı 10 dakikada "vay, bu işime yarayacak" diyorsa) → free trial yeterli.
+- Değer zamanla birikiyorsa (ürünü ne kadar çok kullanırsan o kadar değerli oluyorsa) → freemium daha güçlü.
+- B2B SaaS'ta genelde **free trial** daha mantıklı; satın alma kararını veren kişi denemek için 14 gün yeterli.
+- B2C'ye yakın araçlarda **freemium** daha sık kullanılıyor; viral etki için ücretsiz tabanın büyümesi gerekiyor.
+
+Türkiye pazarında B2B alıcının özelliği şu: çoğu zaman 14 günlük denemeyi yeterli görmüyor, "demo isteriz" diyor. Bu durumda free trial yerine **rehberli demo + 30 günlük deneme** kombinasyonu daha pratik.
+
+## Yıllık ödeme indirimi: bir lüks değil, gereklilik
+
+Aylık ve yıllık fiyatı yan yana koyun, yıllığa **bir ila iki aylık indirim** uygulayın. Bu sayede:
+
+- Müşterinin nakit akışı sizin lehinize işliyor; tek seferde 12 aylık ödüyor.
+- Yıllık ödeyen müşterinin churn'u dramatik biçimde düşüyor; ay ortasında ürünü kapatıp gitmesi zorlaşıyor.
+- Yıllık plana geçen müşteriler genelde ürüne daha ciddi bağlanmış olanlar; doğru segmenti yukarı çekmiş oluyorsunuz.
+
+KolayOnay'da yıllık ödeyen müşteri oranı aylık ödeyenin neredeyse iki katı. Çünkü KVKK uyumu zaten "bir yıllık iş" olarak algılanıyor — yıllık ödeme akışla uyumlu.
+
+## Türkiye'ye özgü detaylar
+
+Eğer Türkiye'de SaaS satıyorsanız fiyatlandırmaya gömülü birkaç detay var:
+
+- **KDV gösterimi.** B2B alıcı net fiyatı, B2C alıcı KDV dahil fiyatı görmek istiyor. Fiyatlandırma sayfasında bunu açıkça belirtin. Belirtmemek "kandırılma" hissi yaratıyor.
+- **TL kur dalgalanması.** Aylık fiyatınızı TL olarak veriyorsanız her 6 ayda bir gözden geçirin. Pazarlık alışkanlığı olan bir pazarda zam yapmaktan korkmamak gerekiyor; ama zammı önceden duyurmak gerekiyor.
+- **e-Fatura ve e-Arşiv zorunluluğu.** KDV mükellefi müşterilerinize e-Fatura kesmek zorundasınız. Foy + Paraşüt + Logo gibi entegrasyonlar baştan düşünülmeli; fatura sürecini manuel yürütmek 20 müşteriden sonra cehenneme dönüyor.
+- **iyzico vs Stripe.** Türkiye'deki müşterilerden kart tahsilatı için iyzico daha pratik. Yurt dışı müşteri de hedefliyorsanız ikisini paralel kullanın; ödeme akışında müşterinin bulunduğu ülkeye göre yönlendirin.
+
+## Fiyatı değiştirmek, ilan etmekten daha kolay değil
+
+Erken aşamada en sık duyduğum endişe: "Ya fiyatı yanlış belirlersem, sonra değiştirmem zor olur." Doğrudur, ama sandığınız kadar değil. Pratikte iki kuralla iyi yönetiliyor:
+
+1. **Mevcut müşterilerin fiyatını ilk 12 ay garanti edin.** Yeni fiyat sadece yeni kayıtlar için geçerli olsun.
+2. **Fiyat zammını duyurun, sürpriz olmasın.** "30 gün sonra fiyatlar şu olacak; bugün kayıt olursan eski fiyattan 12 ay daha kullanırsın" mesajı hem dürüst hem dönüşüm tetikleyici.
+
+Yanlış fiyatla yaşamak, fiyatı değiştirmekten çok daha pahalıya patlıyor. Erken kullanıcılarınıza "kuruluş fiyatı" gibi bir konumlandırmayla esneklik kazanmak mümkün.
+
+## Fiyatlandırma sayfasının kendi tasarımı önemli
+
+Fiyatlandırma sayfası çoğu zaman ürünün **ikinci en çok görülen sayfası** oluyor (ilk sayfa anasayfa). Ama çoğu SaaS bu sayfayı son anda, üstünkörü tasarlıyor.
+
+Bir fiyatlandırma sayfasında olması gerekenler:
+
+- Üç paket, ortası vurgulanmış.
+- Her pakette **3-5 madde**, daha fazlası okunmuyor.
+- Aylık/yıllık geçiş anahtarı (toggle).
+- KDV dahil/hariç ibaresi.
+- "Sık sorulan sorular" bölümü — özellikle iptal koşulları, fatura, deneme süresi gibi sorular.
+- Görünür bir "Demo iste" veya "Satışa danış" CTA'sı; herkes paketten almıyor.
+
+Bunların hiçbiri lüks değil; her biri belirli bir alıcı endişesini çözüyor.
+
+## Birlikte çalışmak
+
+Kendi SaaS ürününüzün fiyatlandırmasını kurarken hangi modeli seçeceğiniz, kaç paketle başlayacağınız, freemium mu trial mı yapacağınız gibi sorularla boğuşuyorsanız [SaaS geliştirme](/hizmetler/saas-gelistirme) hizmetimde bu konularda da birlikte çalışıyoruz. Ürünün kodundan önce iş modelinin oturmuş olması, sonradan yapılan büyük değişikliklerden çok daha ucuz. Konuşmak isterseniz [iletişim sayfasından](/iletisim) ulaşın.
