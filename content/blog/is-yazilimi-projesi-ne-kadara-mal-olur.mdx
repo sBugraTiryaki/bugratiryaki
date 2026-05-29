@@ -1,0 +1,257 @@
+---
+title: "İş yazılımı projesi ne kadara mal olur?"
+description: "Özel yazılım projesi maliyetini neler belirler, hangi kalemler var, Türkiye'de hangi yaklaşım ne kadara gelir? Bütçeyi küçültmenin pratik yolları."
+date: "2026-05-25"
+tags: ["Yazılım", "Maliyet", "İşletme", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+"İşimiz için bir yazılım yaptırmak istiyoruz, ne kadara mal olur?" Bu soruyu yıllardır en sık duyduğum soru olarak listelesem yanılmam. Ve her seferinde aynı cevabı vermek zorunda kalıyorum: "Değişir." Bu cevap karşıdakini hiçbir zaman tatmin etmiyor, haklılar da; ev almaya gittiğinizde emlakçı "değişir" derse siz de sinirlenirsiniz.
+
+Ama yazılım projesinin maliyeti gerçekten de tek bir rakama indirgenemez. "Bir mobil uygulama ne kadar?" sorusu, "bir bina ne kadar?" sorusuyla aynı belirsizliği taşıyor. Köpek kulübesi de bir yapı, gökdelen de. İkisi arasında 10.000 kat fark var.
+
+Bu yazıda "değişir" cevabının arkasını dolduracağım: maliyeti neyin belirlediğini, hangi kalemlerin olduğunu, Türkiye bağlamında hangi yaklaşımın kabaca nereye oturduğunu ve en önemlisi — bütçenizi nasıl kontrol altında tutacağınızı anlatacağım. Rakam da vereceğim, ama temkinli ve "bunlar kaba aralık" uyarısıyla.
+
+## Neden tek bir cevap yok?
+
+Yazılım maliyetini sorduğunuzda karşınızdaki kişi aslında bir bilmeceyi çözmeye çalışıyor. Çünkü "yazılım" dediğiniz şey, içine ne koyacağınıza göre tamamen başka bir şeye dönüşebilir.
+
+Bir örnekle açayım. İki firma da bana gelip "randevu sistemi istiyorum" diyor.
+
+- Birincisi: küçük bir kuaför. Müşteri takvimden saat seçsin, adını yazsın, SMS ile hatırlatma alsın. Bitti.
+- İkincisi: 40 şubeli bir poliklinik zinciri. Her şubenin kendi doktor kadrosu, doktorların farklı çalışma saatleri, SGK entegrasyonu, hasta geçmişi, farklı kullanıcı rolleri (resepsiyon, doktor, yönetici), mobil uygulama, raporlama paneli.
+
+İkisi de "randevu sistemi." Ama birincisi birkaç haftalık iş, ikincisi aylarca sürecek ve aralarında 50 kat maliyet farkı olabilecek bir proje. İşte "değişir" dediğimde kastettiğim tam olarak bu.
+
+> Yazılımın fiyatı koda değil, kapsama bağlıdır. Aynı cümleyle anlatılan iki proje, içeriğine göre tamamen başka bütçelere oturur.
+
+Bu yüzden bir geliştiriciden ya da ajanstan ciddi bir teklif almadan önce, ne istediğinizi mümkün olduğunca netleştirmeniz gerekiyor. Belirsizlik, hem fiyatı yukarı çeker (kimse risk altına girmek istemez) hem de sonradan sürpriz faturalar doğurur.
+
+Pratikte şunu çok görüyorum: firma "fiyat alalım" diye birkaç yere e-posta atıyor, gelen tekliflerin arasında 5 kat fark çıkıyor ve hangisinin doğru olduğunu anlayamıyor. Aslında çoğu zaman teklifler farklı şeyleri fiyatlıyor — biri minimum bir versiyonu, diğeri tüm hayali kapsayan bir sistemi. Aynı brifle yola çıkmadıkları için kıyaslanabilir bile değiller. Bu yüzden "kaç para" sorusundan önce gelen asıl iş, **kapsamı yazıya dökmek**. Bir sayfalık bile olsa, ne yapacağını ve ne yapmayacağını net anlatan bir doküman, hem daha isabetli teklifler getirir hem de sizi sonraki tartışmalardan korur.
+
+## Maliyeti belirleyen faktörler
+
+Bir projenin bütçesini şekillendiren değişkenleri tek tek açayım. Teklif aldığınızda, karşı tarafın hangi sorulara cevap aradığını bilmek pazarlığı da kolaylaştırır.
+
+### Özellik sayısı ve kapsam
+
+En büyük belirleyici bu. Her ekran, her buton, her "şunu da yapabilse" cümlesi maliyete eklenir. Önemli olan ekran sayısı değil; o ekranların ardındaki **iş mantığının karmaşıklığı**.
+
+Basit bir "form doldur, kaydet, listele" ekranı ucuzdur. Ama "kullanıcı şunu seçince bu alanlar değişsin, fiyat şu kurala göre hesaplansın, onay şu kişiye gitsin, reddedilirse geri dönsün" gibi bir akış — aynı ekran gibi görünse de katlanarak pahalanır.
+
+Bir başka sinsi nokta da "istisna" durumları. Müşteri size mutlu yolu (her şeyin yolunda gittiği senaryoyu) anlatır. Ama yazılımın asıl maliyeti istisnalardadır: ödeme yarıda kesilirse ne olacak, iki kişi aynı kaydı aynı anda değiştirirse ne olacak, bir alan boş gelirse, internet koparsa, ay sonu raporu çekilirken sistem çökerse? Tecrübeli bir geliştirici teklifi verirken bu istisnaları da fiyatlar; tecrübesiz olan fiyatlamaz ve fark sonradan "bu da mı yokmuş" diyalogları olarak geri döner.
+
+Burada sayısal bir gerçeği de paylaşayım: yazılımcılar arasında dolaşan bir kuraldır, "bir özelliğin görünen kısmı işin %20'sidir, geri kalan %80 görünmeyen kısımdadır." Ekranı çizmek, formu koymak kolaydır; o formun her senaryoda doğru çalışmasını, hata vermemesini, veriyi temiz tutmasını sağlamak işin asıl gövdesidir. Bu yüzden "basit bir ekran, yarım günde biter" beklentisiyle gelen müşteri ile geliştiricinin verdiği "üç gün" tahmini arasındaki fark, çoğu zaman tembellik değil, o görünmeyen %80'dir.
+
+### Tasarım
+
+Hazır bir arayüz kütüphanesiyle (Material, Tailwind bileşenleri gibi) ilerlemek ucuzdur ve çoğu iç kullanım yazılımı için fazlasıyla yeterlidir. Ama müşteriye dönük, markanızı yansıtan, özgün tasarlanmış bir arayüz istiyorsanız işin içine bir UI/UX tasarımcısı girer ve bu ayrı bir kalemdir.
+
+İç kullanım için kullanacağınız bir stok takip programına özel tasarım yatırımı yapmak çoğu zaman israftır. Müşterinizin göreceği bir e-ticaret sitesinde ise tasarım doğrudan gelire etki eder.
+
+Tasarım maliyetini değerlendirirken sorulması gereken soru şu: **bu yazılımı kim, hangi sıklıkta kullanacak?** Eğer sizin için günde sekiz saat çalışan üç muhasebe personeliyse, onlar ilk gün arayüze biraz alışır, sonra hızla körü körüne kullanmaya başlar; orada özgün tasarımdan çok, ekranların **mantıklı ve hızlı** olması önemlidir. Ama dışarıdan gelen, ürününüzü ilk kez gören bir potansiyel müşteriyse, tasarımın kötülüğü doğrudan "bu firma ciddi değil" izlenimi yaratır ve satışı kaçırırsınız. Tasarıma harcanan para, kullanıcının "ilk izlenimi"nin ne kadar para ettiğine göre haklı çıkar ya da çıkmaz.
+
+### Entegrasyonlar
+
+Yazılımınız tek başına bir ada gibi çalışmıyorsa — başka sistemlerle konuşuyorsa — her entegrasyon ayrı bir iş kalemidir. Türkiye'de en sık karşılaştıklarım:
+
+- Ödeme altyapısı (iyzico, PayTR, Stripe)
+- e-Fatura / e-Arşiv (Paraşüt, Logo, Foriba)
+- SMS ve e-posta gönderimi (NetGSM, İleti Yönetim Sistemi)
+- Muhasebe yazılımları
+- Kargo firmaları API'leri
+- SGK, e-Devlet gibi kamu servisleri
+
+Her entegrasyonun kendi dokümantasyonu, kendi tuhaflıkları, kendi test süreci vardır. "Birkaç satır kod" sanılan entegrasyonlar, en çok zaman yiyen kalemlerden çıkar — özellikle kamu servisleri.
+
+Entegrasyon maliyetinin tahmin edilmesi neden bu kadar zor? Çünkü maliyetin büyük kısmı sizin kontrolünüzde değil, **karşı tarafın elinde.** İyi belgelenmiş, modern bir ödeme API'sine bağlanmak yarım gün sürebilir; oysa belgesi eski, test ortamı çalışmayan, destek hattı günlerce dönmeyen bir kurumsal sisteme bağlanmak haftalara yayılabilir. Türkiye'de özellikle bazı banka entegrasyonları, kamu servisleri ve eski ERP sistemleri bu açıdan "kara kutu"dur; geliştiriciden net bir süre tahmini alamamanızın sebebi çoğu zaman tembellik değil, karşı tarafın ne çıkaracağının bilinememesidir.
+
+Pratik bir öneri: entegrasyon gerektiren projelerde, en riskli entegrasyonu **en başta** prototipleyin. "Bu bağlantı çalışıyor mu?" sorusunu projenin sonuna bırakmak, en kötü sürprizleri en pahalı anda yaşamanıza yol açar.
+
+### Platform sayısı (web mi, mobil mi, ikisi de mi?)
+
+Bu maliyeti doğrudan çarpan bir faktör. Sadece web uygulaması mı istiyorsunuz, yoksa iOS ve Android uygulamaları da mı?
+
+- Sadece **web**: tek bir kod tabanı, her cihazdan tarayıcıyla erişim. En ekonomik başlangıç.
+- **Mobil (native)**: iOS ve Android ayrı ayrı geliştirme demek, ki bu neredeyse iki kat iş.
+- **Cross-platform mobil** (React Native, Flutter): tek kod tabanıyla iki platforma çıkmak, native'e göre ekonomik bir orta yol.
+
+Çoğu işletme yazılımı için baştan mobil uygulamaya ihtiyaç yoktur; mobil uyumlu bir web uygulaması işi fazlasıyla görür. Bu konuda detaya [web uygulaması hizmeti](/hizmetler/web-uygulamasi) sayfasında giriyorum. Mobili gerçekten ihtiyaç olduğunda, kanıtlanmış bir talep varken eklemek daha akıllıca.
+
+### Kullanıcı rolleri ve yetkilendirme
+
+"Herkes her şeyi görsün" en ucuz senaryodur. Ama gerçek dünyada genelde böyle olmuyor: yönetici şunu görsün, çalışan bunu görmesin, müşteri sadece kendi verisine erişsin... Her rol ve her yetki kuralı, hem geliştirme hem test tarafında ek yük getirir.
+
+Yetkilendirme, dışarıdan en görünmez ama maliyet açısından en sinsi katmanlardan biridir. Çünkü her ekranda, her işlemde aynı soru tekrar tekrar sorulmak zorundadır: "Bu kişi bunu görebilir mi? Yapabilir mi? Silebilir mi?" Üç rolle başlayan bir uygulamaya zamanla "bir de bölge müdürü olsun, o sadece kendi bölgesini görsün; bir de denetçi olsun, hiçbir şeyi değiştiremesin ama her şeyi görsün" eklendiğinde, iş katlanarak büyür. Yetki kuralları, test edilmesi de en zahmetli kısımdır; her rolün her senaryoda doğru davrandığını ayrı ayrı sınamak gerekir.
+
+### Ölçek ve performans beklentisi
+
+Aynı anda 10 kişinin kullanacağı bir iç yazılım ile aynı anda 100.000 kişinin kullanacağı bir platform, mimari olarak bambaşka kararlar gerektirir. "İlk günden milyon kullanıcıya hazır olalım" demek, çoğu zaman erken ve pahalı bir karardır. Buna birazdan "gizli maliyetler" ve "bütçe küçültme" bölümlerinde döneceğim.
+
+İşin tatlı yanı şu: ölçek bir problem haline geldiğinde, bu aslında **güzel bir problemdir** — demek ki ürününüz tutmuş, kullanıcı gelmiş. Çoğu iş yazılımı projesi ise o ölçeğe hiçbir zaman ulaşmaz. Henüz bir kullanıcınız yokken "ya milyonlarca kişi gelirse" diye mimari kurmak, daha taşımadığınız bir yükü kaldırmak için bel sağlamlaştırmaya benzer. Önce ayağa kalkın; yük gelince güçlendirirsiniz, üstelik o zaman onu finanse edecek geliriniz de olur.
+
+## Maliyet kalemleri: para sadece geliştirmeye gitmez
+
+Çoğu kişi "yazılım maliyeti" deyince aklına sadece kod yazma ücreti geliyor. Oysa bir projenin toplam sahip olma maliyeti birkaç kalemden oluşuyor ve geliştirme bunların sadece biri.
+
+1. **Geliştirme.** İşin gövdesi. Genelde toplam ilk yatırımın en büyük kalemi.
+2. **Tasarım.** UI/UX tasarımı, marka kimliği, kullanıcı akışları. Kapsamına göre toplamın %10-25'i arasında değişebilir.
+3. **Altyapı ve hosting.** Sunucu, veritabanı, depolama, alan adı, SSL. Bu **tek seferlik değil, aylık tekrar eden** bir gider. Bulut maliyetleri çoğunlukla dolar bazlı, buna birazdan döneceğim.
+4. **Bakım ve destek.** Yazılım canlıya çıktıktan sonra biten bir şey değildir. Hata düzeltmeleri, güvenlik güncellemeleri, kütüphane yükseltmeleri, sunucu izleme. Sektörde kaba bir kural: yıllık bakım, ilk geliştirme maliyetinin **%15-25'i** civarında planlanır.
+5. **Sonraki iterasyonlar.** İlk sürüm hiçbir zaman son sürüm değildir. Kullanıcılar geri bildirim verir, yeni ihtiyaçlar doğar, ürün gelişir. Bu, maliyet değil **yatırım**dır — ama bütçelenmesi gerekir.
+
+Bu son üç kalem, projenin "buzdağının altında kalan" kısmı. İlk teklifteki rakama odaklanıp bunları görmezden gelmek, en sık yapılan planlama hatası.
+
+Sektörde sıkça tekrarlanan bir gözlem var: bir yazılımın ömrü boyunca harcanan paranın **yarıdan fazlası**, ilk sürüm yayınlandıktan sonra harcanır. Yani "geliştirme bitti, iş bitti, artık masraf yok" diye düşünmek, bütçeyi en baştan eksik kurmaktır. Doğru bütçe; sadece "yazılımı yaptırmak kaç para" değil, "bu yazılıma üç yıl sahip olmak kaç para" sorusuna cevap verir. İngilizcede buna *total cost of ownership* (toplam sahip olma maliyeti) deniyor ve bir yazılım kararı verirken bakılması gereken asıl rakam budur — teklifteki tek satırlık fiyat değil.
+
+## Farklı yaklaşımların maliyet aralığı
+
+Bir ihtiyacı çözmenin tek yolu özel yazılım değil. Aşağıda farklı yaklaşımları, kabaca nereye oturduklarıyla sıralıyorum. **Önemli uyarı:** Aşağıdaki rakamlar 2026 Türkiye bağlamında, çok kaba ve temkinli aralıklardır; projeden projeye misliyle değişir. Bunları kesin fiyat değil, "büyüklük mertebesi" olarak okuyun.
+
+### Hazır çözüm (SaaS / paket yazılım)
+
+İhtiyacınız standart bir ihtiyaçsa (muhasebe, CRM, e-ticaret, randevu) muhtemelen onu zaten çözen bir hazır ürün vardır. Aylık abonelikle kullanırsınız.
+
+- **Maliyet:** Genelde aylık birkaç yüz ila birkaç bin TL arası abonelik.
+- **Avantaj:** Anında kullanıma hazır, bakım derdi yok, ucuz başlangıç.
+- **Dezavantaj:** Süreçlerinizi yazılıma uydurmak zorundasınız, özelleştirme sınırlı, verileriniz başkasının sisteminde.
+
+Bu kararın detaylı bir karşılaştırmasını [işletmeniz için özel yazılım mı hazır çözüm mü](/blog/isletmeniz-icin-ozel-yazilim-mi-hazir-cozum-mu) yazısında ele aldım. Kısa cevap: işiniz standartsa hazır çözümle başlayın, özel yazılıma ancak hazır çözümler yetmediğinde geçin.
+
+### No-code / low-code
+
+Bubble, Glide, Softr, Airtable gibi araçlarla kod yazmadan ya da çok az kodla uygulama kurabilirsiniz.
+
+- **Maliyet:** Araç aboneliği (aylık birkaç bin TL'ye kadar) + kuran kişinin emeği. Toplam ilk kurulum, özel yazılımın küçük bir kesri.
+- **Avantaj:** Hızlı, ucuz, fikrinizi doğrulamak için ideal.
+- **Dezavantaj:** Ölçek ve karmaşıklık arttıkça duvara toslarsınız; platforma bağımlı kalırsınız; belli bir noktadan sonra özel yazılımdan pahalıya bile gelebilir.
+
+No-code'un nerede mantıklı, nerede tehlikeli olduğunu [no-code mu kod yazmak mı](/blog/no-code-mu-kod-yazmak-mi) yazısında karşılaştırdım. Bir fikri ucuza test etmek için harika; uzun vadeli, çekirdek iş yazılımınız için temkinli yaklaşın. Sıkça gördüğüm bir senaryo: firma no-code ile hızlıca bir şey kurar, işe yarar, büyür — sonra platformun limitlerine toslayınca her şeyi baştan, özel yazılım olarak yazdırmak zorunda kalır. Bu kötü bir sonuç değil aslında; no-code o aşamada görevini yapmış, fikri doğrulamış olur. Yeter ki başından beri "bu kalıcı çözüm değil, doğrulama aracı" diye bilinçli kullanılsın.
+
+### Freelance geliştirici
+
+Tek bir bağımsız geliştiriciyle çalışmak.
+
+- **Maliyet:** Türkiye'de tecrübeye göre çok geniş bir aralık; küçük bir projenin geliştirmesi onlarca bin TL'den başlayıp, kapsamlı bir işte birkaç yüz bin TL'ye uzanabilir.
+- **Avantaj:** Ajanstan ekonomik, doğrudan iletişim, esneklik.
+- **Dezavantaj:** Tek kişiye bağımlılık (hastalanır, kaybolur, başka işe geçer), sınırlı kapasite, tasarım/test/altyapı gibi farklı uzmanlıkları tek kişide bulmak zor.
+
+### Özel yazılım — ajans / yazılım evi
+
+Birden fazla kişilik bir ekip: proje yöneticisi, tasarımcı, birkaç geliştirici, test.
+
+- **Maliyet:** En geniş aralık burada. Orta ölçekli bir iş yazılımı yüz binlerce TL'den başlar; kapsamlı, çok platformlu, entegrasyonlu projeler milyon TL ve üzerine rahatlıkla çıkar.
+- **Avantaj:** Kapasite, süreklilik, farklı uzmanlıkların bir arada olması, kurumsal güvence.
+- **Dezavantaj:** En pahalı seçenek, overhead (yönetim maliyeti) fiyata yansır, hız bazen yavaşlar.
+
+Burada altını çizmek istediğim şey: **"daha pahalı" her zaman "daha iyi" demek değil.** Küçük ve net bir ihtiyaç için kurumsal bir ajansla çalışmak parayı boşa harcamak olabilir; karmaşık ve kritik bir sistem içinse tek bir freelancer'a güvenmek risk olabilir. Doğru seçim, projenin büyüklüğüne ve kritikliğine bağlı.
+
+## Gizli maliyetler
+
+Teklifteki rakamda görünmeyen ama cebinizi en çok yakan kalemler bunlar. Tecrübeyle öğrenilen, başta kimsenin söylemediği şeyler.
+
+### Bakım, biten bir iş değildir
+
+Yazılım canlıya çıktı, "tamam bitti" diye düşünürsünüz. Ama kullandığınız her kütüphane güncellenir, güvenlik açıkları çıkar, işletim sistemleri değişir, ödeme sağlayıcı API'sini günceller. Bakım bütçesi ayırmazsanız, bir gün "küçük bir hata" diye başlayan şey, aylardır ertelenmiş güncellemeler yüzünden devasa bir işe dönüşür.
+
+### Teknik borç
+
+Hızlı çıkmak için alınan kestirme kararlar, sonradan faiziyle geri döner. "Şimdilik böyle yapalım, sonra düzeltiriz" cümlesi, yazılımın en pahalı cümlesidir. Ucuza ve aceleye getirilmiş bir proje, ikinci yılda "baştan yazmak daha ucuz" noktasına gelebilir. Bu da ilk parayı çöpe atmak demektir.
+
+Teknik borcun en aldatıcı yanı, bir süre hiç fark edilmemesidir. İlk aylarda her şey yolunda görünür, yazılım çalışır, müşteri memnundur. Sonra her yeni özellik beklenenden uzun sürmeye başlar; küçük bir değişiklik beş yeri birden bozar; geliştirici "buraya dokunmaya korkuyorum" demeye başlar. İşte o noktada borcun faizini ödüyorsunuzdur. En ucuz teklifi seçmenin gizli bedeli çoğu zaman budur: önde tasarruf ettiğiniz para, arkadan teknik borç olarak ikiye katlanarak geri gelir. "Ucuz etin yahnisi" deyiminin yazılımdaki karşılığı tam olarak budur.
+
+> Yazılımda en pahalı şey, yanlış başlangıçtan geri dönmektir. İki kez ödemek, bir kez doğru ödemekten daima daha pahalıdır.
+
+### Yanlış başlangıçtan dönüş
+
+En acı maliyet kalemi bu. Yanlış teknoloji, yanlış ekip ya da yanlış kapsamla başlayıp, aylar sonra "bu böyle olmayacak" demek. O ana kadar harcanan zaman ve para çoğu zaman geri gelmez. Bu yüzden başlangıçtaki doğru kararlar — ne yapacağınızı netleştirmek, doğru kapsamı seçmek — sonradan yapılacak en pahalı işten daha değerlidir. [Fikrim var, nasıl yazılım yaparım](/blog/fikrim-var-nasil-yazilim-yaparim) yazısında bu ilk adımları nasıl atacağınızı anlattım.
+
+## Bütçeyi nasıl küçültürsünüz?
+
+İyi haber şu: maliyet kaderiniz değil. Doğru kararlarla aynı işi çok daha ekonomik yapabilirsiniz. İşte pratikte işe yarayan üç strateji.
+
+### Kapsamı daraltın
+
+Projeyi büyüten şey "şu da olsa", "bu da lazım olabilir" cümleleridir. Bu cümlelerin her birini sorgulayın: **Bu özellik olmadan yazılım işe yarar mı?** Yarıyorsa, ilk sürüme koymayın.
+
+KolayOnay'da bir özelliği eklemeden önce kendimize hep şunu sorduk: "Bunu isteyen kaç müşterimiz oldu?" İçimizden geçen "havalı" özelliklerin çoğu bu testi geçemedi. Sonradan ekleyebileceğiniz her şey, ilk faturadan düşülecek paradır.
+
+Pratik bir egzersiz öneriyorum: özellik listenizi açın ve her satırın yanına şu soruyu sorun — "Bu olmadan yazılım işe yarar mı?" Cevap "evet, yine işe yarar" ise, o özelliği kalın bir çizgiyle ikinci faza taşıyın. Çoğu projede bu egzersiz, ilk listenin neredeyse yarısını sonraki fazlara aktarır. Bu yarı, doğrudan başlangıç bütçenizden düşen paradır ve çoğu zaman o "sonraki faz" özelliklerinin bir kısmına gerçek kullanımda hiç ihtiyaç olmadığı ortaya çıkar — yani sadece ertelemiş değil, tamamen tasarruf etmiş olursunuz.
+
+### MVP ile başlayın
+
+MVP (minimum uygulanabilir ürün), fikrinizi en küçük çalışan haliyle test etme yaklaşımı. Tüm hayalinizi tek seferde kodlatmak yerine, çekirdek değeri sunan en küçük versiyonu çıkarıp gerçek kullanıcılarla test edersiniz.
+
+Bu hem maliyeti düşürür hem riski. Çünkü yüz binlerce TL'lik tam ürünü yapıp "meğer kimse istemiyormuş" demek yerine, çok daha küçük bir bütçeyle gerçeği öğrenirsiniz. [MVP geliştirme nedir, nasıl başlanır](/blog/mvp-gelistirme-nedir-nasil-baslanir) yazısında bu yaklaşımı ve [MVP geliştirme hizmeti](/hizmetler/mvp-gelistirme) sayfasında nasıl çalıştığımızı detaylandırdım.
+
+### Faz faz ilerleyin
+
+Projeyi tek bir dev blok olarak değil, ardışık fazlar olarak planlayın. Birinci faz canlıya çıksın, gelir/değer üretmeye başlasın, oradan gelen geri bildirim ikinci fazı şekillendirsin.
+
+Bunun iki büyük faydası var:
+
+- **Nakit akışı yumuşar.** Bütün parayı baştan ödemek yerine, ürün değer üretmeye başladıkça yatırıma devam edersiniz.
+- **Yanlış yatırımdan korunursunuz.** İlk faz çalışmazsa, ikinci faza para dökmemiş olursunuz. Gerçek kullanım, sonraki kararları yönlendirir.
+- **Esnekliğinizi korursunuz.** Tek seferde büyük bir sözleşmeye kilitlenmek yerine, her faz sonunda "devam mı, dur mu, yön mü değiştir mi?" kararını yeniden verebilirsiniz. İhtiyaçlar değişirse rotayı düzeltmek çok daha ucuza gelir.
+
+Faz faz ilerlemenin bir yan faydası da geliştiriciyle ilişkinizi test etmenizdir. İlk fazı birlikte tamamlamadan büyük bir bütçeyi tek kişiye ya da tek ekibe bağlamak risklidir. Küçük bir ilk fazla başlayıp işin nasıl yürüdüğünü, iletişimin nasıl olduğunu, teslimatın söz verilen kalitede gelip gelmediğini görmek; daha büyük yatırımı yapmadan önce alabileceğiniz en ucuz sigortadır.
+
+## Türkiye'ye özgü maliyet detayları
+
+Türkiye'de yazılım yaptırırken bütçeye gömülü, başka ülkelerde olmayan ya da farklı işleyen birkaç kalem var.
+
+### KDV
+
+Yazılım hizmetleri %20 KDV'ye tabi. Aldığınız tekliflerde "fiyata KDV dahil mi?" sorusunu mutlaka net sorun. "100.000 TL" diye anlaşıp faturada 120.000 TL görmek, bütçe planınızı bozar. KDV mükellefi bir işletmeyseniz bu KDV'yi indirebilirsiniz; ama nakit akışı planında yine de hesaba katmalısınız.
+
+### Döviz kuru etkisi
+
+Bu, en sinsi kalem. Yazılımın **bulut altyapı maliyetleri büyük oranda dolar bazlı.** AWS, Google Cloud, Azure, Vercel, Cloudflare, çeşitli SaaS araçları — hepsi dolar fatura keser. Geliştirme ücretini TL anlaştınız diyelim; ama yazılım canlıya çıktıktan sonra her ay ödeyeceğiniz hosting/altyapı gideri kurla birlikte hareket eder.
+
+KolayOnay'da bunu en başından planladık: altyapı seçimlerinde dolar bazlı maliyetleri olabildiğince öngörülebilir tuttuk, gereksiz "her ihtimale karşı" kaynak ayırmadık. Kur dalgalanan bir ülkede, dolar bazlı tekrar eden giderleri minimumda tutmak doğrudan kâr marjına yansıyor. Aylık bulut faturasını da en baştan **dolar bazında** takip ediyoruz; TL'ye çevirip "ucuzlamış" yanılgısına düşmemek için. Kur arttığında TL faturası şişer ama dolar gideriniz aynıysa, panik yapmak yerine planı koruyabilirsiniz.
+
+Bütçe yaparken pratik bir kural: aylık dolar bazlı giderlerinizi ayrı bir satırda tutun ve üstüne ciddi bir kur artış payı bırakın. Yazılım yıllık planı yaparken bugünkü kurla hesap yapıp sonra yıl ortasında açık vermek, Türkiye'de çok yaygın bir hata.
+
+### Bordro ve istihdam
+
+Eğer "ekip kuralım, kendi geliştiricilerimizi alalım" diye düşünüyorsanız, hesaba sadece maaşı değil, **toplam istihdam maliyetini** katın: SGK primleri, vergiler, yan haklar, işe alım maliyeti, yönetim yükü. Bir yazılımcının işverene maliyeti, eline geçen net maaşın belirgin biçimde üzerindedir.
+
+Tek bir proje için ekip kurmak çoğu zaman mantıksızdır; proje bitince o ekibi ne yapacaksınız? Sürekli ve büyüyen bir yazılım ihtiyacınız yoksa, dış kaynak (freelance/ajans) genelde daha ekonomik ve esnek kalır.
+
+Kabaca bir eşik şöyle: tek seferlik ya da ara sıra ihtiyaç duyacağınız bir yazılım için dış kaynak neredeyse her zaman daha hesaplı. Yazılım sizin işinizin **çekirdeği** haline geldiyse — yani sürekli geliştirilmesi, sahiplenilmesi gereken bir ürünse — o zaman içeride ekip kurmak uzun vadede mantıklı olmaya başlar. Çoğu KOBİ ilk kategoridedir; "biz de kendi yazılım ekibimizi kuralım" hevesi, genelde gereğinden erken ve gereğinden pahalı bir karar olur.
+
+## KolayOnay örneği: dar kapsamla başlamak
+
+Somut bir örnek vereyim. [KolayOnay](/projeler/kolayonay), Türkiye'ye özel bir KVKK uyum ürünü. Bugün baktığınızda birçok özelliği olan bir SaaS; ama öyle başlamadı.
+
+İlk sürümde **tek bir şeyi** çözdük: bir web sitesine, KVKK'ya uygun bir çerez/onay bannerı eklemek ve bu onayları kayıt altında tutmak. Hepsi bu. Aklımızda olan onlarca özellik vardı — gelişmiş raporlama, çok dilli destek, farklı yasal modüller, ajanslar için toplu yönetim paneli — ama hiçbirini ilk sürüme koymadık.
+
+Neden? Çünkü:
+
+- **Önce talebi doğrulamak istedik.** Bu çekirdek özelliği isteyen gerçek müşteri var mı? Olmasaydı, gelişmiş raporlamayı yapmamış olmak bizi kurtarırdı.
+- **Maliyeti kontrol altında tuttuk.** Dar kapsam, az kod, az altyapı, hızlı çıkış demekti. Bütün hayali baştan kodlatsaydık, hem çok daha pahalı hem çok daha geç çıkardık.
+- **Gerçek geri bildirim, yol haritasını yazdı.** Sonradan eklediğimiz özelliklerin çoğu, bizim baştaki tahminimiz değil, müşterilerin gerçekten istediği şeylerdi. "Bunu kendi tasarımıma uydurabilir miyim?", "rapor alabilir miyim?" gibi talepler önceliği belirledi.
+
+Her yeni özelliği, gerçek bir talep gördükçe ve ürün gelir üretmeye başladıkça faz faz ekledik. Böylece hiçbir zaman "henüz parası gelmemiş büyük bir yatırımın" altında ezilmedik. Maliyet, ürünün büyümesiyle aynı tempoda büyüdü — tersi değil.
+
+Bu yaklaşımın özeti şu: **küçük başla, doğrula, kazandıkça büyüt.** Yazılım maliyetini kontrol etmenin tek gerçek yolu, başta her şeyi yapmaya çalışmamaktan geçiyor.
+
+Aynı yaklaşımı müşteri projelerinde de uyguluyorum. Biri gelip "şöyle kocaman bir sistem hayal ediyorum" dediğinde ilk işim fiyat vermek değil; o sistemin içinden "yarın işe yarayacak en küçük çekirdeği" birlikte bulmak oluyor. Çünkü hem bütçeyi hem riski en çok düşüren karar bu. Müşteriler ilk başta "ama hepsi lazım" diye direnir; faz faz ilerleyip ilk sürümün gerçekten işe yaradığını gördüklerinde ise neredeyse her zaman "iyi ki hepsini birden yapmamışız" diyorlar. Çünkü kullanmaya başladıkça öncelikleri değişiyor ve baştaki listenin bir kısmının aslında gereksiz olduğunu kendi gözleriyle görüyorlar.
+
+## Toparlarsak
+
+"İş yazılımı projesi ne kadara mal olur?" sorusunun tek cevabı yok, çünkü maliyeti belirleyen şey rakam değil, kapsam. Ama artık o "değişir" cevabının arkasını biliyorsunuz:
+
+- Maliyeti **özellik kapsamı, tasarım, entegrasyonlar, platform sayısı, kullanıcı rolleri ve ölçek** belirler.
+- Para sadece geliştirmeye gitmez; **tasarım, altyapı, bakım ve sonraki iterasyonlar** da bütçenin parçasıdır.
+- Yaklaşımlar arasında geniş bir maliyet yelpazesi var: hazır çözüm en ucuzdan, kurumsal ajans en pahalıya. Doğru seçim, işinizin büyüklüğüne ve kritikliğine bağlı.
+- En tehlikeli kalemler **gizli olanlar**: bakım, teknik borç ve yanlış başlangıçtan dönüş.
+- Bütçeyi küçültmenin yolu: **kapsamı daraltmak, MVP ile başlamak, faz faz ilerlemek.**
+- Türkiye'de **KDV, dolar bazlı altyapı maliyeti ve istihdam yükünü** baştan hesaba katın.
+
+En önemli tavsiyem, ilk faturadaki rakama değil, **toplam sahip olma maliyetine ve ne yaptığınızın netliğine** odaklanın. Ucuza yaptırıp iki kez ödemektense, doğru kapsamla bir kez yapmak her zaman daha hesaplı.
+
+## Birlikte çalışmak
+
+Bir iş yazılımı ya da özel uygulama düşünüyorsanız ama bütçeyi nasıl kuracağınızdan, nereden başlayacağınızdan emin değilseniz, çoğu zaman ihtiyaç doğru kapsamı belirleyip işi yönetilebilir parçalara bölmek oluyor. [İşletme yazılımı](/hizmetler/isletme-yazilimi) ve [MVP geliştirme](/hizmetler/mvp-gelistirme) süreçlerinde, kodlamadan önce "ne yapmalı, ne yapmamalı, hangi sırayla" sorularına birlikte cevap arıyoruz. Projenizi konuşmak isterseniz [iletişim sayfasından](/iletisim) ulaşın ya da sunduğum [hizmetlere](/hizmetler) göz atın.
