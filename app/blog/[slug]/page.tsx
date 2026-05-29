@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const ogImage =
+    post.ogImage ??
+    `${siteConfig.url}/og?title=${encodeURIComponent(post.title)}&eyebrow=Blog`;
   return {
     title: post.title,
     description: post.description,
@@ -39,6 +42,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       modifiedTime: post.updatedDate ?? post.date,
       tags: post.tags,
       authors: [post.author],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [ogImage],
     },
   };
 }
