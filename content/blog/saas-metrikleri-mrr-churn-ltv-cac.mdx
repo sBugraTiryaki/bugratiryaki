@@ -1,0 +1,143 @@
+---
+title: "SaaS metrikleri: MRR, Churn, LTV, CAC ve gerçekten bakman gerekenler"
+description: "SaaS işinde hangi sayılar önemli? MRR, ARR, churn, LTV, CAC ve LTV:CAC oranını sade bir dille, Türkiye ve erken aşama bağlamında anlatıyorum."
+date: "2026-05-29"
+tags: ["SaaS", "Metrikler", "Büyüme", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+SaaS işine girince bir anda metrik denizinde buluyorsunuz kendinizi: MRR, ARR, churn, LTV, CAC, ARPU, NRR... Her biri için ayrı bir kısaltma, her kısaltma için ayrı bir "doğru değer" tartışması. Yeni başlayan çoğu girişimci ya bunları tamamen görmezden gelip "hissiyatla" ilerliyor ya da tam tersine, henüz 10 müşterisi yokken karmaşık dashboard'lar kurup kendini sayılarda kaybediyor.
+
+Gerçek şu: SaaS'ta birkaç metrik işin sağlığını neredeyse tek başına anlatır. Geri kalanı çoğu zaman gürültü. Bu yazıda hangi sayıların gerçekten önemli olduğunu, ne anlama geldiklerini ve hangi aşamada hangisine bakman gerektiğini sade bir dille anlatıyorum — formül ezberi değil, karar verme aracı olarak.
+
+## Önce tuzak: vanity metrikler
+
+Metriklere girmeden önce bir uyarı. En çok zaman kaybettiren şey, iyi hissettiren ama hiçbir karar değiştirmeyen sayılardır. Toplam kayıt olan kullanıcı sayısı, web sitesi ziyaretçisi, sosyal medya takipçisi, "toplam indirme"... Bunlar yukarı gittikçe insanın içini ısıtır ama işin gerçekten büyüyüp büyümediğini söylemez.
+
+> Bir metriğe bakıp "güzel, artıyor" diyorsan ama o sayı sana bir sonraki adımda ne yapman gerektiğini söylemiyorsa, muhtemelen vanity metriğe bakıyorsundur.
+
+Sağlam bir metrik üç şeyi yapar: bir karara bağlanır, zaman içinde karşılaştırılabilir ve manipüle etmesi zordur. Aşağıdaki metrikler bu testi geçtiği için önemli.
+
+## MRR ve ARR: işin kalp atışı
+
+**MRR (Monthly Recurring Revenue)** — aylık yinelenen gelir. Yani her ay tahmin edilebilir şekilde gelen abonelik geliri. Tek seferlik kurulum ücretleri, danışmanlık, bir defalık satışlar buna dahil değildir; sadece düzenli, tekrar eden gelir.
+
+**ARR (Annual Recurring Revenue)** ise bunun yıllık hali — kabaca `MRR × 12`. Yıllık sözleşmelerle çalışan B2B SaaS'larda ARR daha çok konuşulur; aylık abonelikte MRR daha doğal.
+
+MRR'ı tek bir rakam olarak görmek yetmez, içindeki hareketi parçalara ayırmak gerekir:
+
+- **Yeni MRR:** O ay kazanılan yeni müşterilerden gelen gelir.
+- **Genişleme (expansion) MRR:** Mevcut müşterilerin üst pakete geçmesi, koltuk eklemesi, kullanım artışıyla gelen ek gelir.
+- **Daralma (contraction) MRR:** Mevcut müşterinin alt pakete inmesiyle kaybedilen gelir.
+- **Kayıp (churned) MRR:** Tamamen ayrılan müşterilerden kaybedilen gelir.
+
+Net MRR büyümesi = `Yeni + Genişleme − Daralma − Kayıp`. Bu ayrıştırma kritik, çünkü iki şirketin MRR'ı aynı oranda artıyor olabilir ama biri sürekli yeni müşteri bulup eskisini kaybediyordur (delik kova), diğeri mevcut müşterisini büyütüyordur (sağlıklı). Toplam rakam bunu gizler; parçalar açığa çıkarır.
+
+### Büyüme oranını da kaçırma
+
+MRR'ın mutlak değeri kadar, **aydan aya büyüme oranı** da önemli. Erken aşamada küçük rakamlardan başladığın için yüzdeler yanıltıcı olabilir (1.000 TL'den 2.000 TL'ye çıkmak %100 büyüme ama hâlâ küçük), ama trend yön gösterir: büyüme oranın istikrarlı mı, hızlanıyor mu, yoksa her ay biraz daha mı yavaşlıyor? Tek bir ayın rakamından çok, son birkaç ayın eğilimi anlamlıdır.
+
+## Churn: en acımasız ama en dürüst metrik
+
+**Churn**, belirli bir dönemde kaybettiğin müşteri ya da gelir oranıdır. İki türü var ve ikisi de önemli:
+
+- **Müşteri churn'ü:** O ay kaç müşterinin ayrıldığı. `Ayrılan müşteri / Dönem başındaki müşteri`.
+- **Gelir churn'ü:** Kaybedilen MRR oranı. Bu daha kritiktir, çünkü 1 büyük müşteri kaybetmek, 5 küçük müşteri kaybetmekten daha ağır olabilir.
+
+Churn neden bu kadar önemli? Çünkü yüksek churn, büyümeyi imkânsız kılar. Düşünün: her ay müşterilerinizin %10'unu kaybediyorsanız, sadece olduğunuz yerde kalmak için bile her ay o kadar yeni müşteri bulmanız gerekir. Bu, [ürün-pazar uyumu (PMF)](/blog/urun-pazar-uyumu-pmf-nedir) olmadan büyümeye çalışmanın matematiksel halidir — delik kovaya su taşımak.
+
+> Yüksek churn, çoğu zaman pazarlama değil ürün problemidir. Müşteri gidiyorsa, ya yanlış müşteriyi getirdin ya da ürün vaat ettiğini vermiyor.
+
+İyi bir churn değeri sektöre göre değişir ama kaba bir pusula: B2B SaaS'ta aylık %2-3'ün altı sağlıklı, %5 üstü alarm. Küçük işletmelere (SMB) satıyorsan churn doğal olarak daha yüksek olur; kurumsala satıyorsan daha düşük beklersin.
+
+### Negatif net churn: kutsal kâse
+
+İleri seviye bir hedef: **negatif net churn** (ya da net gelir retention'ının %100'ün üstünde olması). Bu, mevcut müşterilerinden gelen genişleme gelirinin, kaybettiğin gelirden fazla olması demek. Yani hiç yeni müşteri bulmasan bile gelirin büyüyor. Buna ulaşan SaaS'lar büyüme makinesine dönüşür — çünkü mevcut tabanları kendi kendine büyür.
+
+### Churn'ü nasıl azaltırsın?
+
+Churn'e bakıp "yüksekmiş" demek kolay; düşürmek iş ister. Pratikte işe yarayanlar:
+
+1. **Doğru müşteriyi getir.** Churn çoğu zaman satış aşamasında belli olur. Ürününe uymayan, yanlış beklentiyle gelen müşteri er ya da geç gider. [İlk müşterilerini bulurken](/blog/ilk-musterini-nasil-bulursun) kimi hedeflediğin, churn'ünü baştan belirler.
+
+2. **İlk değeri hızlı yaşat (onboarding).** Müşterinin üründen ilk somut faydayı görmesi ne kadar gecikirse, ayrılma ihtimali o kadar artar. İlk gün, ilk hafta kritiktir. "Aha anı"na giden yolu olabildiğince kısalt.
+
+3. **Kullanmayanları yakala.** Aktif kullanmayan müşteri, churn etmeden önce sessizleşir. Kullanım düşüşünü erken fark edip proaktif ulaşmak, faturanın iptal edilmesini beklemekten çok daha etkili.
+
+4. **İptal anını bir konuşmaya çevir.** İptal eden her müşteri bir geri bildirim kaynağı. Neden gittiğini sormak hem bazılarını geri kazandırır hem de ürün yol haritana en değerli veriyi verir.
+
+5. **Yıllık ödemeye teşvik et.** [Fiyatlandırma yazısında](/blog/saas-fiyatlandirma-nasil-belirlenir) anlattığım gibi, yıllık ödeyen müşterinin churn'ü dramatik biçimde düşer; ay ortasında kalkıp gitmesi zorlaşır.
+
+KolayOnay'da churn'ü düşüren en büyük etken, ürünü bir "kur ve unut" aracı olmaktan çıkarıp düzenli değer üreten bir akışa bağlamak oldu: KVKK uyumu bir kerelik iş gibi göründüğü için, müşterinin her ay ürüne neden ihtiyaç duyduğunu somut göstermek (mevzuat güncellemeleri, yeni rıza talepleri, raporlar) gerekti.
+
+## LTV: bir müşteri sana ne kadar değer?
+
+**LTV (Lifetime Value)** — müşteri yaşam boyu değeri. Bir müşterinin, seninle kaldığı süre boyunca ortalama ne kadar gelir bıraktığı.
+
+Kaba ve pratik bir formül:
+
+```
+LTV = ARPU / Churn oranı
+```
+
+Burada **ARPU** müşteri başına ortalama aylık gelir, churn ise aylık müşteri kayıp oranı. Örneğin müşteri başına ayda 500 TL kazanıyorsan ve aylık churn'ün %4 ise, ortalama müşteri `500 / 0.04 = 12.500 TL` değerindedir (yaklaşık 25 ay kalır).
+
+Bu formül neyi güzel gösteriyor? **Churn doğrudan LTV'yi belirliyor.** Churn'ü yarıya indirirsen, LTV iki katına çıkar. Yani churn'le uğraşmak, sadece "müşteri kaybetmemek" değil, her müşterinin değerini büyütmektir. Brüt kâr marjını da hesaba katmak istersen LTV'yi marjla çarpabilirsin, ama erken aşamada bu kaba hali bile yönlendirici.
+
+## CAC: bir müşteriyi kazanmak sana ne kadara mal oluyor?
+
+**CAC (Customer Acquisition Cost)** — müşteri edinme maliyeti. Belirli bir dönemde pazarlama ve satışa harcadığın toplam paranın, o dönemde kazandığın yeni müşteri sayısına bölümü.
+
+```
+CAC = (Pazarlama + Satış giderleri) / Yeni müşteri sayısı
+```
+
+Buraya reklam harcaması, satış ekibinin maaşı, kullandığın araçlar, içerik üretim maliyeti — müşteri kazanmak için harcanan her şey girer. Tek başına CAC bir şey ifade etmez; asıl anlamı LTV ile birlikte kazanır.
+
+### CAC geri ödeme süresi
+
+Pratikte çok işe yarayan bir türevi: **CAC payback period** — yani bir müşteriyi kazanmak için harcadığın parayı, o müşteriden ne kadar sürede geri kazandığın. `CAC / aylık brüt kâr` ile bulursun. Bu süre kısa olduğunda büyümeyi kendi nakdinle finanse edebilirsin; uzun olduğunda her yeni müşteri seni nakit olarak daha da zorlar. Erken aşamada, dış kaynak yoksa, 12 ayın altı genelde rahattır.
+
+## LTV:CAC oranı: işin sürdürülebilir mi?
+
+Tek bir oranla SaaS ekonominin sağlığını okumak istersen bakacağın yer burası: **LTV bölü CAC.**
+
+- **3:1 civarı** genelde sağlıklı kabul edilir — bir müşteriye harcadığın her 1 lira, ömrü boyunca 3 lira getiriyor.
+- **1:1'e yakınsa** her müşteriyi neredeyse zararına kazanıyorsundur; bu modelle büyümek seni batırır.
+- **5:1 ve üstüyse** kulağa harika gelir ama çoğu zaman pazarlamaya yeterince yatırım yapmadığının, yani masada büyüme bıraktığının işaretidir.
+
+Bu oranı tek başına bir hedef olarak görme; CAC payback süresiyle birlikte oku. 3:1 oranın varsa ama parayı geri almak 20 ay sürüyorsa, nakit akışın yine de sıkışabilir.
+
+## Kuzey yıldızı metriği: hepsini bağlayan tek sayı
+
+Bütün bu metrikler önemli ama hepsine aynı anda bakmak da felç edici olabilir. Bu yüzden birçok ekip bir **kuzey yıldızı metriği (north star metric)** seçer: ürünün müşteriye sunduğu temel değeri en iyi temsil eden tek sayı. Slack için "gönderilen mesaj", bir fatura ürünü için "kesilen fatura" gibi.
+
+İyi bir kuzey yıldızı, müşterinin üründen gerçekten fayda gördüğü anı ölçer — ve bu metrik sağlıklı büyüdüğünde, gelir ve retention da arkasından gelir. Erken aşamada gelirden bile önce buna odaklanmak mantıklı olabilir, çünkü değer üretmediğin bir üründe gelirin zaten kalıcı olmaz.
+
+## Hangi aşamada hangi metrik?
+
+En sık yapılan hata, her metriği ilk günden takip etmeye çalışmak. Aşamana göre odaklan:
+
+- **PMF öncesi / ilk müşteriler:** Gelir metriklerini boş ver. Kullanım, retention (geri dönüş) ve nitel geri bildirime bak. Soru: "İnsanlar bunu gerçekten kullanıyor ve geri geliyor mu?" Para değil, kullanım sinyali önemli.
+- **İlk gelir / erken büyüme:** MRR, müşteri churn'ü ve büyüme oranı. Soru: "Kazandığımı tutabiliyor muyum, ay ay büyüyor muyum?"
+- **Büyüme aşaması:** LTV, CAC, LTV:CAC, CAC payback, genişleme MRR. Soru: "Bu makineye para koysam kârlı şekilde büyür mü?"
+
+Erken aşamada LTV:CAC hesaplamaya çalışmak çoğu zaman boşunadır — elinde anlamlı bir churn verisi yokken LTV bir tahminden ibaret olur. Önce yeterince müşteri ve yeterince zaman; sonra ince metrikler.
+
+## Türkiye ve erken aşama bağlamı
+
+Birkaç pratik not, özellikle Türkiye'de erken aşamadaysan:
+
+- **Küçük sayılarla yüzdelere fazla anlam yükleme.** 20 müşterin varken bir ayda 2 kişinin gitmesi %10 churn demek ama bu istatistiksel olarak gürültü olabilir. Trendi izle, tek ayın paniğine kapılma.
+- **Kur dalgalanması metrikleri bozar.** Gelirini TL tutuyorsan, MRR büyümen gerçek mi yoksa kur etkisi mi olduğunu ayırt et. Mümkünse sabit kurla da bir kez bak.
+- **CAC'ı dürüst hesapla.** Erken aşamada "pazarlama" çoğu zaman senin kendi emeğindir. İçerik yazmak, [ilk müşteriyle](/blog/ilk-musterini-nasil-bulursun) tek tek konuşmak bedava görünür ama zamanın da bir maliyet. Görmezden gelirsen CAC'ın gerçekçi olmaz.
+- **Basit araçlarla başla.** İlk dönemde pahalı analytics ürünlerine gerek yok; bir tablo (spreadsheet) ile MRR, müşteri sayısı ve churn'ü elle takip etmek fazlasıyla yeterli ve hatta daha öğretici.
+
+## Toparlarsak
+
+SaaS metrikleri korkutucu görünür ama özü basit: **ne kadar tekrarlayan gelirin var (MRR), bunu ne kadar tutabiliyorsun (churn), her müşteri sana ne getiriyor (LTV) ve onu kazanmak ne kadara mal oluyor (CAC).** Bu dördünü ve aralarındaki LTV:CAC oranını dürüstçe takip edersen, işinin sağlığı hakkında çoğu girişimciden daha net bir fikrin olur.
+
+En önemlisi: metriği karar vermek için kullan, kendini iyi hissetmek için değil. Eğer bir SaaS kurma yolundaysan, bu metriklerin temelini [SaaS geliştirme](/hizmetler/saas-gelistirme) sürecinin en başından düşünmek, sonradan dağınık veriyle uğraşmaktan çok daha kolaydır.
+
+Bir SaaS fikrini hayata geçirmeyi ya da mevcut ürününün metriklerini sağlıklı bir zemine oturtmayı konuşmak istersen, [bana ulaşabilirsin](/iletisim).
