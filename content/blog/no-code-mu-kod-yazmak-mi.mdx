@@ -1,0 +1,178 @@
+---
+title: "No-code mu, gerçek yazılım mı?"
+description: "No-code ile mi başlamalı yoksa gerçek yazılım mı yazdırmalı? Hangisinin ne zaman mantıklı olduğunu, sınırlarını ve geçiş anını pratik olarak anlatıyorum."
+date: "2026-05-26"
+tags: ["No-code", "Yazılım", "MVP", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+---
+
+Son birkaç yıldır en çok karşılaştığım sorulardan biri şu: "Buğra, bunu Bubble ile yapsam yeter mi, yoksa baştan gerçek yazılım mı yazdırmalıyım?" Soruyu soran kişi çoğu zaman teknik biri değil; bir fikri var, parası sınırlı, vakti az ve mümkün olan en hızlı şekilde sahaya çıkmak istiyor.
+
+Bu yazıda tarafsız bir şekilde iki dünyayı karşılaştırmaya çalışacağım: no-code/low-code araçları ile geleneksel anlamda kod yazarak geliştirilen yazılım. Hangisinin daha "iyi" olduğu sorusu yanlış soru. Doğru soru şu: **siz hangi aşamadasınız ve önümüzdeki 12-24 ayda nereye gitmek istiyorsunuz?**
+
+Bu sorunun cevabı her şeyi belirliyor.
+
+## No-code/low-code tam olarak nedir?
+
+Önce terimleri netleştirelim, çünkü "no-code" çatısı altında birbirinden çok farklı araçlar var ve hepsini aynı kefeye koymak hata.
+
+Kabaca üç tür araçtan bahsediyoruz:
+
+- **Tam uygulama platformları:** Bubble, Glide, Adalo, FlutterFlow gibi araçlar. Görsel bir editörde sürükle-bırak ile veritabanı, ekranlar ve iş mantığı kurarsınız. Çıktısı çalışan bir web ya da mobil uygulama.
+- **Web sitesi ve içerik araçları:** Webflow, Framer, Carrd, WordPress. Esas olarak vitrin niteliğinde siteler, açılış sayfaları, blog ve pazarlama siteleri için.
+- **Veri ve otomasyon araçları:** Airtable, Notion, Google Sheets tarafında veriyi tutarsınız; Zapier, Make (eski adıyla Integromat) ve n8n ile bu verileri birbirine bağlar, otomasyonlar kurarsınız.
+
+Bu araçların ortak vaadi şu: **kod yazmadan, görsel bir arayüzle yazılım kurmak.** "Low-code" ise tamamen kodsuz değil; gerektiğinde araya kod parçacıkları sokabildiğiniz, ama büyük kısmını görsel kurduğunuz ara bir kategori.
+
+No-code'un ne olmadığını söylemek de önemli. No-code:
+
+- "Sihir" değil. Arka planda yine bir veritabanı, bir mantık katmanı, bir arayüz var; siz bunları kod yerine görsel olarak kuruyorsunuz.
+- "Herkes geliştirici olur" demek değil. İyi bir no-code uygulaması kurmak da bir öğrenme eğrisi ister; karmaşık bir Bubble uygulaması, basit bir koddan daha çetrefilli olabilir.
+- "Bedava" değil. Çoğu araç abonelik temelli ve ölçeklendikçe faturası şaşırtıcı biçimde büyüyebilir — buna birazdan döneceğiz.
+
+> No-code, "kod yok" demek değil. "Kodu sen yazmıyorsun, araç senin yerine yazıyor" demek. Kontrolü de bir miktar araca devrediyorsun.
+
+## No-code'un gerçek güçlü yanları
+
+No-code'a önyargıyla yaklaşan çok yazılımcı tanıyorum. Ben o tarafta değilim. Doğru yerde kullanıldığında no-code, baştan kod yazmaya göre haftalar hatta aylar kazandırır. Güçlü yanlarını dürüstçe sıralayayım.
+
+### Hız
+
+En büyük avantaj bu. Bir fikri görsel bir araçla birkaç günde ayağa kaldırabilirsiniz. Aynı şeyi sıfırdan kodlamak — veritabanı şeması, kimlik doğrulama, arayüz, dağıtım — haftalar alır. [Fikrim var, nasıl yazılım yaparım](/blog/fikrim-var-nasil-yazilim-yaparim) yazısında anlattığım gibi, çoğu fikrin en büyük düşmanı zamandır; ne kadar erken sahaya çıkarsanız, o kadar erken öğrenirsiniz.
+
+### Düşük başlangıç maliyeti
+
+Geliştirici tutmadan, aylık birkaç yüz liralık abonelikle çalışan bir ürün çıkarabilirsiniz. Henüz tek lira gelir görmediğiniz bir fikre on binlerce lira yazılım yatırımı yapmak yerine, küçük bir bütçeyle başlamak ölçülü bir karar.
+
+### Doğrulama için ideal
+
+Asıl mesele de bu. Erken aşamada cevabını aradığınız soru "bu yazılım ne kadar sağlam?" değil, "bunu isteyen biri var mı?" sorusudur. [Ürün-pazar uyumunu](/blog/isletmeniz-icin-ozel-yazilim-mi-hazir-cozum-mu) test etmek için kusursuz bir mimariye değil, müşterinin önüne koyabileceğiniz çalışan bir şeye ihtiyacınız var. No-code tam burada parlıyor — varsayımınızı en ucuz ve en hızlı şekilde test ediyor.
+
+### Teknik olmayan kurucu için bağımsızlık
+
+Yazılımcı olmayan bir kurucuysanız, no-code size bir geliştiriciye bağımlı olmadan kendi ürününüzü kurma, değiştirme ve denemeler yapma imkânı verir. Bir butonun yerini değiştirmek için birine ricacı olmazsınız. Bu özgürlük, erken aşamada çok değerli.
+
+### İç araçlar için biçilmiş kaftan
+
+Müşteriye gitmeyen, sadece ekibinizin kullandığı iç araçlar — bir takip panosu, basit bir CRM, bir onay akışı — için no-code neredeyse her zaman doğru tercih. Burada görsel cilaya, ölçeğe ya da fark yaratan teknolojiye ihtiyaç yok; "işi görmesi" yeterli.
+
+## No-code'un sınırları
+
+Şimdi madalyonun öbür yüzü. No-code'un en büyük tehlikesi, başta her şey çok kolay göründüğü için sınırlarını çok geç fark etmeniz. İşler büyüdüğünde duvara tosladığınızda ise geri dönmek pahalı oluyor.
+
+### Özelleştirme tavanı
+
+Her no-code aracının bir "yapabildikleri" sınırı var. Aracın düşündüğü senaryoların içinde kaldığınız sürece harikadır. Ama özel bir iş mantığı, alışılmadık bir arayüz davranışı ya da aracın desteklemediği bir entegrasyon istediğiniz an duvara çarparsınız. O noktada ya feragat edersiniz ("olmuyormuş, vazgeçtik") ya da aracı zorlamak için akıl almaz dolambaçlı çözümler ("workaround") kurarsınız — ki bu çözümler zamanla bakımı imkânsız bir karmaşaya dönüşür.
+
+### Performans ve ölçek
+
+No-code platformları genelliği için optimize edilmiştir, sizin özel kullanım senaryonuz için değil. Birkaç yüz kullanıcıyla sorunsuz çalışan bir Bubble uygulaması, on binlerce kullanıcıda ya da ağır veri işleyen senaryolarda yavaşlayabilir. Veritabanı sorgularını, önbelleğe almayı, altyapıyı sizin yerinize araç yönetir — ve onun verdiği kararları siz değiştiremezsiniz.
+
+### Vendor lock-in (araca kilitlenme)
+
+Bu, en sinsi risk. No-code ile kurduğunuz uygulama o platforma aittir. Bubble'da kurduğunuz mantığı alıp başka bir yere taşıyamazsınız; sıfırdan yeniden kurmanız gerekir. Araç fiyatını üçe katlasa, politikasını değiştirse ya da kapansa, elinizde taşınabilir bir varlık kalmaz. Kod yazdığınızda en azından kaynak kodu sizindir; istediğiniz sunucuya taşırsınız.
+
+### Maliyetin ölçekte tersine dönmesi
+
+Başta no-code çok ucuzdur, kod pahalı. Ama bu denklem ölçekte tersine döner. No-code araçları çoğunlukla kullanıcı sayısına, kayıt sayısına ya da iş akışı çalışma sayısına göre faturalandırır. Büyüdükçe aylık faturanız hızla şişer. Bir noktadan sonra, kendi kodunuzu kendi sunucunuzda çalıştırmak no-code aboneliklerinden ucuza gelmeye başlar. [İş yazılımı projesinin maliyetini](/blog/is-yazilimi-projesi-ne-kadara-mal-olur) konuşurken hep hatırlattığım şey bu: maliyeti tek bir ana göre değil, 24 aylık toplam sahip olma maliyetine göre hesaplayın.
+
+### Veri sahipliği ve gizlilik
+
+Veriniz aracın sunucularında durur. Bu hem teknik (verinizi nasıl yedeklediğiniz, dışarı nasıl aldığınız) hem de hukuki bir mesele. Türkiye'de KVKK bağlamında bu kritik bir konu — yazının ilerleyen kısmında ayrıca ele alacağım.
+
+## Ne zaman no-code mantıklı?
+
+Tüm bunları topladığımızda, no-code'un net biçimde doğru tercih olduğu durumlar şunlar:
+
+- **Fikir doğrulama aşamasındaysanız.** Henüz ödeyen müşteriniz yok, varsayımlarınızı test ediyorsunuz. Hız ve düşük maliyet her şeyden önemli. Burada no-code rakipsiz.
+- **MVP çıkarıyorsanız.** Amaç en küçük çalışan versiyonla pazarı yoklamaksa, no-code çoğu zaman yeterli. [MVP geliştirme nedir, nasıl başlanır](/blog/mvp-gelistirme-nedir-nasil-baslanir) yazısında anlattığım mantıkla birebir örtüşüyor: önce öğren, sonra inşa et.
+- **İç araç kuruyorsanız.** Ekip içi panolar, basit otomasyonlar, onay akışları. Müşteriye gitmeyen, ölçek derdi olmayan her şey.
+- **Karmaşıklık düşükse.** İş mantığınız standart kalıplara uyuyorsa (kayıt al, listele, filtrele, e-posta gönder), no-code bunu fazlasıyla kaldırır.
+- **Tek başına bir kurucuysanız ve teknik değilseniz.** Bir geliştirici bulana ya da gelir görene kadar kendi ürününüzü kendiniz yürütmek istiyorsanız.
+
+## Ne zaman gerçek yazılıma geçmeli?
+
+Bunun tam tersi durumlarda ise no-code'da ısrar etmek size pahalıya patlar. Gerçek yazılıma (kod yazarak geliştirmeye) geçmenin işaretleri:
+
+- **Ölçek geldiyse veya yakındaysa.** Kullanıcı sayınız büyüyor, no-code faturası kabarıyor ve performans sorunları başladıysa, bu geçiş zamanının net habercisidir.
+- **İş mantığınız karmaşıklaştıysa.** Aracın desteklemediği özel hesaplamalar, çok adımlı kurallar, koşullu akışlar gerekiyorsa — ve workaround'larla aracı zorlamaya başladıysanız — kod yazmanın zamanı gelmiştir.
+- **Teknolojiniz fark yaratan unsursa.** Eğer ürününüzün rekabet avantajı bizzat teknolojinin kendisindeyse (özel bir algoritma, gerçek zamanlı işleme, kendine has bir veri modeli), bunu no-code'a teslim edemezsiniz. O zaman teknoloji sizin değil, aracın olur.
+- **Uzun vadeli bir ürün kuruyorsanız.** Yıllarca yaşayacak, üzerine sürekli özellik ekleyeceğiniz, ekibinizin büyüyeceği bir ürünse, sağlam bir kod tabanı uzun vadede çok daha sürdürülebilir.
+- **Veri sahipliği ve uyum kritikse.** Hassas veri işliyorsanız ve verinin nerede, nasıl durduğunu tam kontrol etmeniz gerekiyorsa, kod yazmak size bu kontrolü verir.
+
+Bu kararı verirken hatırlatmak isterim: bu tartışma, daha önce yazdığım [işletmeniz için özel yazılım mı, hazır çözüm mü](/blog/isletmeniz-icin-ozel-yazilim-mi-hazir-cozum-mu) sorusunun yakın akrabası. Orada hazır SaaS ile özel yazılımı karşılaştırmıştım; burada no-code ile kod yazmayı. Mantık aynı: standart ihtiyaç için hazır/no-code, farklılaşan ve büyüyen ihtiyaç için özel.
+
+## Hibrit yaklaşım: ikisini birden kullanmak
+
+Çoğu insan bunu ikili bir seçim sanıyor — ya no-code ya kod. Oysa en akıllı yol genelde ikisinin ortasında: **no-code ile başlayıp, doğrulama sonrası kademeli olarak koda göçmek.**
+
+Pratikte şöyle işliyor:
+
+1. Fikri no-code ile hızlıca ayağa kaldırırsınız ve pazara çıkarsınız.
+2. Gerçek kullanıcılarla test eder, neyin tuttuğunu öğrenirsiniz.
+3. Ürünün hangi parçasının değerli olduğu netleştiğinde, o çekirdek parçayı önce koda taşırsınız.
+4. Geri kalanı bir süre daha no-code'da bırakabilirsiniz — her şeyi aynı anda taşımak zorunda değilsiniz.
+
+Hibrit yaklaşımın bir başka biçimi de katmanlı kullanım: kritik ve özel kısmı kodla yazarsınız, ama pazarlama sitenizi Webflow'da, iç otomasyonlarınızı n8n'de tutmaya devam edersiniz. AgencyLambda tarafında müşterilerle çalışırken sık sık bu karmayı kuruyoruz — ürünün çekirdeği gerçek yazılım, çevresindeki yardımcı süreçler no-code. Her şeyi kodla yazmak da bir israf olabiliyor; doğru aracı doğru işe koşmak esas mesele.
+
+> En iyi mimari "saf" mimari değildir. Her parçayı, o parçaya en uygun araçla yapan mimaridir.
+
+## "No-code ile başladım, ne zaman ve nasıl göç ederim?"
+
+Diyelim ki tavsiyeye uydunuz, no-code ile başladınız ve ürün tuttu. Şimdi geçiş anını nasıl anlarsınız ve nasıl yönetirsiniz?
+
+### Göç zamanının sinyalleri
+
+Aşağıdakilerden birkaçı aynı anda olmaya başladıysa, geçişi ciddi ciddi planlamanın vakti gelmiştir:
+
+- No-code faturanız, eşdeğer bir kod altyapısının maliyetini geçti ya da hızla yaklaşıyor.
+- İstediğiniz özellikleri "araç desteklemiyor" diye sürekli erteliyorsunuz.
+- Performans şikâyetleri gelmeye başladı; uygulama yavaş.
+- Birden fazla workaround'unuz birbirine girdi ve kimse nasıl çalıştığını tam bilmiyor.
+- Yatırımcı, kurumsal müşteri ya da güvenlik denetimi gibi bir taraf, altyapı ve veri kontrolü konusunda sorular sormaya başladı.
+
+Tek bir sinyal panik sebebi değil. Ama bunların üç dördü bir aradaysa, no-code artık sizi yavaşlatan tarafa geçmiş demektir.
+
+### Göçü nasıl yönetirsiniz?
+
+Geçişin en büyük hatası, "her şeyi bir gecede yeniden yazalım" yaklaşımıdır. Bu hem riskli hem pahalı. Bunun yerine:
+
+1. **Önce veriyi kurtarın.** No-code aracınızdan tüm verinizi dışa aktarabildiğinizden emin olun. Eğer veriyi dışa alamıyorsanız, geçiş başlamadan ciddi bir problem var demektir.
+2. **Çekirdeği önce taşıyın.** Ürünün en değerli, en çok kullanılan ve en kritik parçasını belirleyip önce onu koda geçirin. Çevresel özellikler bekleyebilir.
+3. **Paralel çalıştırın.** Yeni kodlanan parçayı, eski no-code sürümle bir süre yan yana çalıştırın. Aniden fişi çekmek yerine kademeli geçiş yapın.
+4. **Dokümantasyon çıkarın.** No-code uygulamanızdaki iş kurallarını yazıya dökün. Bu kurallar genelde sadece aracın içinde, kimsenin belgelemediği halde yaşıyor; geliştiriciye net bir kaynak vermezseniz iş kuralları yolda kaybolur.
+
+Bu süreç, sıfırdan başlamaktan farklıdır — elinizde çalışan bir ürün ve gerçek kullanıcı verisi var. Bu da koda geçişi çok daha az riskli kılar, çünkü artık tahmin etmiyor, bildiğiniz bir şeyi sağlamlaştırıyorsunuz. [Web uygulaması](/hizmetler/web-uygulamasi) ve [işletme yazılımı](/hizmetler/isletme-yazilimi) projelerinde bu tür göçleri sık yapıyoruz; en sevdiğim projeler de bunlar, çünkü neyin işe yaradığı baştan belli oluyor.
+
+## Türkiye ve KVKK bağlamı: gözden kaçan kritik konu
+
+Buraya kadar yazdıklarım dünyanın her yerinde geçerli. Ama Türkiye'de iş yapıyorsanız, no-code kararında çoğu kaynağın hiç değinmediği bir boyut var: **veri yerelleştirme ve KVKK uyumu.**
+
+KolayOnay'ı kurarken bu konunun ne kadar büyük olduğunu yakından gördüm. Mesele şu: no-code araçlarının neredeyse tamamı yurt dışı menşeli ve verinizi yurt dışındaki sunucularda tutuyor. Bubble, Airtable, Webflow — hepsinin sunucuları büyük çoğunlukla ABD ya da AB'de.
+
+Bu, KVKK açısından şu sorunları doğuruyor:
+
+- **Yurt dışına veri aktarımı.** Kişisel veri işliyorsanız (ki kullanıcı kaydı alan hemen her uygulama işliyor) ve bu veri yurt dışı sunucularda tutuluyorsa, KVKK'nın yurt dışına veri aktarımı kurallarına uymanız gerekir. Bu, gözle görülmeyen ama gerçek bir uyum yükü.
+- **Veri işleyen ilişkisi.** No-code aracı, sizin adınıza kişisel veri işleyen bir "veri işleyen" konumundadır. Bu ilişkinin sözleşmesel olarak düzenlenmesi gerekir — ve birçok küçük araç bu konuda Türkiye mevzuatına uygun bir altyapı sunmaz.
+- **Veriye erişim ve silme.** KVKK kapsamında bir kullanıcı verisinin silinmesini istediğinde, bunu eksiksiz yapabilmeniz gerekir. No-code aracının veri modeline tam hâkim değilseniz, bu yükümlülüğü yerine getirmek zorlaşır.
+- **Sektör kısıtları.** Sağlık, finans gibi düzenlenmiş sektörlerde verinin Türkiye'de tutulması zorunlu olabilir. Bu durumda yurt dışı sunucuda çalışan bir no-code aracı doğrudan elenir.
+
+Bu, "no-code kullanmayın" demek değil. Açılış sayfası, blog ya da kişisel veri içermeyen bir iç araç için hiçbir sorun yok. Ama **kişisel veri işleyen, müşteriye dönük bir ürün** kuruyorsanız, no-code aracının verinizi nerede ve nasıl tuttuğunu baştan netleştirmeniz şart. KolayOnay'da müşterilerimize sürekli söylediğimiz şey bu: uyum, ürünü çıkardıktan sonra düşünülecek bir detay değil; mimari kararın bir parçası.
+
+Eğer ürününüz doğası gereği hassas veri işliyorsa ve verinin Türkiye'de, sizin kontrolünüzde durmasını gerektiriyorsa, bu tek başına gerçek yazılıma geçiş için yeterli bir gerekçedir.
+
+## Toparlayalım
+
+No-code mu, gerçek yazılım mı sorusunun tek bir doğru cevabı yok; doğru cevap aşamanıza ve hedefinize bağlı. Özetle:
+
+- **No-code ile başlayın** eğer fikir doğruluyor, MVP çıkarıyor, iç araç kuruyor ya da hızla ve ucuza pazara çıkmak istiyorsanız.
+- **Gerçek yazılıma geçin** eğer ölçek geldiyse, iş mantığınız karmaşıklaştıysa, teknolojiniz fark yaratıyorsa, uzun vadeli düşünüyorsanız ya da veri sahipliği/KVKK uyumu kritikse.
+- **En akıllısı genelde hibrit:** no-code ile başlayıp, ürün tuttuğunda çekirdeği koda göçürmek. Her şeyi baştan kodlamak da, her şeyi sonsuza dek no-code'da tutmak da uç noktalar.
+- **Türkiye'de iş yapıyorsanız KVKK boyutunu baştan hesaba katın** — kişisel veri işleyen ürünlerde no-code aracının verinizi nerede tuttuğu, başlı başına bir karar kriteridir.
+
+En büyük hata, kararı duygusal vermek: "no-code amatörce" diye baştan reddetmek de, "her şey no-code ile olur" diye duvara toslamak da. İkisi de araç; mesele doğru aracı doğru aşamada kullanmak.
+
+## Birlikte değerlendirmek
+
+Bir fikriniz var ve no-code mu yoksa kod yazarak mı ilerlemeniz gerektiğine karar veremiyorsanız, bu çoğu zaman yarım saatlik bir konuşmayla netleşiyor. [MVP geliştirme](/hizmetler/mvp-gelistirme) sürecinde tam da bunu yapıyoruz: aşamanıza ve hedefinize göre en hızlı ve en az maliyetli yolu birlikte çıkarıyoruz — gerektiğinde no-code öneriyorum, gerektiğinde kod. Tüm [hizmetlerime](/hizmetler) göz atabilir, kararsızsanız [iletişim sayfasından](/iletisim) yazabilirsiniz; doğru başlangıç, sonradan atılacak adımların tümünü kolaylaştırıyor.
