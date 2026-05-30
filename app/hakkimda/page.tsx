@@ -68,9 +68,9 @@ export default function HakkimdaPage() {
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Buğra Tiryaki, KolayOnay ve AgencyLambda&apos;nın kurucu
-                ortağıyım. Aynı zamanda işletmeler ve girişimciler için bağımsız
-                yazılım geliştiriyorum.
+                KolayOnay ve AgencyLambda&apos;nın kurucu ortağıyım. Fikirleri
+                çalışan ürünlere çeviririm — kendi girişimlerimi kurar, bir
+                yandan da işletmeler ve girişimciler için yazılım geliştiririm.
               </p>
             </div>
             <div
@@ -106,7 +106,7 @@ export default function HakkimdaPage() {
             className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light mt-4 mb-10"
             style={{ color: "var(--text-primary)" }}
           >
-            Buraya nasıl geldim
+            Beni ben yapan şey
           </h2>
 
           <div
@@ -114,45 +114,30 @@ export default function HakkimdaPage() {
             style={{ color: "var(--text-secondary)" }}
           >
             <p>
-              Yazılıma 12 yaşımda başladım. Ortaokulda bilişim dersinde Scratch
-              ile oyun yapıyorduk. Bilişim hocam yeteneğim olduğunu fark etti.
-              Boş derslerde ve öğle aralarında sınıfa gidip oyunumu
-              geliştirmeye devam ettim. Bir süre sonra sınıf arkadaşlarım
-              etrafımda toplanıp ne yaptığımı izlemeye başladı.
+              Yazılımla 12 yaşımda tanıştım ve o gün bugündür bırakmadım. Kimse
+              zorlamadı; bir şeyi kendi ellerimle yapıp çalışır görmenin verdiği
+              hazzı erken keşfettim, o his bende kalıcı oldu. Yıllarca bu merakın
+              peşinden gittim — bir dönem siber güvenliğe daldım, bir dönem yeni
+              diller öğrendim — ama hep aynı içgüdüyle: bir şey kurmak,
+              çalıştırmak, daha iyisini yapmak.
             </p>
             <p>
-              16 yaşıma kadar Python öğrendim. Bu dönemde büyük başarımlarım
-              yok — sadece yazılımla aramda mesafe koymamayı bildim. 17
-              yaşımda siber güvenliğe yöneldim ve üniversiteye kadar bu alanda
-              yoğunlaştım, özellikle web uygulama güvenliği üzerine.
-              PortSwigger&apos;ın Web Application Security laboratuvarlarının
-              başlangıç setinin tamamını çözdüm. Bugün ürün geliştirirken
-              güvenlik tarafını sezgisel görmemin temeli o dönemden geliyor.
+              Asıl kırılma, yazılımı bir &quot;beceri&quot; olmaktan çıkarıp
+              &quot;ürün&quot; haline getirmeyi öğrendiğimde oldu. Bir fikrin
+              baştan sona nasıl gerçek ve çalışan bir ürüne dönüştüğünü uçtan uca
+              ilk kez gördüğümde geri dönüşü olmadı. Kısa sürede üç ortakla
+              KolayOnay&apos;ı, üniversiteden iki arkadaşımla AgencyLambda&apos;yı
+              kurdum; bir yandan işletmeler için sıfırdan özel yazılımlar
+              geliştirdim.
             </p>
             <p>
-              2023 Haziran&apos;ında YKS&apos;ye girdim ve Eskişehir Osmangazi
-              Üniversitesi Matematik ve Bilgisayar Bilimleri&apos;ni kazandım.
-              Asıl dönüm noktası 2025 yazında geldi: Oklidis&apos;te 8 haftalık
-              staj yaptım. Yazılım tutkumu gerçek bir ürüne çevirmemin
-              temellerini orada attım. Ekip içinde baştan sona bir uygulama
-              geliştirip teslim etmeyi orada öğrendim. Bugün sahip olduğum
-              becerinin temeli o sekiz hafta.
-            </p>
-            <p>
-              Staj sonrası iki iş paralel ilerledi. Bir yandan üç ortak olarak
-              KolayOnay&apos;ı kurmaya başladık. Bir yandan da stajda
-              tanıştığım bir gayrimenkul firmasına sahibinden.com tarzı özel
-              bir platform yazdım. Aynı dönemde üniversiteden iki arkadaşımla
-              AgencyLambda&apos;yı kurduk. KolayOnay 6 aydan uzun bir
-              geliştirme sürecinin ardından Şubat 2026&apos;da yayına alındı.
-            </p>
-            <p>
-              2026 Ocak&apos;ta üçüncü sınıfın güz dönemi bitmek üzereyken
-              üniversiteyi bıraktım. Yaz stajından sonra öğrenmem gerekenleri
-              öğrendiğimi, okuldan ek bir şey kazanamayacağımı görmüştüm. 2026
-              Eylül&apos;de İstanbul&apos;da bir üniversitede ekonomi okumaya
-              başlayacağım — yazılım bilgime finans tarafını eklemek
-              istiyorum.
+              Bu yolda verdiğim en net karar, aynı zamanda en çok kendime
+              güvendiğim karardı: öğrenmem gerekeni öğrendiğime inandığım noktada
+              üniversiteyi bırakıp tüm enerjimi kurduğum işlere verdim. Çünkü beni
+              asıl heyecanlandıran şey diploma ya da unvan değil — yokken var
+              ettiğin bir şeyin gerçekten çalıştığını görmek. Şimdi bu yazılım
+              birikimine ekonomi ve finans tarafını da ekliyorum; çünkü iyi ürün
+              kadar iyi iş modeli de kurabilmek istiyorum.
             </p>
           </div>
         </div>
