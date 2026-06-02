@@ -5,6 +5,8 @@ import { calculateReadingTime } from "./reading-time";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
+export type PostFAQ = { soru: string; cevap: string };
+
 export type PostMeta = {
   slug: string;
   title: string;
@@ -16,6 +18,8 @@ export type PostMeta = {
   ogImage?: string;
   draft?: boolean;
   readingTime: number;
+  summary?: string;
+  faq?: PostFAQ[];
 };
 
 export type Post = PostMeta & {
@@ -47,6 +51,8 @@ function parsePost(slug: string, raw: string): Post {
     ogImage: data.ogImage,
     draft: data.draft ?? false,
     readingTime: calculateReadingTime(content),
+    summary: data.summary,
+    faq: data.faq,
     content,
   };
 }

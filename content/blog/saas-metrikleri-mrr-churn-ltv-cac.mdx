@@ -5,6 +5,18 @@ date: "2026-05-29"
 tags: ["SaaS", "Metrikler", "Büyüme", "Girişimcilik"]
 author: "Buğra Tiryaki"
 draft: false
+summary: "SaaS'ta birkaç metrik işin sağlığını neredeyse tek başına anlatır: ne kadar tekrarlayan gelirin var (MRR), bunu ne kadar tutabiliyorsun (churn), her müşteri sana ne getiriyor (LTV) ve onu kazanmak ne kadara mal oluyor (CAC). Geri kalan çoğu sayı gürültüdür. Metriği kendini iyi hissetmek için değil, karar vermek için kullan ve aşamana göre odaklan."
+faq:
+  - soru: "SaaS'ta en önemli metrikler hangileri?"
+    cevap: "Dört temel metrik işin sağlığını büyük ölçüde anlatır: MRR (aylık tekrarlayan gelir), churn (kayıp oranı), LTV (müşteri yaşam boyu değeri) ve CAC (müşteri edinme maliyeti). Bunların arasındaki LTV:CAC oranı işin sürdürülebilir olup olmadığını gösterir."
+  - soru: "MRR ve ARR arasındaki fark nedir?"
+    cevap: "MRR aylık tekrarlayan gelirdir; her ay tahmin edilebilir şekilde gelen abonelik geliri. ARR ise bunun yıllık halidir, kabaca MRR çarpı 12. Yıllık sözleşmeyle çalışan B2B SaaS'larda ARR, aylık abonelikte ise MRR daha doğal kullanılır. Tek seferlik ücretler ikisine de dahil edilmez."
+  - soru: "İyi bir churn oranı nedir?"
+    cevap: "Sektöre göre değişir ama kaba bir pusula olarak B2B SaaS'ta aylık yüzde 2-3'ün altı sağlıklı, yüzde 5 üstü alarm sayılır. Küçük işletmelere satışta churn doğal olarak yüksek, kurumsal müşteride daha düşüktür. Yüksek churn çoğu zaman pazarlama değil ürün problemine işaret eder."
+  - soru: "LTV:CAC oranı kaç olmalı?"
+    cevap: "Genelde 3:1 civarı sağlıklı kabul edilir — bir müşteriye harcadığın her 1 lira ömrü boyunca 3 lira getiriyor demektir. 1:1'e yakınsa müşteriyi neredeyse zararına kazanıyorsundur; 5:1 üstü ise çoğu zaman pazarlamaya yeterince yatırım yapmadığının işaretidir. Oranı CAC geri ödeme süresiyle birlikte okumak gerekir."
+  - soru: "Erken aşamada hangi metriklere bakmalıyım?"
+    cevap: "PMF öncesi gelir metriklerini boş ver; kullanım, geri dönüş (retention) ve nitel geri bildirime bak. İlk gelir aşamasında MRR, müşteri churn'ü ve büyüme oranına; büyüme aşamasında LTV, CAC ve LTV:CAC oranına odaklan. Elinde anlamlı churn verisi yokken LTV hesaplamak boşunadır."
 ---
 
 SaaS işine girince bir anda metrik denizinde buluyorsunuz kendinizi: MRR, ARR, churn, LTV, CAC, ARPU, NRR... Her biri için ayrı bir kısaltma, her kısaltma için ayrı bir "doğru değer" tartışması. Yeni başlayan çoğu girişimci ya bunları tamamen görmezden gelip "hissiyatla" ilerliyor ya da tam tersine, henüz 10 müşterisi yokken karmaşık dashboard'lar kurup kendini sayılarda kaybediyor.

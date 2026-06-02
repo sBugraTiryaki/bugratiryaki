@@ -8,7 +8,7 @@ import {
   getRelatedPosts,
 } from "@/lib/blog";
 import { siteConfig } from "@/lib/site";
-import { blogPostingSchema } from "@/lib/schema";
+import { blogPostingSchema, faqSchema } from "@/lib/schema";
 import Breadcrumbs from "@/app/components/layout/Breadcrumbs";
 import BlogCard from "@/app/components/cards/BlogCard";
 import CTASection from "@/app/components/cta/CTASection";
@@ -81,6 +81,9 @@ export default async function BlogPostPage({ params }: Params) {
   return (
     <>
       <JsonLd data={blogPostingSchema(post)} />
+      {post.faq && post.faq.length > 0 && (
+        <JsonLd data={faqSchema(post.faq)} />
+      )}
 
       {/* Hero */}
       <section
@@ -134,8 +137,67 @@ export default async function BlogPostPage({ params }: Params) {
         className="py-16 md:py-20"
         style={{ backgroundColor: "var(--luxury-dark)" }}
       >
-        <div className="max-w-3xl mx-auto px-6">{content}</div>
+        <div className="max-w-3xl mx-auto px-6">
+          {post.summary && (
+            <div
+              className="mb-12 p-6 rounded-lg border-l-2"
+              style={{
+                backgroundColor: "var(--luxury-charcoal)",
+                borderColor: "var(--accent-gold)",
+              }}
+            >
+              <p
+                className="text-xs tracking-[0.2em] uppercase mb-3"
+                style={{ color: "var(--accent-gold)" }}
+              >
+                Özet
+              </p>
+              <p
+                className="text-base md:text-lg leading-relaxed"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {post.summary}
+              </p>
+            </div>
+          )}
+          {content}
+        </div>
       </article>
+
+      {/* SSS */}
+      {post.faq && post.faq.length > 0 && (
+        <section
+          className="py-16 md:py-20"
+          style={{ backgroundColor: "var(--luxury-black)" }}
+        >
+          <div className="max-w-3xl mx-auto px-6">
+            <h2
+              className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light mb-12"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Sıkça sorulan sorular
+            </h2>
+            <div className="space-y-8">
+              {post.faq.map((item) => (
+                <div key={item.soru}>
+                  <h3
+                    className="text-lg font-medium mb-3"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {item.soru}
+                  </h3>
+                  <p
+                    className="text-base leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {item.cevap}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Yazar bio */}
       <section
