@@ -20,6 +20,7 @@ export type PostMeta = {
   readingTime: number;
   summary?: string;
   faq?: PostFAQ[];
+  seoTitle?: string;
 };
 
 export type Post = PostMeta & {
@@ -53,6 +54,7 @@ function parsePost(slug: string, raw: string): Post {
     readingTime: calculateReadingTime(content),
     summary: data.summary,
     faq: data.faq,
+    seoTitle: data.seoTitle,
     content,
   };
 }

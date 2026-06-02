@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     post.ogImage ??
     `${siteConfig.url}/og?title=${encodeURIComponent(post.title)}&eyebrow=Blog`;
   return {
-    title: post.title,
+    title: { absolute: post.seoTitle ?? post.title },
     description: post.description,
     keywords: post.tags,
     alternates: { canonical: `${siteConfig.url}/blog/${post.slug}` },
