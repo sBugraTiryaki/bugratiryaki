@@ -9,8 +9,8 @@ const service = getServiceBySlug(SLUG);
 
 export const metadata: Metadata = service
   ? {
-      title: service.name,
-      description: service.problemStatement,
+      title: service.seoTitle ? { absolute: service.seoTitle } : service.name,
+      description: service.metaDescription ?? service.problemStatement,
       keywords: service.keywords,
       alternates: { canonical: `${siteConfig.url}/hizmetler/${SLUG}` },
       openGraph: {

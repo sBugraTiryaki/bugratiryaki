@@ -11,6 +11,8 @@ export type Service = {
   technologies: string[];
   faqs: ServiceFAQ[];
   keywords: string[];
+  seoTitle?: string;
+  metaDescription?: string;
   relatedProjectSlugs: string[];
 };
 
@@ -302,13 +304,28 @@ export const services: Service[] = [
         cevap:
           "Evet. Kaynak kodu ve dokümantasyon sizin. İleride başka bir geliştiriciye devretmek istediğinizde sorun çıkmıyor.",
       },
+      {
+        soru: "İhtiyaca özel yazılım nedir?",
+        cevap:
+          "İhtiyaca özel yazılım, hazır paket programların karşılayamadığı kendi iş akışınıza göre sıfırdan geliştirilen yazılımdır. Süreçlerinizi hazır bir yazılıma uydurmaya çalışmak yerine, yazılımı sizin sürecinize göre tasarlarız.",
+      },
+      {
+        soru: "İşletmeye özel yazılım hazır çözümden neden daha iyi?",
+        cevap:
+          "Hazır çözümler herkes için ortalama bir akış sunar; işletmeye özel yazılım tam sizin süreçlerinize oturur. Aylık lisans ücreti ödemezsiniz, kaynak kod sizin olur ve ihtiyaç değiştikçe yazılım da sizinle birlikte değişir.",
+      },
     ],
     keywords: [
       "işletmeye özel yazılım",
+      "işletmelere özel yazılım",
+      "ihtiyaca özel yazılım",
       "KOBİ yazılım geliştirme",
       "özel iş yazılımı yaptırma",
       "küçük işletme dijitalleşme",
     ],
+    seoTitle: "İşletmeye Özel Yazılım Geliştirme | Buğra Tiryaki",
+    metaDescription:
+      "İşletmelere ve ihtiyaca özel yazılım geliştiriyorum. Hazır çözümler iş akışınıza uymuyorsa, size özel yazılımla lisans ücretlerinden ve esnek olmayan süreçlerden kurtulun.",
     relatedProjectSlugs: ["agencylambda"],
   },
   {
