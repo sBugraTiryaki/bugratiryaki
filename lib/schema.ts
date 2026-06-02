@@ -157,13 +157,24 @@ export function projectSchema(project: Project) {
 }
 
 export function blogPostingSchema(post: PostMeta) {
+  const url = `${siteConfig.url}/blog/${post.slug}`;
+  const image =
+    post.ogImage ??
+    `${siteConfig.url}/og?title=${encodeURIComponent(post.title)}&eyebrow=Blog`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image,
+    url,
     datePublished: post.date,
     dateModified: post.updatedDate ?? post.date,
+    inLanguage: "tr",
+    isAccessibleForFree: true,
+    timeRequired: `PT${post.readingTime}M`,
+    wordCount: post.readingTime * 200,
+    articleSection: post.tags[0],
     author: {
       "@type": "Person",
       name: post.author,
@@ -176,7 +187,7 @@ export function blogPostingSchema(post: PostMeta) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/blog/${post.slug}`,
+      "@id": url,
     },
     keywords: post.tags.join(", "),
   };
