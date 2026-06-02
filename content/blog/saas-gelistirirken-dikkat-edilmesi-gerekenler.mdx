@@ -5,6 +5,18 @@ date: "2026-05-19"
 tags: ["SaaS", "Ürün", "Mimari"]
 author: "Buğra Tiryaki"
 draft: false
+summary: "SaaS kurarken bazı kararları sonradan değiştirmek imkânsız ya da çok acı verici. Multi-tenancy modelini, veri modelini ve ödeme entegrasyonunu gün 0'da doğru kur; gözlemlenebilirlik, admin paneli ve dokümantasyonu 'sonradan yapılacak iş' sayma. Her tavsiyenin hangi aşamada kritik olduğunu bilerek hareket et."
+faq:
+  - soru: "Multi-tenancy modelini ne zaman seçmeliyim?"
+    cevap: "İlk müşterinden önce, gün 0'da seç. 50 müşteriye ulaştıktan sonra modeli değiştirmek mümkün ama acı verici. Türkiye'deki çoğu SaaS için kiracı kolonlu tek veritabanı yeterli; daha katı izolasyon yalnızca regülasyon gerektirdiğinde anlamlı."
+  - soru: "Veri modelini neden 'müşteri' değil 'hesap' üzerine kurmalıyım?"
+    cevap: "Çünkü gerçek dünyada bir abonelikte birden fazla çalışan oturum açıyor, bir kullanıcı iki şirketin yönetiminde olabiliyor ve sahiplik değişse de abonelik kalıyor. İlk günden kullanıcı ve hesap kavramlarını ayrı modelle, aralarına bir üyelik ilişkisi koy ve her veriyi hesaba bağla."
+  - soru: "Ödeme entegrasyonunu sonraya bırakabilir miyim?"
+    cevap: "Bırakma. Ödeme akışı ürünün en kırılgan parçalarından biri ve trafik artmadan test etmek istersin; ayrıca müşteriyi ücretliye geçirme anı ürünün gerçek değerinin sınandığı andır. Türkiye'de B2B satıyorsan iyzico daha pratik, uluslararası satışta Stripe."
+  - soru: "Gözlemlenebilirlik için en baştan ne eklemeliyim?"
+    cevap: "Üç şey: Sentry gibi bir hata izleme aracı, kullanıcı ve hesap kimliği etiketli yapılandırılmış JSON loglar ve temel metrikler (istek sayısı, başarısız oranı, ortalama yanıt süresi). Bunlar olmadan 10 müşteriden sonra sorunları çözmek çok yavaşlıyor."
+  - soru: "Neden ideal müşteri profilini yazıya dökmeliyim?"
+    cevap: "Çünkü 'kimin için' olduğunu netleştirmeden geliştirmek, herkese hitap eden ama hiç kimseye yetmeyen bir araca dönüşüyor. ICP ve TAM tanımlarını yazıya dökersen, her özellik için 'bu ICP'mizin işine yarar mı?' diye sorabilirsin."
 ---
 
 [KolayOnay'ı](/projeler/kolayonay) üç ortak olarak sıfırdan kurarken aldığımız bazı kararları sonradan değiştirmek imkânsızdı; bazılarını ise erkenden yeniden yazmak zorunda kaldık. Bu yazı, bir SaaS ürünü kurarken erkenden alınması gereken mimari ve ürün kararları üzerine.
