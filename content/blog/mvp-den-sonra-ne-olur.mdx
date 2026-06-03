@@ -1,0 +1,126 @@
+---
+title: "MVP'den sonra ne olur?"
+description: "MVP yayına çıktı, ilk kullanıcılar geldi. Peki sonra? Doğrulamadan büyümeye geçişin adımları, sık yapılan hatalar ve ne zaman ne yapılması gerektiği."
+date: "2026-06-03"
+tags: ["MVP", "Ürün", "Büyüme", "Girişimcilik"]
+author: "Buğra Tiryaki"
+draft: false
+summary: "MVP'yi yayına almak bir bitiş değil başlangıçtır. Sonraki adım yeni özellik eklemek değil, elindeki sinyali okumaktır: kim kaldı, ne için kaldı, neye para ödedi? Varsayım doğrulandıysa büyümeye değil önce tekrarlanabilir bir kazanma biçimine odaklan; doğrulanmadıysa ürünü değil varsayımı gözden geçir. Bu aşamada en büyük hata, az sayıda kullanıcıyla erkenden 'ölçeklenme' moduna geçip biriken teknik borcu ve onboarding sorunlarını görmezden gelmektir."
+faq:
+  - soru: "MVP yayına alındıktan sonra ilk olarak ne yapılmalı?"
+    cevap: "İlk iş yeni özellik eklemek değil, gelen sinyali okumaktır. Kaç kişi denedi, kaçı geri döndü, kaçı para ödedi ve kalanlar ürünü neden kullanıyor sorularına bakmak gerekir. Bu sayılar varsayımın doğrulanıp doğrulanmadığını, dolayısıyla bir sonraki adımın ne olacağını söyler."
+  - soru: "MVP'den sonra hemen yeni özellik eklemek doğru mu?"
+    cevap: "Çoğunlukla değil. Yeni özellik eklemek, ürünün eksik olduğu varsayımına dayanır; oysa erken aşamada asıl sorun genellikle eksik özellik değil, yanlış kullanıcı, zayıf onboarding ya da net olmayan değer önermesidir. Önce mevcut kullanıcıların neden kaldığını anlamak, hangi özelliğin gerçekten gerekli olduğunu gösterir."
+  - soru: "MVP sonrası ne zaman ölçeklenmeye başlanmalı?"
+    cevap: "Ölçeklenme, tekrarlanabilir bir kazanma biçimi bulunduktan sonra başlamalıdır. Yani belirli bir tip müşteriyi öngörülebilir bir yoldan bulup ücretliye çevirebiliyorsan ölçeklenebilirsin. Bunu bulmadan reklam bütçesi artırmak ya da ekip büyütmek, çözülmemiş bir sorunu pahalı hale getirmekten başka işe yaramaz."
+  - soru: "MVP sonrası teknik borç ne zaman ödenmeli?"
+    cevap: "Teknik borcun bir kısmı MVP'nin doğal maliyetidir ve hızlı doğrulama için makuldür. Ancak varsayım doğrulanıp ürün büyümeye başladığında, sık dokunulan ve kırılgan olan kısımlar öncelikli olarak düzeltilmelidir. Her şeyi baştan yazmak değil, büyümeyi yavaşlatan darboğazları seçici biçimde temizlemek doğru yaklaşımdır."
+  - soru: "MVP başarısız olursa ne yapılır?"
+    cevap: "Başarısız bir MVP, ürünü değil varsayımı gözden geçirmek için bir fırsattır. Sonuçlar tamamen olumsuzsa yön değiştirmek (pivot), karışıksa varsayımı daraltıp yeniden test etmek gerekir. Erken aşamada öğrenilen bir 'hayır', yıllar sonra öğrenilenden çok daha ucuzdur."
+---
+
+[MVP'yi yayına almak](/blog/mvp-gelistirme-nedir-nasil-baslanir) çoğu kurucunun zihninde bir bitiş çizgisi gibi durur. Aylarca uğraşılır, sonunda ürün canlıya alınır, ilk kullanıcılar gelir ve bir rahatlama yaşanır.
+
+Oysa MVP yayına çıktığı an iş bitmez; asıl iş yeni başlar. MVP'nin tek görevi bir varsayımı test etmekti. Şimdi elinizde o testin sonuçları var ve esas soru şu: **bu sonuçlarla ne yapacaksınız?**
+
+Bu yazıda, ürün yayına alındıktan sonra ne olduğunu, hangi sırayla ilerlemek gerektiğini ve en sık yapılan hataları anlatıyorum.
+
+## Önce sinyali oku, özellik ekleme
+
+Yayın sonrası en yaygın refleks şu oluyor: "Hadi şimdi şu özelliği de ekleyelim." Bildirim sistemi, daha güzel bir panel, kullanıcıların istediğini sandığınız üç yeni şey...
+
+Bu refleks neredeyse her zaman erkendir. Çünkü yeni özellik eklemek, ürünün **eksik** olduğu varsayımına dayanır. Oysa erken aşamada asıl sorun genelde eksik özellik değildir; yanlış kullanıcı, zayıf bir değer önermesi ya da kötü bir [onboarding](/blog/saas-onboarding-ve-kullanici-aktivasyonu) olur.
+
+Önce gelen sinyali okuyun:
+
+- Ürünü kaç kişi denedi?
+- Kaçı bir hafta sonra geri döndü?
+- Kaçı para ödedi?
+- Kalanlar ürünü **tam olarak ne için** kullanıyor?
+
+Bu son soru en kıymetlisi. Çünkü çoğu zaman ürününüzü, sizin tasarladığınız sebepten farklı bir sebeple kullanıyorlardır. O farkı görmek, sonraki tüm kararları değiştirir.
+
+## Üç senaryo: hangisindesin?
+
+MVP sonrası kabaca üç durumdan birinde olursunuz:
+
+1. **Varsayım doğrulandı.** İnsanlar geliyor, kalıyor ve ödüyor. Nadir ama mümkün. Bu durumda dahi acele etmeyin — birazdan "neden" diyeceğim.
+2. **Varsayım yanlış çıktı.** Kimse kalmıyor ya da kimse ödemiyor. Üzücü ama en ucuz öğrenme. Bu, [yön değiştirmek (pivot)](/blog/girisimde-ne-zaman-pivot-edilir) için doğru an olabilir.
+3. **Karışık sonuçlar.** En sık karşılaşılan durum budur. Bazı kullanıcılar bayılıyor, çoğu kayboluyor. İşte asıl iş buradan sonra başlar.
+
+Üçüncü senaryo en çok kafa karıştıran ama en öğretici olandır. Çünkü içinde hem bir "evet" hem bir "hayır" saklıdır ve sizin işiniz hangisinin gerçek olduğunu bulmaktır.
+
+## Bayılan azınlığı dinle
+
+Karışık sonuçlarda yapılacak en doğru şey, ürünü bırakıp gidenlere değil, **kalan ve seven azınlığa** odaklanmaktır.
+
+O küçük grup neden kaldı? Hangi problemi sizin çözdüğünüz kadar iyi çözen başka bir şey bulamadılar? Onların ortak bir özelliği var mı — aynı sektör, aynı şirket büyüklüğü, aynı rol?
+
+Bu sorular sizi çoğu zaman [ürün-pazar uyumunun (PMF)](/blog/urun-pazar-uyumu-pmf-nedir) ilk kıvılcımına götürür. Erken aşamada herkesi memnun etmeye çalışmak yerine, sizi gerçekten sevenleri daha da memnun ederek büyümek çok daha sağlamdır.
+
+KolayOnay'da bunu net yaşadık. İlk sürümü herkese hitap etsin diye genel tutmuştuk. Ama kalan kullanıcılara baktığımızda hepsinin benzer bir akışta sıkıştığını ve ürünü tam o noktada kullandığını gördük. Yol haritamızı tahminlerimize göre değil, o gözleme göre yeniden çizdik.
+
+## "Büyüme" değil, "tekrarlanabilirlik" peşinde koş
+
+Varsayım doğrulandığında akla ilk gelen şey büyümektir: daha çok reklam, daha çok kullanıcı, belki bir ekip.
+
+Ama büyümeden önce cevaplamanız gereken bir soru var: **Bir müşteriyi öngörülebilir bir yoldan bulup ödeme yapar hale getirebiliyor musunuz?**
+
+Eğer ilk müşterileriniz tesadüfen, tanıdık üzerinden ya da tek seferlik bir denk gelmeyle geldiyse, ortada henüz tekrarlanabilir bir şey yok demektir. Bu durumda reklam bütçesini artırmak, çözülmemiş bir sorunu sadece pahalı hale getirir.
+
+Önce şunu netleştirin:
+
+- Hangi tip müşteri en hızlı "evet" diyor?
+- Onları nereden, hangi mesajla buluyorsunuz?
+- [Satış](/blog/kurucu-olarak-nasil-satis-yapilir) sürecinde tekrar eden, çoğaltılabilir bir kalıp var mı?
+
+Bu kalıbı bulduğunuzda büyüme bir kumar olmaktan çıkıp bir çarpan haline gelir. Bulmadan büyümek ise sadece para yakmaktır.
+
+## Fiyatı yeniden masaya yatır
+
+MVP aşamasında fiyat genelde bir tahmindir, çoğu zaman düşük tutulur ya da hiç alınmaz. Ürün doğrulanmaya başladığında ise fiyat artık bir tahmin olmaktan çıkıp ölçülebilir bir karara dönüşmelidir.
+
+İlk ödeyen müşterileriniz size çok şey öğretti: hangi özellik için para vermeye razılar, hangi planı seçiyorlar, nerede tereddüt ediyorlar. Bu veriyle [fiyatlandırmayı yeniden gözden geçirmek](/blog/saas-fiyatlandirma-nasil-belirlenir) MVP sonrasının en kârlı ama en çok ertelenen işidir. Çoğu kurucu fiyatı yıllarca düşük tutar ve farkında olmadan en büyük büyüme kaldıracını kullanmaz.
+
+## Doğru metrikleri kurmaya başla
+
+MVP sırasında birkaç kaba sayıyla idare edersiniz. Sonrasında ise neyin işe yarayıp yaramadığını anlamak için düzenli ölçüm şart olur.
+
+Her metriği takip etmeye çalışmak yerine, işinizin türüne uygun birkaç temel sayıyla başlayın. Bir abonelik ürünü için [MRR, churn, LTV ve CAC](/blog/saas-metrikleri-mrr-churn-ltv-cac) genelde yeterli bir başlangıçtır. Asıl önemli olan metrik panosunun şık görünmesi değil, her hafta aynı yere bakıp "geçen haftaya göre ne değişti?" sorusunu cevaplayabilmenizdir.
+
+Erken aşamada bir uyarı: çok az kullanıcıyla hesaplanan oranlar yanıltıcıdır. 10 kullanıcının 1'i ayrıldığında churn'ünüz "%10" görünür ama bu istatistiksel olarak gürültüdür. Sayılar anlam kazanana kadar onları yön bulmak için kullanın, kesin karar vermek için değil.
+
+## Teknik borcu görmezden gelme, ama hepsini de ödeme
+
+MVP hızlı doğrulamak için yazılır ve bu yüzden bir miktar teknik borç taşır — bu normaldir, hatta doğrudur. Sorun, ürün büyümeye başladığında bu borcu tümüyle yok saymaktır.
+
+Doğru yaklaşım uçlarda değil ortadadır:
+
+- **Her şeyi baştan yazmak** erken bir lükstür; henüz kalıcı olup olmayacağı belli olmayan bir ürünü mükemmelleştirmek zaman kaybıdır.
+- **Borcu tamamen yok saymak** ise bir noktada büyümeyi durdurur; her yeni özellik daha yavaş çıkar, sistem sık sık kırılır.
+
+Pratikte şunu yapın: en sık dokunduğunuz ve en sık kırılan yerleri seçici biçimde sağlamlaştırın. [SaaS geliştirirken dikkat edilmesi gerekenlerin](/blog/saas-gelistirirken-dikkat-edilmesi-gerekenler) çoğu tam da bu dengeyle ilgilidir: hızı korurken sistemi büyümeye hazır tutmak.
+
+## En sık yapılan hata: erken "ölçeklenme" modu
+
+MVP sonrası gördüğüm en pahalı hata, henüz birkaç düzine kullanıcı varken şirketi büyük bir oyuncu gibi yönetmeye başlamaktır: ekip alınır, ofis tutulur, reklam bütçesi açılır, "ölçeklenme" konuşulur.
+
+Oysa ölçeklenecek tekrarlanabilir bir şey henüz yokken yapılan her büyütme, sadece yanlışı hızlandırır. Bu aşamada hâlâ "ölçeklenmeyen işler" yapmanın tam zamanıdır: müşterilerle tek tek konuşmak, kuruluşları elle yapmak, geri bildirimleri kendiniz toplamak. Bu işler can sıkıcı görünür ama size hiçbir panonun veremeyeceği bilgiyi verir.
+
+Büyüme, sebep değil sonuçtur. Önce kazanma biçimini bulun; büyüme onu takip eder.
+
+## Toparlarsak
+
+MVP'den sonrası, "daha çok özellik" değil "daha çok netlik" peşinde koşmaktır. Sırayla:
+
+1. Önce gelen sinyali oku — kim kaldı, ne için kaldı, ne ödedi.
+2. Üç senaryodan hangisinde olduğunu dürüstçe belirle.
+3. Seven azınlığa odaklan, PMF'in kıvılcımını orada ara.
+4. Büyümeden önce tekrarlanabilir bir kazanma biçimi bul.
+5. Fiyatı ve metrikleri gerçek veriyle yeniden kur.
+6. Teknik borcu seçici biçimde, büyümeyi yavaşlatan yerden öde.
+7. Erken "ölçeklenme" modundan kaçın.
+
+MVP, doğru sorulara ucuzdan cevap bulma aracıdır. Yayın sonrası dönem ise bu cevapları doğru kararlara çevirme sanatıdır. Acele eden değil, sinyali doğru okuyan kazanır.
+
+Bir MVP'niz yayında ve "şimdi ne yapmalıyım, neye odaklanmalıyım?" diye düşünüyorsanız, [bana ulaşabilirsiniz](/iletisim) — birlikte sinyali okuyup sonraki adımı netleştirelim. Sunduğum [hizmetlere](/hizmetler) de göz atabilirsiniz.
